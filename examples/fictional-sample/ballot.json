@@ -1,0 +1,138 @@
+{
+  "_comment": "Schema example with FICTIONAL candidates. Replace everything with researched data. Fields marked optional may be omitted.",
+  "election": {
+    "guide_title": "Lakeshore County Ballot Guide 2026",
+    "jurisdiction": "Lakeshore County, ST",
+    "precinct": "Precinct 0412",
+    "date_label": "Nov. 3, 2026",
+    "compiled": "Oct. 21, 2026"
+  },
+  "voting_info": {
+    "state": "Example State",
+    "audience": "first_time",
+    "items": [
+      {"text": "Photo ID required: driver's license, state ID, passport or military ID. Without one you can cast a provisional ballot and show ID within 6 days.", "source": "https://sos.example.gov/voter-id"},
+      {"text": "Early voting runs Oct. 19–30 at any county vote center. Election Day hours are 7 a.m.–7 p.m.; if you're in line at 7 p.m., you can still vote.", "source": "https://lakeshore.example.gov/elections"},
+      {"text": "There is no straight-party option. Mark each contest separately; skipping a contest doesn't affect the rest of your ballot.", "source": "https://sos.example.gov/faq"},
+      {"text": "You may bring printed notes. Phones may not be used at the voting station.", "source": "https://sos.example.gov/faq"}
+    ],
+    "cheatsheet_reminder": "Bring photo ID. Phones can't be used at the voting station, so print this."
+  },
+  "cheatsheet_two_sided": false,
+  "sections": [
+    {
+      "title": "Federal & State",
+      "ballot_label": "Page 1",
+      "intro": "Optional one-line context for the section.",
+      "contests": [
+        {
+          "office": "Governor",
+          "short": "Governor",
+          "ballot_page": 1,
+          "description": "State chief executive; signs or vetoes bills. Four-year term.",
+          "writein": true,
+          "poll": {"source": "State University poll, likely voters, Oct. 10–14, ±2.5", "values": {"Ann Rivera": 48, "Tom Hale": 45, "Lee Park": 3}},
+          "candidates": [
+            {"name": "Tom Hale", "party": "REP", "incumbent": true, "facts": ["Governor since 2019.", "Platform: property-tax cuts; border enforcement."], "links": [["Campaign site", "https://example.com/hale"]]},
+            {"name": "Ann Rivera", "party": "DEM", "facts": ["State senator since 2015.", "Platform: school funding; health-care costs."], "links": [["Campaign site", "https://example.com/rivera"]]},
+            {"name": "Lee Park", "party": "Libertarian", "thin": true, "facts": ["Little published. Check VOTE411."]}
+          ]
+        },
+        {
+          "office": "Supreme Court, Place 3",
+          "short": "Supreme Ct. Pl. 3",
+          "ballot_page": 1,
+          "description": "Highest civil court. Six-year term.",
+          "judicial": true,
+          "bar_poll": {"source": "State Bar poll, lawyer votes (Feb. 2026)", "type": "votes", "values": {"Mara Ortiz": 1912, "Dan Webb": 1650}},
+          "candidates": [
+            {"name": "Dan Webb", "party": "R", "incumbent": true, "facts": ["Appointed 2021."]},
+            {"name": "Mara Ortiz", "party": "D", "facts": ["Appeals court justice since 2019."]}
+          ]
+        },
+        {
+          "office": "State Treasurer",
+          "short": "Treasurer",
+          "ballot_page": 1,
+          "candidates": [{"name": "Gil Moore", "party": "REP"}]
+        }
+      ]
+    },
+    {
+      "title": "Lakeshore County",
+      "ballot_label": "Page 2",
+      "contests": [
+        {
+          "office": "District Judge, 4th District",
+          "short": "4th District Judge",
+          "ballot_page": 2,
+          "description": "Felony trial court.",
+          "bar_poll": {"source": "County Bar: recommend / not recommend", "type": "rating", "values": {"Sue Kim": [30, 15, 10, 5, 8, 32], "Raj Patel": [18, 10, 8, 8, 12, 44]}},
+          "candidates": [
+            {"name": "Sue Kim", "party": "REP", "facts": ["Associate judge since 2022."]},
+            {"name": "Raj Patel", "party": "DEM", "facts": ["Defense attorney, 15 years."]}
+          ]
+        },
+        {
+          "office": "City Council, Ward 2",
+          "short": "Council Ward 2",
+          "ballot_page": 2,
+          "ranked": true,
+          "max_ranks": 3,
+          "candidates": [
+            {"name": "Ada Li", "party": "", "facts": ["Small-business owner."]},
+            {"name": "Ben Ruiz", "party": "", "facts": ["Retired teacher."]},
+            {"name": "Cy Young", "party": "", "thin": true, "facts": ["No background found."]}
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Lakeshore School District (nonpartisan)",
+      "ballot_label": "Page 3",
+      "contests": [
+        {
+          "office": "School Board Trustee, Place 1",
+          "short": "School Board Pl. 1",
+          "ballot_page": 3,
+          "candidates": [
+            {"name": "Dee Shaw", "party": "", "facts": ["Split: opposed.", "Party signals: none found."]},
+            {"name": "Ed Vance", "party": "", "incumbent": true, "facts": ["Split: voted to study it in 2025.", "Party signals: county GOP precinct chair."]}
+          ]
+        },
+        {
+          "type": "measure",
+          "office": "Proposition A: $120M school bond",
+          "short": "Prop A – $120M bond",
+          "ballot_page": 3,
+          "description": "Official ballot language summarized here.",
+          "choices": ["For", "Against"],
+          "measure": {
+            "what": ["Renovations and HVAC at 12 campuses."],
+            "support": ["District; citizens' bond committee."],
+            "opposition": ["Local taxpayer group."],
+            "fiscal": ["District projects no tax-rate increase; depends on property values."]
+          }
+        }
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "title": "The 2025 district split proposal",
+      "before_section": "Lakeshore School District (nonpartisan)",
+      "timeline": [["Jan. 2025", "Board discussed splitting the district."], ["May 2025", "Board voted to drop it."]],
+      "stance_table": {
+        "columns": ["Candidate", "Seat", "Stance", "Party signal"],
+        "rows": [
+          ["Ed Vance", "Place 1 (inc.)", "Voted to study the split.", {"lean": "r", "label": "Republican", "note": "GOP precinct chair"}],
+          ["Dee Shaw", "Place 1", "Opposed.", {"lean": "n", "label": "None found"}]
+        ]
+      },
+      "note": "Party signals come only from public party roles and partisan-group endorsements.",
+      "links": [["Local news story", "https://example.com/news"]]
+    }
+  ],
+  "resources": [["VOTE411", "https://www.vote411.org"], ["County elections", "https://lakeshore.example.gov/elections"]],
+  "caveats": "Polls are snapshots. Bar polls are lawyer surveys, not endorsements."
+}

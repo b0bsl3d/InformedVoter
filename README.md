@@ -20,6 +20,18 @@ It works for any U.S. state, county or city. Each guide also opens with **that s
 
 These examples come from a real November 2026 ballot (Tarrant County, Texas, Precinct 3471-127). All of it is public information.
 
+### On screen (web page / HTML)
+
+The guide is one continuous scrolling page. It adapts to phones and follows your device's light or dark mode.
+
+![HTML guide on desktop](docs/images/html-desktop.png)
+
+| Phone (race #1) | Dark mode (local issue tracker) |
+|---|---|
+| <img src="docs/images/html-phone.png" alt="HTML guide on a phone" width="300"> | ![HTML guide in dark mode](docs/images/html-dark-split.png) |
+
+### Printed (PDF)
+
 | Guide cover and voting basics | A race box with its poll strip |
 |---|---|
 | ![Guide cover](docs/images/tx-cover.png) | ![U.S. Senate race](docs/images/tx-senate.png) |
@@ -28,7 +40,9 @@ These examples come from a real November 2026 ballot (Tarrant County, Texas, Pre
 |---|---|
 | ![Judges with bar poll](docs/images/tx-judges.png) | ![Split stance table](docs/images/tx-split.png) |
 
-**One-page cheat sheet** (71 contests, uncontested ones included, in ballot order):
+### Cheat sheet
+
+**One page** (71 contests, uncontested ones included, in ballot order):
 
 ![Cheat sheet](docs/images/tx-cheatsheet.png)
 

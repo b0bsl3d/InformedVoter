@@ -33,7 +33,7 @@ The cheat sheet also handles ranked-choice grids, write-ins and ballot measures.
 
 ![Sample cheat sheet](docs/images/sample-cheatsheet.png)
 
-Full PDFs are in [`examples/`](examples/).
+Full PDFs and the Tarrant County quality-check report ([`qc-report.md`](examples/tarrant-county-tx-2026/qc-report.md)) are in [`examples/`](examples/).
 
 ---
 

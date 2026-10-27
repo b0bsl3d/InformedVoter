@@ -92,7 +92,8 @@ For breadth, use a research subagent or extended research. Brief it with the con
   - Order candidates from most open to least open on the issue only when the record supports it.
   - If no candidate holds a position the user might expect, say so plainly.
 - **Party signals** (nonpartisan races only, if requested).
-  - Use only public party offices, partisan-group endorsements or recommendations, and candidates' own statements.
+  - Use only public party offices, partisan-group endorsements or recommendations, and candidates' own statements, including answers on public questionnaires such as iVoterGuide.
+  - **Search every side equally.** Check both major parties' county endorsement lists, conservative and progressive group slates, and each candidate's questionnaires. A table that flags one side's endorsements but misses the other's is a quality failure.
   - Write "none found" otherwise, and note that this doesn't mean they have no affiliation.
 - **Measures, bonds and propositions.**
   - Give a neutral summary, the sponsor's rationale, and organized support and opposition.

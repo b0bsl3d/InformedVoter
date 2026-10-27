@@ -74,7 +74,7 @@ def cand_card(x):
     if x.get("thin"):
         tags += '<span class="tag thin">Little info</span>'
     facts = "".join(f"<li>{E(f)}</li>" for f in x.get("facts", []))
-    return (f'<div class="cand"><div class="cand-head"><h4>{E(x["name"])}</h4><div class="tags">{tags}</div></div>'
+    return (f'<div class="cand" data-cand="{E(x["name"])}"><div class="cand-head"><h4>{E(x["name"])}</h4><div class="tags">{tags}</div></div>'
             f'<ul>{facts}</ul>{links_html(x.get("links"))}</div>')
 
 
@@ -120,17 +120,23 @@ def build(data):
     issues = data.get("issues", [])
     for si, s in enumerate(data["sections"]):
         sid = f"s{si}"
-        items, races, unc = [], [], []
+        items, races = [], []
+        first = n + 1
         for c in s["contests"]:
-            if not contested(c):
-                if c.get("candidates"):
-                    x = c["candidates"][0]
-                    unc.append(f'{c["office"]}: {x["name"]}' + (f' ({party(x.get("party"))[0]})' if party(x.get("party"))[0] else ""))
-                continue
             n += 1
             rid = f"r{n}"
-            items.append(f'<li><a href="#{rid}"><span class="num">{n}</span>{E(c["office"])}</a></li>')
             page = f'Ballot page {E(str(c["ballot_page"]))} · ' if c.get("ballot_page") else ""
+            if not contested(c):
+                x = (c.get("candidates") or [{"name": "(no candidate listed)"}])[0]
+                tag, pcls, full = party(x.get("party"))
+                chip = f' <span class="party {pcls}">{E(tag)}</span>' if tag else ""
+                items.append(f'<li class="toc-unc"><a href="#{rid}"><span class="num">{n}</span>{E(c["office"])} <i>(unopposed)</i></a></li>')
+                races.append(f'<div class="unc-row" id="{rid}" data-contest="{n}"><span class="num">{n}</span>'
+                             f'<span class="uo-office">{E(c["office"])}</span>'
+                             f'<span class="uo-name" data-cand="{E(x["name"])}">{E(x["name"])}{chip}</span>'
+                             f'<span class="uo-tag">Unopposed{(" · p." + E(str(c["ballot_page"]))) if c.get("ballot_page") else ""}</span></div>')
+                continue
+            items.append(f'<li><a href="#{rid}"><span class="num">{n}</span>{E(c["office"])}</a></li>')
             if is_measure(c):
                 cards = measure_cards(c)
                 meta = f'{page}{" / ".join(c.get("choices", ["Yes", "No"]))}'
@@ -141,24 +147,28 @@ def build(data):
                 meta = f'{page}{k} candidates' + (f' · vote for {vf}' if vf > 1 else "") + (" · ranked choice" if c.get("ranked") else "")
                 inner = poll_strip(c) + f'<div class="cands c2">{"".join(cand_card(x) for x in c["candidates"])}</div>'
             races.append(
-                f'<article class="race" id="{rid}"><header class="race-head"><span class="num">{n}</span>'
+                f'<article class="race" id="{rid}" data-contest="{n}"><header class="race-head"><span class="num">{n}</span>'
                 f'<div><h3>{E(c["office"])}</h3><p class="meta">{meta}</p></div></header>'
                 + (f'<p class="office">{E(c["description"])}</p>' if c.get("description") else "")
                 + inner + links_html(c.get("links"), "links race-links") + "</article>")
         pre = "".join(issue_html(i) for i in issues if i.get("before_section") in (si, s["title"]))
-        unc_html = (f'<p class="unc"><b>Uncontested in this section:</b> {E("; ".join(unc))}.</p>' if unc else "")
-        if not races and not unc:
+        if not races:
             continue
-        toc.append(f'<li><a href="#{sid}">{E(s["title"])}</a><ol>{"".join(items)}</ol></li>')
-        body.append(f'<section class="sec" id="{sid}"><h2>{E(s["title"])}</h2>'
+        rng = f'<span class="rng">#{first}–{n}</span>' if n > first else f'<span class="rng">#{first}</span>'
+        toc.append(f'<li><a href="#{sid}">{E(s["title"])} {rng}</a><ol>{"".join(items)}</ol></li>')
+        body.append(f'<section class="sec" id="{sid}"><h2>{E(s["title"])} {rng}</h2>'
                     + (f'<p class="sec-intro">{E(s["intro"])}</p>' if s.get("intro") else "")
-                    + pre + "".join(races) + unc_html + "</section>")
+                    + pre + "".join(races) + "</section>")
 
     vi = data.get("voting_info", {})
     vi_title = "First time voting? What to know in " + vi.get("state", "your state") if vi.get("audience") == "first_time" else "Voting basics for " + vi.get("state", "this election")
     vi_items = "".join(f'<li>{E(i["text"])}' + (f' <a href="{E(i["source"])}" target="_blank" rel="noopener">source</a>' if i.get("source") else "") + "</li>"
                        for i in vi.get("items", []))
     vi_html = f'<div class="notice"><b>{E(vi_title)}</b><ul>{vi_items}</ul></div>' if vi_items else ""
+    qc = data.get("qc", {})
+    qc_items = "".join(f"<li>{E(v)}</li>" for v in qc.get("items", []))
+    qc_html = (f'<div class="notice qc"><b>Quality checks</b><ul>{qc_items}</ul></div>' if qc_items else
+               '<div class="notice qc warn"><b>Quality checks not recorded.</b> Treat this guide as a draft.</div>')
     res = "".join(f'<li><a href="{E(u)}" target="_blank" rel="noopener">{E(l)}</a></li>' for l, u in data.get("resources", []))
     title = el.get("guide_title", "Ballot Guide")
     sub = " · ".join(x for x in (el.get("jurisdiction"), el.get("precinct"), el.get("date_label")) if x)
@@ -240,7 +250,14 @@ nav.toc .num {{ font: 500 12px/1.6 var(--f-mono); color: var(--muted); min-width
 .cand ul {{ margin: 8px 0 0; padding-left: 18px; font-size: 14.5px; }} .cand li {{ margin-bottom: 4px; }}
 .links {{ margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13.5px; }}
 .race-links {{ padding: 8px 16px 12px; border-top: 1px solid var(--rule); margin: 0; }}
-.unc {{ margin: 16px 0 0; font-size: 14px; color: var(--muted); max-width: 90ch; }}
+.unc-row {{ display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 10px; padding: 8px 16px; border: 1px dashed var(--rule); background: var(--card); font-size: 14.5px; break-inside: avoid; }}
+.unc-row .num {{ font: 500 12px var(--f-mono); color: var(--muted); border: 1px solid var(--rule); min-width: 30px; text-align: center; padding: 2px 4px; }}
+.uo-office {{ font-weight: 600; }} .uo-name {{ display: inline-flex; gap: 6px; align-items: baseline; }}
+.uo-tag {{ margin-left: auto; font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }}
+.rng {{ font: 500 .6em var(--f-mono); color: var(--muted); vertical-align: middle; }}
+nav.toc .toc-unc a {{ color: var(--muted); }}
+.notice.qc {{ border-color: var(--grn); }} .notice.qc b {{ color: var(--grn); }}
+.notice.qc.warn {{ border-color: var(--rep); }} .notice.qc.warn b {{ color: var(--rep); }}
 .split-body {{ padding: 12px 16px 14px; }} .timeline {{ margin: 0 0 12px; padding-left: 18px; font-size: 14.5px; }}
 .timeline li {{ margin-bottom: 6px; }} .stance td:first-child {{ font-weight: 600; }}
 .note {{ font-size: 14px; margin: 10px 0 0; padding: 8px 12px; background: var(--soft); }}
@@ -267,8 +284,9 @@ th {{ font: 600 13px var(--f-display); text-transform: uppercase; letter-spacing
 <div class="wrap">
   <p class="kicker">{E(sub)}</p>
   <h1>{E(title)}</h1>
-  <p class="lede">Every contested race on this ballot, in ballot order, one box per race. Uncontested races are listed at the end of each section. This guide is nonpartisan and recommends no candidate or vote.</p>
+  <p class="lede">Every contest on this ballot, in exact ballot order. Contest numbers match the ballot cheat sheet. Contested races get a full box; uncontested races are one line in their ballot position. This guide is nonpartisan and recommends no candidate or vote.</p>
   {vi_html}
+  {qc_html}
   <div class="legend"><span class="party rep">REP</span><span class="party dem">DEM</span><span class="party lib">LIB</span><span class="party grn">GRN</span><span class="party oth">Other / Ind.</span><span class="party np">Nonpartisan</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div>
   <nav class="toc" aria-label="Races"><p class="kicker">Contents</p><ol>{"".join(toc)}</ol></nav>
   {"".join(body)}

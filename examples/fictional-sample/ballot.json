@@ -11,10 +11,22 @@
     "state": "Example State",
     "audience": "first_time",
     "items": [
-      {"text": "Photo ID required: driver's license, state ID, passport or military ID. Without one you can cast a provisional ballot and show ID within 6 days.", "source": "https://sos.example.gov/voter-id"},
-      {"text": "Early voting runs Oct. 19–30 at any county vote center. Election Day hours are 7 a.m.–7 p.m.; if you're in line at 7 p.m., you can still vote.", "source": "https://lakeshore.example.gov/elections"},
-      {"text": "There is no straight-party option. Mark each contest separately; skipping a contest doesn't affect the rest of your ballot.", "source": "https://sos.example.gov/faq"},
-      {"text": "You may bring printed notes. Phones may not be used at the voting station.", "source": "https://sos.example.gov/faq"}
+      {
+        "text": "Photo ID required: driver's license, state ID, passport or military ID. Without one you can cast a provisional ballot and show ID within 6 days.",
+        "source": "https://sos.example.gov/voter-id"
+      },
+      {
+        "text": "Early voting runs Oct. 19–30 at any county vote center. Election Day hours are 7 a.m.–7 p.m.; if you're in line at 7 p.m., you can still vote.",
+        "source": "https://lakeshore.example.gov/elections"
+      },
+      {
+        "text": "There is no straight-party option. Mark each contest separately; skipping a contest doesn't affect the rest of your ballot.",
+        "source": "https://sos.example.gov/faq"
+      },
+      {
+        "text": "You may bring printed notes. Phones may not be used at the voting station.",
+        "source": "https://sos.example.gov/faq"
+      }
     ],
     "cheatsheet_reminder": "Bring photo ID. Phones can't be used at the voting station, so print this."
   },
@@ -31,11 +43,52 @@
           "ballot_page": 1,
           "description": "State chief executive; signs or vetoes bills. Four-year term.",
           "writein": true,
-          "poll": {"source": "State University poll, likely voters, Oct. 10–14, ±2.5", "values": {"Ann Rivera": 48, "Tom Hale": 45, "Lee Park": 3}},
+          "poll": {
+            "source": "State University poll, likely voters, Oct. 10–14, ±2.5",
+            "values": {
+              "Ann Rivera": 48,
+              "Tom Hale": 45,
+              "Lee Park": 3
+            }
+          },
           "candidates": [
-            {"name": "Tom Hale", "party": "REP", "incumbent": true, "facts": ["Governor since 2019.", "Platform: property-tax cuts; border enforcement."], "links": [["Campaign site", "https://example.com/hale"]]},
-            {"name": "Ann Rivera", "party": "DEM", "facts": ["State senator since 2015.", "Platform: school funding; health-care costs."], "links": [["Campaign site", "https://example.com/rivera"]]},
-            {"name": "Lee Park", "party": "Libertarian", "thin": true, "facts": ["Little published. Check VOTE411."]}
+            {
+              "name": "Tom Hale",
+              "party": "REP",
+              "incumbent": true,
+              "facts": [
+                "Governor since 2019.",
+                "Platform: property-tax cuts; border enforcement."
+              ],
+              "links": [
+                [
+                  "Campaign site",
+                  "https://example.com/hale"
+                ]
+              ]
+            },
+            {
+              "name": "Ann Rivera",
+              "party": "DEM",
+              "facts": [
+                "State senator since 2015.",
+                "Platform: school funding; health-care costs."
+              ],
+              "links": [
+                [
+                  "Campaign site",
+                  "https://example.com/rivera"
+                ]
+              ]
+            },
+            {
+              "name": "Lee Park",
+              "party": "Libertarian",
+              "thin": true,
+              "facts": [
+                "Little published. Check VOTE411."
+              ]
+            }
           ]
         },
         {
@@ -44,17 +97,60 @@
           "ballot_page": 1,
           "description": "Highest civil court. Six-year term.",
           "judicial": true,
-          "bar_poll": {"source": "State Bar poll, lawyer votes (Feb. 2026)", "type": "votes", "values": {"Mara Ortiz": 1912, "Dan Webb": 1650}},
+          "bar_poll": {
+            "source": "State Bar poll, lawyer votes (Feb. 2026)",
+            "type": "votes",
+            "values": {
+              "Mara Ortiz": 1912,
+              "Dan Webb": 1650
+            }
+          },
           "candidates": [
-            {"name": "Dan Webb", "party": "R", "incumbent": true, "facts": ["Appointed 2021."]},
-            {"name": "Mara Ortiz", "party": "D", "facts": ["Appeals court justice since 2019."]}
+            {
+              "name": "Dan Webb",
+              "party": "R",
+              "incumbent": true,
+              "facts": [
+                "Appointed 2021."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/dan-webb"
+                ]
+              ]
+            },
+            {
+              "name": "Mara Ortiz",
+              "party": "D",
+              "facts": [
+                "Appeals court justice since 2019."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/mara-ortiz"
+                ]
+              ]
+            }
           ]
         },
         {
           "office": "State Treasurer",
           "short": "Treasurer",
           "ballot_page": 1,
-          "candidates": [{"name": "Gil Moore", "party": "REP"}]
+          "candidates": [
+            {
+              "name": "Gil Moore",
+              "party": "REP",
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/gil-moore"
+                ]
+              ]
+            }
+          ]
         }
       ]
     },
@@ -67,10 +163,55 @@
           "short": "4th District Judge",
           "ballot_page": 2,
           "description": "Felony trial court.",
-          "bar_poll": {"source": "County Bar: recommend / not recommend", "type": "rating", "values": {"Sue Kim": [30, 15, 10, 5, 8, 32], "Raj Patel": [18, 10, 8, 8, 12, 44]}},
+          "bar_poll": {
+            "source": "County Bar: recommend / not recommend",
+            "type": "rating",
+            "values": {
+              "Sue Kim": [
+                30,
+                15,
+                10,
+                5,
+                8,
+                32
+              ],
+              "Raj Patel": [
+                18,
+                10,
+                8,
+                8,
+                12,
+                44
+              ]
+            }
+          },
           "candidates": [
-            {"name": "Sue Kim", "party": "REP", "facts": ["Associate judge since 2022."]},
-            {"name": "Raj Patel", "party": "DEM", "facts": ["Defense attorney, 15 years."]}
+            {
+              "name": "Sue Kim",
+              "party": "REP",
+              "facts": [
+                "Associate judge since 2022."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/sue-kim"
+                ]
+              ]
+            },
+            {
+              "name": "Raj Patel",
+              "party": "DEM",
+              "facts": [
+                "Defense attorney, 15 years."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/raj-patel"
+                ]
+              ]
+            }
           ]
         },
         {
@@ -80,9 +221,40 @@
           "ranked": true,
           "max_ranks": 3,
           "candidates": [
-            {"name": "Ada Li", "party": "", "facts": ["Small-business owner."]},
-            {"name": "Ben Ruiz", "party": "", "facts": ["Retired teacher."]},
-            {"name": "Cy Young", "party": "", "thin": true, "facts": ["No background found."]}
+            {
+              "name": "Ada Li",
+              "party": "",
+              "facts": [
+                "Small-business owner."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/ada-li"
+                ]
+              ]
+            },
+            {
+              "name": "Ben Ruiz",
+              "party": "",
+              "facts": [
+                "Retired teacher."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/ben-ruiz"
+                ]
+              ]
+            },
+            {
+              "name": "Cy Young",
+              "party": "",
+              "thin": true,
+              "facts": [
+                "No background found."
+              ]
+            }
           ]
         }
       ]
@@ -96,8 +268,35 @@
           "short": "School Board Pl. 1",
           "ballot_page": 3,
           "candidates": [
-            {"name": "Dee Shaw", "party": "", "facts": ["Split: opposed.", "Party signals: none found."]},
-            {"name": "Ed Vance", "party": "", "incumbent": true, "facts": ["Split: voted to study it in 2025.", "Party signals: county GOP precinct chair."]}
+            {
+              "name": "Dee Shaw",
+              "party": "",
+              "facts": [
+                "Split: opposed.",
+                "Party signals: none found."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/dee-shaw"
+                ]
+              ]
+            },
+            {
+              "name": "Ed Vance",
+              "party": "",
+              "incumbent": true,
+              "facts": [
+                "Split: voted to study it in 2025.",
+                "Party signals: county GOP precinct chair."
+              ],
+              "links": [
+                [
+                  "Example source",
+                  "https://example.com/ed-vance"
+                ]
+              ]
+            }
           ]
         },
         {
@@ -106,13 +305,25 @@
           "short": "Prop A – $120M bond",
           "ballot_page": 3,
           "description": "Official ballot language summarized here.",
-          "choices": ["For", "Against"],
+          "choices": [
+            "For",
+            "Against"
+          ],
           "measure": {
-            "what": ["Renovations and HVAC at 12 campuses."],
-            "support": ["District; citizens' bond committee."],
-            "opposition": ["Local taxpayer group."],
-            "fiscal": ["District projects no tax-rate increase; depends on property values."]
-          }
+            "what": [
+              "Renovations and HVAC at 12 campuses."
+            ],
+            "support": [
+              "District; citizens' bond committee."
+            ],
+            "opposition": [
+              "Local taxpayer group."
+            ],
+            "fiscal": [
+              "District projects no tax-rate increase; depends on property values."
+            ]
+          },
+          "ballot_key": "proposition a"
         }
       ]
     }
@@ -121,18 +332,70 @@
     {
       "title": "The 2025 district split proposal",
       "before_section": "Lakeshore School District (nonpartisan)",
-      "timeline": [["Jan. 2025", "Board discussed splitting the district."], ["May 2025", "Board voted to drop it."]],
+      "timeline": [
+        [
+          "Jan. 2025",
+          "Board discussed splitting the district."
+        ],
+        [
+          "May 2025",
+          "Board voted to drop it."
+        ]
+      ],
       "stance_table": {
-        "columns": ["Candidate", "Seat", "Stance", "Party signal"],
+        "columns": [
+          "Candidate",
+          "Seat",
+          "Stance",
+          "Party signal"
+        ],
         "rows": [
-          ["Ed Vance", "Place 1 (inc.)", "Voted to study the split.", {"lean": "r", "label": "Republican", "note": "GOP precinct chair"}],
-          ["Dee Shaw", "Place 1", "Opposed.", {"lean": "n", "label": "None found"}]
+          [
+            "Ed Vance",
+            "Place 1 (inc.)",
+            "Voted to study the split.",
+            {
+              "lean": "r",
+              "label": "Republican",
+              "note": "GOP precinct chair"
+            }
+          ],
+          [
+            "Dee Shaw",
+            "Place 1",
+            "Opposed.",
+            {
+              "lean": "n",
+              "label": "None found"
+            }
+          ]
         ]
       },
       "note": "Party signals come only from public party roles and partisan-group endorsements.",
-      "links": [["Local news story", "https://example.com/news"]]
+      "links": [
+        [
+          "Local news story",
+          "https://example.com/news"
+        ]
+      ]
     }
   ],
-  "resources": [["VOTE411", "https://www.vote411.org"], ["County elections", "https://lakeshore.example.gov/elections"]],
-  "caveats": "Polls are snapshots. Bar polls are lawyer surveys, not endorsements."
+  "resources": [
+    [
+      "VOTE411",
+      "https://www.vote411.org"
+    ],
+    [
+      "County elections",
+      "https://lakeshore.example.gov/elections"
+    ]
+  ],
+  "caveats": "Polls are snapshots. Bar polls are lawyer surveys, not endorsements.",
+  "qc": {
+    "items": [
+      "Ballot match: all contests and candidate names checked against the official sample ballot PDF, in order (scripts/verify_ballot.py).",
+      "Fact-check: an independent reviewer checked candidate claims against their cited sources on Oct. 21, 2026; unsupported claims were removed.",
+      "Voting rules: verified against the Secretary of State and county elections pages listed beside each item."
+    ]
+  }
 }

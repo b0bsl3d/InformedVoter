@@ -63,7 +63,31 @@ Verified each time against official state and county election offices:
 - Straight-ticket voting and ranked-choice voting
 - Phone and note rules in the booth, and electioneering buffer zones
 
+**One numbering system:** every contest carries its ballot position (1, 2, 3 …) in both the guide and the cheat sheet. Uncontested races appear as one-line entries in their place, so numbers never skip or shift.
+
 **Color key:** Republicans red · Democrats blue · Libertarians gold · Greens green · Independents and other parties purple · Nonpartisan slate.
+
+---
+
+## Quality checks
+
+The skill doesn't deliver anything until these gates pass. Their results print in a **Quality checks** box at the top of every guide.
+
+1. **Ballot match (automated).** [`verify_ballot.py`](ballot-research-guide/scripts/verify_ballot.py) reads the official sample-ballot PDF column by column, ignoring "SAMPLE" watermarks. It then confirms that:
+   - every candidate name in the data is printed on the ballot (catching invented or misspelled names);
+   - contests and names are in ballot order;
+   - nothing on the ballot was left out;
+   - the guide and the cheat sheet both number contests 1..N, with the right candidates under each number.
+
+   Any error blocks delivery.
+2. **Every fact has a source.** Each candidate fact, poll and dollar figure must link to a source looked at during the session. Anything unsourced is removed or marked unverified.
+3. **Independent fact-check.** A separate reviewer agent, with no drafting context, checks the claims against their sources: numbers first, then biographies, quotes and stances, then endorsements. Wrong or unsupported claims are fixed or removed.
+4. **Voting rules.** Every rule links to an official state or county page, and every date's weekday is checked.
+5. **Visual check.** Guide pages and the cheat sheet are rendered and inspected.
+
+If a gate can't pass, for example because there is no ballot PDF, the guide says so and is labeled a draft.
+
+We tested the checker by planting errors: a misspelled name, an invented candidate, two swapped races, a dropped candidate and a wrong contest number. It caught every one. The real Tarrant County example passes with 0 errors and 0 warnings across 71 contests.
 
 ---
 
@@ -98,12 +122,13 @@ Ask Claude to **recheck polls and late news** a few days before Election Day, or
 The builders are plain Python and work without Claude, given a `ballot.json`. See [`examples/fictional-sample/ballot.json`](examples/fictional-sample/ballot.json) for the schema.
 
 ```bash
-pip install playwright && python -m playwright install chromium
+pip install playwright pdfplumber && python -m playwright install chromium
 cd ballot-research-guide/scripts
 python build_guide.py ../../examples/fictional-sample/ballot.json guide.html
 python build_cheatsheet.py ../../examples/fictional-sample/ballot.json cheatsheet.html
 python render_pdf.py guide.html guide.pdf --footer "Ballot Guide"
 python render_pdf.py cheatsheet.html cheatsheet.pdf --one-page
+python verify_ballot.py --pdf your-sample-ballot.pdf --json ballot.json --html guide.html --html cheatsheet.html
 ```
 
 ---
@@ -118,7 +143,12 @@ Please read these before relying on a guide.
   - Check VOTE411, local newspapers and candidates' own sites.
 - **AI can make mistakes.**
   - Claude researches from public web sources and can misread or misattribute something.
+  - The quality gates reduce this risk but can't eliminate it. The ballot-match check is mechanical; the fact-check is AI-assisted.
   - Every fact carries a link so you can check it. Please do.
+- **The ballot check depends on the PDF.**
+  - Unusual layouts, scanned images or watermarks can confuse the column reader.
+  - Its report includes the extracted reading order so you can check it.
+  - Nonpartisan names (school boards, appraisal boards) print without party codes, so an omitted one is harder to detect automatically. Compare those by eye.
 - **A snapshot in time.**
   - Polls, endorsements, withdrawals and court rulings change. The guide is only current as of the date it was compiled.
 - **Polls have limits.**
@@ -148,7 +178,7 @@ Please read these before relying on a guide.
 ballot-research-guide/          The Claude skill (upload this folder, zipped)
   SKILL.md                      Workflow Claude follows
   references/state-voting-rules.md   What voting rules to verify and where
-  scripts/                      build_guide.py, build_cheatsheet.py, render_pdf.py
+  scripts/                      build_guide.py, build_cheatsheet.py, render_pdf.py, verify_ballot.py
   assets/example-ballot.json    Data-file schema (fictional candidates)
 dist/ballot-research-guide.zip  Ready-to-upload skill
 examples/                       Sample PDFs (fictional and real Texas 2026)

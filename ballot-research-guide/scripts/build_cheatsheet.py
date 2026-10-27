@@ -16,7 +16,7 @@ def contest_html(n, c):
     if is_measure(c):
         rows = "".join(f'<div class="c"><span class="box"></span><span class="nm">{E(ch)}</span></div>'
                        for ch in c.get("choices", ["Yes", "No"]))
-        return f'<div class="race"><div class="of"><span class="n">{n}</span>{E(office)}</div>{rows}</div>'
+        return f'<div class="race" data-contest="{n}"><div class="of"><span class="n">{n}</span>{E(office)}</div>{rows}</div>'
 
     cands = c.get("candidates", [])
     ranked = c.get("ranked")
@@ -30,19 +30,20 @@ def contest_html(n, c):
         for nm, p in names:
             tag, pcls, _ = party(p) if p is not None else ("", "np", "")
             boxes = '<span class="box"></span>' * k
-            rows += f'<div class="rk"><span class="nm">{E(nm)}' + (f' <span class="pt {pcls}">{E(tag)}</span>' if tag else "") + f'</span>{boxes}</div>'
-        return (f'<div class="race"><div class="of"><span class="n">{n}</span>{E(office)}'
+            dc = f' data-cand="{E(nm)}"' if p is not None else ""
+            rows += f'<div class="rk"{dc}><span class="nm">{E(nm)}' + (f' <span class="pt {pcls}">{E(tag)}</span>' if tag else "") + f'</span>{boxes}</div>'
+        return (f'<div class="race" data-contest="{n}"><div class="of"><span class="n">{n}</span>{E(office)}'
                 f'<span class="uo">rank up to {k}</span></div>{rows}</div>')
 
     rows = ""
     for x in cands:
         tag, pcls, _ = party(x.get("party"))
-        rows += (f'<div class="c"><span class="box"></span><span class="nm">{E(x["name"])}</span>'
+        rows += (f'<div class="c" data-cand="{E(x["name"])}"><span class="box"></span><span class="nm">{E(x["name"])}</span>'
                  + (f'<span class="pt {pcls}">{E(tag)}</span>' if tag else "") + "</div>")
     if c.get("writein"):
         rows += '<div class="c"><span class="box"></span><span class="nm wi">Write-in ________</span></div>'
     note = '<span class="uo">unopposed</span>' if single else (f'<span class="uo">vote for {vf}</span>' if vf > 1 else "")
-    return f'<div class="race"><div class="of"><span class="n">{n}</span>{E(office)}{note}</div>{rows}</div>'
+    return f'<div class="race" data-contest="{n}"><div class="of"><span class="n">{n}</span>{E(office)}{note}</div>{rows}</div>'
 
 
 def build(data):
@@ -85,7 +86,7 @@ h1 {{ font-size: calc(var(--fs) * 1.7); margin: 0; }}
 footer {{ margin-top: 3pt; font-size: calc(var(--fs) * .8); color: #444; border-top: 0.5pt solid #999; padding-top: 2pt; }}
 </style>
 <header><h1>MY BALLOT CHEAT SHEET</h1><div class="sub">{E(sub)}</div></header>
-<p class="how"><b>How to use:</b> Mark your choices before you go. Every contest is listed in ballot order, including uncontested ones, so you can work down the ballot line by line. A blank contest is skipped; the rest of your ballot still counts. {E(remind)}</p>
+<p class="how"><b>How to use:</b> Mark your choices before you go. Every contest is listed in ballot order, including uncontested ones, and the numbers match the research guide. On multi-column ballots, work down the left column, then the right. A blank contest is skipped; the rest of your ballot still counts. {E(remind)}</p>
 <div class="cols">{"".join(out)}</div>
 <footer>{n} contests{" · print double-sided" if two else ""}. Uncontested races list one name; you may vote for that candidate or leave it blank. Check names against the official ballot; this sheet is a personal reminder only.</footer>
 '''

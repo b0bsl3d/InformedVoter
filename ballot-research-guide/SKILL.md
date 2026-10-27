@@ -7,7 +7,12 @@ description: Turn a voter's sample ballot (any U.S. state, county or city) into 
 
 Produce two deliverables from a voter's sample ballot:
 
-1. **Research guide.** Every contest in exact ballot order. Contested races get a full box (poll strip, candidate facts, links); uncontested races get one line in their ballot position. Published as an artifact and rendered to PDF.
+1. **Research guide**, in three forms:
+   - **Web page (artifact):** the main on-screen version, one continuous scrolling page with no pagination.
+   - **Standalone HTML file:** the same page as one self-contained file that opens in any browser, offline or as an email attachment.
+   - **PDF:** for printing.
+
+   Every contest appears in exact ballot order. Contested races get a full box (poll strip, candidate facts, links); uncontested races get one line in their ballot position.
 2. **Cheat sheet.** One printable letter page listing every contest in exact ballot order, with checkboxes to fill in before voting.
 
 **Both outputs use the same contest numbers: the contest's position on the ballot (1..N).** Contest #17 is the same race on the ballot, in the guide and on the cheat sheet. Both are built from one file, `ballot.json`, by the scripts in `scripts/`. Nothing is delivered until the quality gates in Step 6 pass.
@@ -109,7 +114,7 @@ For breadth, use a research subagent or extended research. Brief it with the con
 
 ```bash
 pip install playwright pdfplumber --break-system-packages -q && python -m playwright install chromium   # once, if missing
-python scripts/build_guide.py ballot.json guide.html
+python scripts/build_guide.py ballot.json guide.html --standalone guide-standalone.html
 python scripts/build_cheatsheet.py ballot.json cheatsheet.html
 python scripts/render_pdf.py guide.html guide.pdf --footer "Ballot Guide"
 python scripts/render_pdf.py cheatsheet.html cheatsheet.pdf --one-page
@@ -126,7 +131,7 @@ Record each gate's result as one plain sentence in `ballot.json` under `qc.items
 
 ```bash
 python scripts/verify_ballot.py --pdf ballot.pdf --json ballot.json \
-    --html guide.html --html cheatsheet.html --report qc_report.md
+    --html guide.html --html guide-standalone.html --html cheatsheet.html --report qc_report.md
 ```
 
 - **Must exit 0 with 0 errors.** It checks four things:
@@ -161,7 +166,11 @@ python scripts/verify_ballot.py --pdf ballot.pdf --json ballot.json \
 
 ## Step 7: Deliver
 
-- Before publishing, load the `artifact-design` skill. Then publish `guide.html` as an artifact and send both PDFs plus `qc_report.md`.
+- Before publishing, load the `artifact-design` skill. Then:
+  - publish `guide.html` as an artifact (the screen version);
+  - send `guide-standalone.html` (renamed to something like `<Place>_Ballot_Guide_<year>.html`);
+  - send both PDFs and `qc_report.md`.
+- **Lead with the web version when you describe the outputs.** The PDF's page breaks make it awkward to read on a screen.
 - **Tell the user, in one line each:**
   - What the checks covered, e.g. "71/71 contests and every name matched the ballot; 3 claims corrected after fact-check."
   - The artifact is private until they share it from the page's Share menu.

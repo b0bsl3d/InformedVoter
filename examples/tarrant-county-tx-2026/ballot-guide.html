@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Keller Ballot Guide 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: ballot-style contests. Each race is a ruled box with a dark contest band, candidates side by side. */
+:root {
+  --paper: #fbfbf9; --ink: #1b2230; --muted: #5b6474; --rule: #c9ced6; --band: #26303f; --band-fg: #f3f5f8;
+  --card: #ffffff; --soft: #eef1f5; --accent: #9a6b12; --link: #1f5aa6;
+  --rep: #c0392b; --dem: #1f5bc4; --lib: #c08a00; --grn: #2f8a43; --np: #6b5fa8; --neu: #b9bfc8; --neg: #4a505b;
+  --f-display: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #13171e; --ink: #e5e8ee; --muted: #9aa3b2; --rule: #343c49; --band: #2b3546; --band-fg: #f3f5f8;
+  --card: #1a1f28; --soft: #222935; --accent: #e0b35a; --link: #7fb0f0;
+  --rep: #e5574a; --dem: #4d8cf0; --lib: #e0b030; --grn: #4fb866; --np: #9a8fe0; --neu: #5a6170; --neg: #c9ced6; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #13171e; --ink: #e5e8ee; --muted: #9aa3b2; --rule: #343c49; --band: #2b3546; --band-fg: #f3f5f8;
+  --card: #1a1f28; --soft: #222935; --accent: #e0b35a; --link: #7fb0f0;
+  --rep: #e5574a; --dem: #4d8cf0; --lib: #e0b030; --grn: #4fb866; --np: #9a8fe0; --neu: #5a6170; --neg: #c9ced6; color-scheme: dark; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.5 var(--f-body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+a { color: var(--link); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.kicker { font: 500 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 700; margin-top: 8px; line-height: 1.1; }
+.lede { max-width: 68ch; color: var(--muted); margin: 12px 0 0; }
+.notice { margin-top: 20px; border: 1px solid var(--accent); border-left-width: 4px; padding: 12px 16px; max-width: 72ch; background: var(--card); }
+.notice b { color: var(--accent); }
+.notice.qc { border-color: var(--grn); } .notice.qc > b { color: var(--grn); } .notice.qc ul { margin: 6px 0 0; padding-left: 18px; font-size: 15px; } .notice.qc li b { color: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; font-size: 14px; color: var(--muted); align-items: center; }
+nav.toc { margin-top: 28px; border-top: 2px solid var(--ink); padding-top: 16px; }
+nav.toc > ol { list-style: none; padding: 0; margin: 12px 0 0; columns: 2 300px; column-gap: 32px; }
+nav.toc > ol > li { break-inside: avoid; margin-bottom: 14px; }
+nav.toc > ol > li > a { font: 600 15px var(--f-display); text-transform: uppercase; letter-spacing: .04em; color: var(--ink); text-decoration: none; }
+nav.toc ol ol { list-style: none; padding: 0; margin: 4px 0 0; }
+nav.toc ol ol a { display: flex; gap: 8px; font-size: 14px; color: var(--ink); text-decoration: none; padding: 2px 0; }
+nav.toc ol ol a:hover { color: var(--link); }
+nav.toc .num { font: 500 12px/1.6 var(--f-mono); color: var(--muted); min-width: 22px; font-variant-numeric: tabular-nums; }
+.sec { margin-top: 48px; }
+.sec h2 { font-size: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; border-bottom: 3px solid var(--ink); padding-bottom: 6px; }
+.sec-intro { max-width: 80ch; color: var(--muted); margin: 10px 0 20px; font-size: 15px; }
+.race { border: 1.5px solid var(--ink); background: var(--card); margin-top: 24px; break-inside: avoid-page; }
+.race-head { display: flex; gap: 14px; align-items: center; background: var(--band); color: var(--band-fg); padding: 10px 16px; }
+.race-head .num { font: 500 14px var(--f-mono); border: 1px solid currentColor; min-width: 34px; text-align: center; padding: 3px 4px; font-variant-numeric: tabular-nums; }
+.race-head h3 { font-size: 21px; font-weight: 600; }
+.race-head .meta { margin: 2px 0 0; font: 500 11px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; opacity: .78; }
+.newbadge { font: 500 10px var(--f-mono); letter-spacing: .08em; text-transform: uppercase; background: var(--accent); color: #1b1305; padding: 2px 6px; vertical-align: middle; margin-left: 6px; }
+.office { margin: 0; padding: 10px 16px; background: var(--soft); font-size: 14.5px; border-bottom: 1px solid var(--rule); }
+.cands { display: grid; gap: 0; }
+.cands.c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cands.c1 { grid-template-columns: 1fr; }
+.cand { padding: 14px 16px 12px; border-top: 1px solid var(--rule); min-width: 0; }
+.cands.c2 > .cand:nth-child(odd) { border-right: 1px solid var(--rule); }
+.cands.c2 > .cand:nth-child(-n+2) { border-top: 0; }
+.cands.c2 > .cand:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
+.cand-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.cand h4 { font-size: 18px; font-weight: 600; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.party, .tag { font: 500 11px/1 var(--f-mono); letter-spacing: .06em; padding: 4px 6px; border: 1px solid currentColor; }
+.p-rep { color: var(--rep); } .p-dem { color: var(--dem); } .p-lib { color: var(--lib); } .p-grn { color: var(--grn); }
+.tag { color: var(--muted); text-transform: uppercase; }
+.tag.thin { color: var(--accent); }
+.cand ul { margin: 8px 0 0; padding-left: 18px; font-size: 14.5px; }
+.cand li { margin-bottom: 4px; }
+.links { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13.5px; }
+.race-links { padding: 8px 16px 12px; border-top: 1px solid var(--rule); margin: 0; }
+
+.info { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-bottom: 1px solid var(--rule); }
+.ib { padding: 10px 16px 12px; min-width: 0; }
+.ib + .ib { border-left: 1px solid var(--rule); }
+.ib-t { margin: 0 0 8px; font: 600 12px var(--f-display); text-transform: uppercase; letter-spacing: .06em; }
+.ib-t span { font: 400 12px var(--f-body); text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+.bar-row { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr auto; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 5px; }
+.bn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bv { font: 500 12px var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; min-width: 3.5em; }
+.track { height: 12px; background: var(--soft); display: flex; overflow: hidden; }
+.fill { display: block; height: 100%; background: currentColor; }
+.fill.p-np { color: var(--np); }
+.seg { display: block; height: 100%; }
+.seg.neu { background: var(--neu); }
+.seg.neg { background: var(--neg); }
+.none { margin: 0; font-size: 13px; color: var(--muted); font-style: italic; }
+.key { margin: 6px 0 0; font-size: 11.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.k { display: inline-block; width: 10px; height: 10px; margin-right: 3px; vertical-align: -1px; }
+.k.rec { background: linear-gradient(90deg, var(--rep) 50%, var(--dem) 50%); }
+.k.neu { background: var(--neu); } .k.neg { background: var(--neg); } .k.sk { background: var(--soft); outline: 1px solid var(--rule); }
+.p-np { color: var(--np); }
+@media (max-width: 640px) { .info { grid-template-columns: 1fr; } .ib + .ib { border-left: 0; border-top: 1px solid var(--rule); } }
+.split-body { padding: 12px 16px 14px; }
+.timeline { margin: 0 0 12px; padding-left: 18px; font-size: 14.5px; max-width: 90ch; }
+.timeline li { margin-bottom: 6px; }
+.stance td:first-child { font-weight: 600; white-space: nowrap; }
+.lean { font: 500 11px var(--f-mono); padding: 2px 5px; border: 1px solid currentColor; margin-right: 4px; white-space: nowrap; }
+.lean.r { color: var(--rep); } .lean.d { color: var(--dem); } .lean.n { color: var(--muted); }
+.note { font-size: 14px; margin: 10px 0 0; padding: 8px 12px; background: var(--soft); }
+.unc-row { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 10px; padding: 8px 16px; border: 1px dashed var(--rule); background: var(--card); font-size: 14.5px; break-inside: avoid; }
+.unc-row .num { font: 500 12px var(--f-mono); color: var(--muted); border: 1px solid var(--rule); min-width: 30px; text-align: center; padding: 2px 4px; font-variant-numeric: tabular-nums; }
+.uo-office { font-weight: 600; } .uo-name { display: inline-flex; gap: 6px; align-items: baseline; }
+.uo-tag { margin-left: auto; font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.rng { font: 500 .6em var(--f-mono); color: var(--muted); letter-spacing: 0; vertical-align: middle; }
+nav.toc .toc-unc a { color: var(--muted); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+th { font: 600 13px var(--f-display); text-transform: uppercase; letter-spacing: .05em; background: var(--soft); }
+td.amt, th.amt { font-family: var(--f-mono); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.resources { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 12px; }
+.resources h2 { font-size: 22px; text-transform: uppercase; letter-spacing: .03em; }
+.resources ul { columns: 2 300px; column-gap: 32px; font-size: 14.5px; padding-left: 18px; }
+.resources li { break-inside: avoid; margin-bottom: 6px; }
+.caveats { font-size: 13.5px; color: var(--muted); max-width: 80ch; }
+@media (max-width: 640px) {
+  .cands.c2 { grid-template-columns: 1fr; }
+  .cands.c2 > .cand:nth-child(odd) { border-right: 0; }
+  .cands.c2 > .cand:nth-child(2) { border-top: 1px solid var(--rule); }
+  .race-head h3 { font-size: 18px; }
+}
+@media print {
+  :root { --paper:#fff; --card:#fff; }
+  body { font-size: 10.5pt; }
+  .wrap { max-width: none; padding: 0; }
+  .race { break-inside: avoid; }
+  .sec h2 { break-after: avoid; }
+  .race-head { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .office, th, .newbadge, .fill, .seg, .track, .k { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: var(--link); text-decoration: none; }
+  .sec { break-before: page; margin-top: 0; }
+}
+</style>
+
+
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Tarrant County · Precinct 3471-127 · Nov. 3, 2026</p>
+  <h1>Keller Ballot Guide 2026</h1>
+  <p class="lede">Every contest on your ballot, in exact ballot order. Numbers 1–71 match the ballot and the one-page cheat sheet. Contested races get a full box; uncontested races are a single line in their ballot position. This guide is nonpartisan and recommends no candidate or bond vote.</p>
+  <div class="notice"><b>First time voting?</b> Bring a Texas photo ID (driver's license, state ID, passport or similar). Texas has no straight-party option, so you mark each race separately, and you may skip any race. You can bring printed notes such as this guide, but you can't use your phone at the voting station.</div>
+  <div class="notice qc"><b>Quality checks (Oct. 26, 2026)</b><ul>
+    <li><b>Ballot match:</b> all 71 contests and every candidate name were checked by script against the official sample ballot PDF for Precinct 3471-127, in ballot order. Contest numbers match the cheat sheet.</li>
+    <li><b>Independent fact-check:</b> a separate reviewer checked about 100 claims against sources. 17 errors were corrected, unverifiable details were removed or attributed, and stale items were updated.</li>
+    <li><b>Not re-verified:</b> bar-poll figures (the official pages block automated reading). Check texasbar.com/pollresults and tarrantbar.org.</li>
+  </ul></div>
+  <div class="notice"><b>Poll strip:</b> each race opens with the latest public voter poll and, for judges, the lawyers' bar poll. Bar polls are surveys of attorneys taken before the primaries, not endorsements. Many local races have no poll at all.<br><b>Keller ISD:</b> a split section before the trustee races shows each candidate's stance and any partisan signals.</div>
+  <div class="legend"><span class="party p-rep">REP</span><span class="party p-dem">DEM</span><span class="party p-lib">LIB</span><span class="party p-grn">GRN</span><span class="party p-np">Nonpartisan</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span> = few published sources; check VOTE411.</div>
+  <p class="lede" style="font-size:14px">Early voting Oct. 19–30. Election Day Nov. 3, 7 a.m.–7 p.m., any countywide vote center.</p>
+
+  <nav class="toc" aria-label="Races"><p class="kicker">Contents</p><ol>
+<li><a href="#sec-fed">Federal &amp; Statewide Offices <span class="rng">#1–9</span></a><ol><li><a href="#r1"><span class="num">1</span>U.S. Senator</a></li><li><a href="#r2"><span class="num">2</span>U.S. Representative, District 24</a></li><li><a href="#r3"><span class="num">3</span>Governor</a></li><li><a href="#r4"><span class="num">4</span>Lieutenant Governor</a></li><li><a href="#r5"><span class="num">5</span>Attorney General</a></li><li><a href="#r6"><span class="num">6</span>Comptroller of Public Accounts</a></li><li><a href="#r7"><span class="num">7</span>Commissioner of the General Land Office</a></li><li><a href="#r8"><span class="num">8</span>Commissioner of Agriculture</a></li><li><a href="#r9"><span class="num">9</span>Railroad Commissioner</a></li></ol></li>
+<li><a href="#sec-sc">Texas Supreme Court <span class="rng">#10–13</span></a><ol><li><a href="#r10"><span class="num">10</span>Chief Justice</a></li><li><a href="#r11"><span class="num">11</span>Justice, Place 2 (Unexpired Term)</a></li><li><a href="#r12"><span class="num">12</span>Justice, Place 7</a></li><li><a href="#r13"><span class="num">13</span>Justice, Place 8</a></li></ol></li>
+<li><a href="#sec-cca">Texas Court of Criminal Appeals <span class="rng">#14–16</span></a><ol><li><a href="#r14"><span class="num">14</span>Judge, Place 3 (open seat)</a></li><li><a href="#r15"><span class="num">15</span>Judge, Place 4</a></li><li><a href="#r16"><span class="num">16</span>Judge, Place 9 (open seat)</a></li></ol></li>
+<li><a href="#sec-leg">Texas Legislature <span class="rng">#17–18</span></a><ol><li><a href="#r17"><span class="num">17</span>State Senator, District 9</a></li><li><a href="#r18"><span class="num">18</span>State Representative, District 98</a></li></ol></li>
+<li><a href="#sec-app">Courts of Appeals <span class="rng">#19–23</span></a><ol><li><a href="#r19"><span class="num">19</span>Chief Justice</a></li><li><a href="#r20"><span class="num">20</span>Justice, Place 2</a></li><li><a href="#r21"><span class="num">21</span>Justice, Place 3</a></li><li class="toc-unc"><a href="#r22"><span class="num">22</span>Justice, 2nd Court of Appeals District, Place 2 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r23"><span class="num">23</span>Justice, 2nd Court of Appeals District, Place 7 <i>(unopposed)</i></a></li></ol></li>
+<li><a href="#sec-dc">Tarrant County District Courts <span class="rng">#24–40</span></a><ol><li class="toc-unc"><a href="#r24"><span class="num">24</span>District Judge, 141st Judicial District <i>(unopposed)</i></a></li><li><a href="#r25"><span class="num">25</span>District Judge, 213th District (Unexpired Term)</a></li><li><a href="#r26"><span class="num">26</span>District Judge, 236th District</a></li><li><a href="#r27"><span class="num">27</span>District Judge, 297th District</a></li><li><a href="#r28"><span class="num">28</span>District Judge, 371st District</a></li><li class="toc-unc"><a href="#r29"><span class="num">29</span>District Judge, 372nd Judicial District <i>(unopposed)</i></a></li><li><a href="#r30"><span class="num">30</span>District Judge, 432nd District</a></li><li class="toc-unc"><a href="#r31"><span class="num">31</span>District Judge, 485th Judicial District <i>(unopposed)</i></a></li><li><a href="#r32"><span class="num">32</span>Criminal District Judge, Court No. 1 (open seat)</a></li><li class="toc-unc"><a href="#r33"><span class="num">33</span>Criminal District Judge, Court No. 3 <i>(unopposed)</i></a></li><li><a href="#r34"><span class="num">34</span>Criminal District Judge, Court No. 4</a></li><li><a href="#r35"><span class="num">35</span>Family District Judge, 231st District (open seat)</a></li><li class="toc-unc"><a href="#r36"><span class="num">36</span>Family District Judge, 233rd Judicial District <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r37"><span class="num">37</span>Family District Judge, 322nd Judicial District <i>(unopposed)</i></a></li><li><a href="#r38"><span class="num">38</span>Family District Judge, 323rd District</a></li><li><a href="#r39"><span class="num">39</span>Family District Judge, 324th District (open seat)</a></li><li><a href="#r40"><span class="num">40</span>Family District Judge, 325th District</a></li></ol></li>
+<li><a href="#sec-co">Tarrant County Offices &amp; County Courts <span class="rng">#41–60</span></a><ol><li><a href="#r41"><span class="num">41</span>Criminal District Attorney</a></li><li><a href="#r42"><span class="num">42</span>County Judge</a></li><li class="toc-unc"><a href="#r43"><span class="num">43</span>Judge, County Court at Law No. 1 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r44"><span class="num">44</span>Judge, County Court at Law No. 2 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r45"><span class="num">45</span>Judge, County Court at Law No. 3 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r46"><span class="num">46</span>Judge, County Criminal Court No. 1 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r47"><span class="num">47</span>Judge, County Criminal Court No. 2 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r48"><span class="num">48</span>Judge, County Criminal Court No. 3 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r49"><span class="num">49</span>Judge, County Criminal Court No. 4 <i>(unopposed)</i></a></li><li><a href="#r50"><span class="num">50</span>Judge, County Criminal Court No. 5</a></li><li class="toc-unc"><a href="#r51"><span class="num">51</span>Judge, County Criminal Court No. 6 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r52"><span class="num">52</span>Judge, County Criminal Court No. 7 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r53"><span class="num">53</span>Judge, County Criminal Court No. 8 <i>(unopposed)</i></a></li><li><a href="#r54"><span class="num">54</span>Judge, County Criminal Court No. 9</a></li><li class="toc-unc"><a href="#r55"><span class="num">55</span>Judge, County Criminal Court No. 10 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r56"><span class="num">56</span>Judge, County Probate Court No. 1 <i>(unopposed)</i></a></li><li class="toc-unc"><a href="#r57"><span class="num">57</span>Judge, County Probate Court No. 2 <i>(unopposed)</i></a></li><li><a href="#r58"><span class="num">58</span>District Clerk</a></li><li><a href="#r59"><span class="num">59</span>County Clerk</a></li><li class="toc-unc"><a href="#r60"><span class="num">60</span>Justice of the Peace, Precinct 3 <i>(unopposed)</i></a></li></ol></li>
+<li><a href="#sec-tad">Tarrant Appraisal District Board <span class="rng">#61–63</span></a><ol><li><a href="#r61"><span class="num">61</span>Board of Directors, At-Large Place 1 (open seat)</a></li><li><a href="#r62"><span class="num">62</span>Board of Directors, At-Large Place 2 (open seat)</a></li><li><a href="#r63"><span class="num">63</span>Board of Directors, At-Large Place 3</a></li></ol></li>
+<li><a href="#sec-kisd">Keller ISD Board of Trustees <span class="rng">#64–66</span></a><ol><li><a href="#r64"><span class="num">64</span>Trustee, Place 4 (Three-Year Term, open seat)</a></li><li><a href="#r65"><span class="num">65</span>Trustee, Place 5 (Three-Year Term)</a></li><li><a href="#r66"><span class="num">66</span>Trustee, Place 6 (Unexpired Term, special election)</a></li></ol></li>
+  <li><a href="#bond">Keller ISD Bond <span class="rng">#67–71</span></a><ol><li><a href="#r67"><span class="num">67–71</span>Propositions A–E</a></li></ol></li>
+  </ol></nav>
+
+<section class="sec" id="sec-fed">
+  <h2>Federal &amp; Statewide Offices <span class="rng">#1–9</span></h2>
+  <p class="sec-intro">U.S. Senate and U.S. House, then Texas&#x27;s statewide executive offices. In the UH Hobby “Texas Votes 2026” poll (Oct. 10–14), the closest statewide races are U.S. Senate and Railroad Commissioner (2 points each) and Governor (3 points). In the other statewide races below, the Republican leads by 5–7 points; most leads are near the margin of error. No Democrat has won statewide in Texas since 1994.</p>
+  
+  <article class="race" id="r1" data-contest="1">
+  <header class="race-head">
+    <span class="num">1</span>
+    <div><h3>U.S. Senator</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">One of Texas&#x27;s two U.S. Senate seats; six-year term. Open seat: incumbent John Cornyn lost the Republican runoff. One of the most closely watched Senate races in the country.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, likely voters, Oct. 10–14, ±2.2</span></p><div class="bar-row"><span class="bn">Ken Paxton</span><span class="track"><span class="fill p-rep" style="width:76.7%"></span></span><span class="bv">46%</span></div><div class="bar-row"><span class="bn">James Talarico</span><span class="track"><span class="fill p-dem" style="width:80.0%"></span></span><span class="bv">48%</span></div><div class="bar-row"><span class="bn">Ted Brown</span><span class="track"><span class="fill p-lib" style="width:5.0%"></span></span><span class="bv">3%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Ken Paxton">
+  <div class="cand-head"><h4>Ken Paxton</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Texas Attorney General since 2015; beat Sen. John Cornyn in the May 26 Republican runoff.</li><li>Known for aggressive state lawsuits against the federal government and for defending Texas&#x27;s own border enforcement.</li><li>Impeached by the Texas House in 2023 on corruption-related articles; acquitted by the Texas Senate. Critics, including some Republicans, cite ethics concerns.</li><li>Campaign ads focus on Talarico&#x27;s progressive voting record.</li></ul><p class="links"><a href="https://www.fox4news.com/election/texas-senate-race-polls-paxton-talarico" target="_blank" rel="noopener">Fox 4 poll tracker</a></p>
+</div><div class="cand" data-cand="James Talarico">
+  <div class="cand-head"><h4>James Talarico</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>37; Austin-area state representative (elected 2018); former San Antonio middle-school teacher; divinity degree from Austin Presbyterian Theological Seminary.</li><li>Beat Rep. Jasmine Crockett in the March primary, about 53% to 46%.</li><li>Platform: overhaul (or abolish) ICE and pursue federal immigration reform; raise taxes on the wealthiest; ban super PACs.</li><li>Helped lead the 2025 Democratic walkout over congressional redistricting.</li></ul><p class="links"><a href="https://www.marfapublicradio.org/texas/2026-03-04/james-talarico-beats-jasmine-crockett-in-democratic-primary-for-u-s-senate" target="_blank" rel="noopener">Marfa Public Radio</a></p>
+</div><div class="cand" data-cand="Ted Brown">
+  <div class="cand-head"><h4>Ted Brown</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span></div></div>
+  <ul><li>Libertarian Party nominee; pitches himself as an alternative to the two-party system and rejects the spoiler label.</li><li>Polls around 3%.</li></ul><p class="links"><a href="https://www.fox7austin.com/news/2026-election-us-senate-texas-ted-brown" target="_blank" rel="noopener">Fox 7 profile</a></p>
+</div></div>
+</article><article class="race" id="r2" data-contest="2">
+  <header class="race-head">
+    <span class="num">2</span>
+    <div><h3>U.S. Representative, District 24</h3><p class="meta">Ballot page 1 · 2 candidates</p></div>
+  </header>
+  <p class="office">Federal congressional seat, two-year term. Covers northeast Tarrant County (Keller, Southlake, Colleyville, Grapevine, Euless, Hurst, Bedford), DFW Airport and part of Dallas County. Lines redrawn August 2025.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Beth Van Duyne">
+  <div class="cand-head"><h4>Beth Van Duyne</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>In office since January 2021; born in New York, moved to Irving in 1986; former Irving mayor. Seeking a fourth term; unopposed in primary.</li><li>Platform: tax cuts for growth and jobs; more immigration enforcement; supports hyperscale data centers as a national-security priority against China; supports the SAVE America Act.</li><li>VoteSee: voted in 99% of roll calls; with GOP majority 94% of the time.</li><li>Endorsed by Gun Owners of America.</li></ul><p class="links"><a href="https://bethfortexas.com" target="_blank" rel="noopener">Campaign site</a> <a href="https://fortworthreport.org/2026/10/01/northeast-tarrant-area-us-house-district-24-race-pits-3-term-incumbent-against-challenger/" target="_blank" rel="noopener">Fort Worth Report</a> <a href="https://ballotpedia.org/Texas&#x27;_24th_Congressional_District_election,_2026" target="_blank" rel="noopener">Ballotpedia</a></p>
+</div><div class="cand" data-cand="Kevin Burge">
+  <div class="cand-head"><h4>Kevin Burge</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Marine Corps veteran; former Defense Intelligence Agency civilian; senior technical adviser in the White House Situation Room (Biden); now works in IT security. Won the Democratic runoff over TJ Ware.</li><li>Platform: restore congressional authority over tariffs; protect Fed independence; small-business loan reform; tax relief under $400K household income; restore ACA subsidies; end the war in Iran; open to bipartisan work.</li><li>Campaign finance: see FEC.gov for current filings.</li></ul><p class="links"><a href="https://communityimpact.com/grapevine-colleyville-southlake/election/q-a-meet-the-candidates-running-for-u-s-house-district-24/" target="_blank" rel="noopener">Community Impact Q&amp;A</a> <a href="https://www.keranews.org/elections-2026/2026-02-25/3-democrats-face-off-against-republican-incumbent-in-u-s-house-district-24" target="_blank" rel="noopener">KERA</a></p>
+</div></div>
+</article><article class="race" id="r3" data-contest="3">
+  <header class="race-head">
+    <span class="num">3</span>
+    <div><h3>Governor</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">Texas&#x27;s chief executive: signs or vetoes bills, calls special sessions, appoints judges to fill vacancies and heads the state&#x27;s emergency response. Four-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, likely voters, Oct. 10–14, ±2.2</span></p><div class="bar-row"><span class="bn">Greg Abbott</span><span class="track"><span class="fill p-rep" style="width:81.7%"></span></span><span class="bv">49%</span></div><div class="bar-row"><span class="bn">Gina Hinojosa</span><span class="track"><span class="fill p-dem" style="width:76.7%"></span></span><span class="bv">46%</span></div><div class="bar-row"><span class="bn">Pat Dixon</span><span class="track"><span class="fill p-lib" style="width:3.3%"></span></span><span class="bv">2%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Greg Abbott">
+  <div class="cand-head"><h4>Greg Abbott</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Governor since 2015; former Texas Attorney General. Seeking a fourth term, which would make him the longest-serving governor in Texas history.</li><li>Signature issues: Operation Lone Star border program; property-tax cuts; the 2025 school-voucher (Education Savings Account) program.</li><li>A record-setting fundraiser; spent heavily in 2024 GOP primaries against voucher opponents.</li><li>Poll: 49% (UH Hobby, Oct. 10-14). A YouGov poll (Sept. 28-Oct. 5) had him at 47% to Hinojosa&#x27;s 48%.</li></ul><p class="links"><a href="https://sanantonioreport.org/2026-candidates-for-texas-governor/" target="_blank" rel="noopener">San Antonio Report</a></p>
+</div><div class="cand" data-cand="Gina Hinojosa">
+  <div class="cand-head"><h4>Gina Hinojosa</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Attorney from Brownsville; Austin state representative; daughter of a longtime Texas Democratic Party chair.</li><li>Running against corruption in the Legislature and on what she calls failing state education policy.</li><li>Campaign is far less funded than Abbott&#x27;s.</li><li>Poll: 46% (UH Hobby). YouGov found her ahead among voters under 45 and among women.</li></ul><p class="links"><a href="https://www.fox7austin.com/election/hinojosa-abbott-split-texas-voters-latest-governors-poll" target="_blank" rel="noopener">Fox 7: YouGov poll</a></p>
+</div><div class="cand" data-cand="Pat Dixon">
+  <div class="cand-head"><h4>Pat Dixon</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span></div></div>
+  <ul><li>Engineer; former Lago Vista City Council member.</li><li>Poll: 2%.</li></ul><p class="links"><a href="https://ballotpedia.org/Pat_Dixon" target="_blank" rel="noopener">Ballotpedia</a></p>
+</div></div>
+</article><article class="race" id="r4" data-contest="4">
+  <header class="race-head">
+    <span class="num">4</span>
+    <div><h3>Lieutenant Governor</h3><p class="meta">Ballot page 1 · 4 candidates</p></div>
+  </header>
+  <p class="office">Presides over the Texas Senate, appoints its committees and decides which bills reach the floor. One of the most powerful offices in state government. Four-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, Texas Votes 2026</span></p><div class="bar-row"><span class="bn">Dan Patrick</span><span class="track"><span class="fill p-rep" style="width:78.3%"></span></span><span class="bv">47%</span></div><div class="bar-row"><span class="bn">Vikki Goodwin</span><span class="track"><span class="fill p-dem" style="width:70.0%"></span></span><span class="bv">42%</span></div><div class="bar-row"><span class="bn">Anthony Cristo</span><span class="track"><span class="fill p-lib" style="width:5.0%"></span></span><span class="bv">3%</span></div><div class="bar-row"><span class="bn">Kevin McCormick</span><span class="track"><span class="fill p-grn" style="width:1.7%"></span></span><span class="bv">1%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Dan Patrick">
+  <div class="cand-head"><h4>Dan Patrick</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Lieutenant governor since 2015.</li><li>Poll: 47% (UH Hobby).</li><li>Dallas Morning News made no recommendation in this race.</li></ul><p class="links"><a href="https://ballotpedia.org/Dan_Patrick" target="_blank" rel="noopener">Ballotpedia</a></p>
+</div><div class="cand" data-cand="Vikki Goodwin">
+  <div class="cand-head"><h4>Vikki Goodwin</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Austin-area state representative.</li><li>Poll: 42% (UH Hobby).</li><li>DMN: found her message more inclusive but her record and policy depth thin.</li></ul><p class="links"><a href="https://www.dallasnews.com/opinion/we-recommend/article/dfw-texas-election-candidate-recommendations-22480028.php" target="_blank" rel="noopener">DMN recommendations</a></p>
+</div><div class="cand" data-cand="Anthony Cristo">
+  <div class="cand-head"><h4>Anthony Cristo</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Poll: 3%. No major coverage found.</li></ul>
+</div><div class="cand" data-cand="Kevin McCormick">
+  <div class="cand-head"><h4>Kevin McCormick</h4><div class="tags"><span class="party p-grn" title="Green">GRN</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Poll: 1%. No major coverage found.</li></ul>
+</div></div>
+</article><article class="race" id="r5" data-contest="5">
+  <header class="race-head">
+    <span class="num">5</span>
+    <div><h3>Attorney General</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">The state&#x27;s top lawyer: represents Texas in court, enforces consumer-protection law, collects child support and issues legal opinions. Open seat (Ken Paxton is running for U.S. Senate).</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, Texas Votes 2026</span></p><div class="bar-row"><span class="bn">Mayes Middleton</span><span class="track"><span class="fill p-rep" style="width:78.3%"></span></span><span class="bv">47%</span></div><div class="bar-row"><span class="bn">Nathan Johnson</span><span class="track"><span class="fill p-dem" style="width:70.0%"></span></span><span class="bv">42%</span></div><div class="bar-row"><span class="bn">Tom Oxford</span><span class="track"><span class="fill p-lib" style="width:5.0%"></span></span><span class="bv">3%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Mayes Middleton">
+  <div class="cand-head"><h4>Mayes Middleton</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>State senator from Galveston; former state representative (first elected 2018); attorney and oil-company executive. Ran in the primary as “MAGA Mayes Middleton.”</li><li>Platform: continue Paxton&#x27;s approach; give the AG power to prosecute any state-law violation, including election crimes (courts have ruled those belong to local prosecutors); bring religion back into government.</li><li>Texas Tribune says he has not answered its questions or interview requests this year.</li><li>Poll: 47%.</li></ul><p class="links"><a href="https://www.texastribune.org/2026/10/05/texas-attorney-general-election-2026-candidates-mayes-middleton-nathan-johnson-tom-oxford/" target="_blank" rel="noopener">Tribune race guide</a> <a href="https://www.texastribune.org/2026/10/09/mayes-middleton-texas-attorney-general-church-state-christianity/" target="_blank" rel="noopener">Tribune profile</a></p>
+</div><div class="cand" data-cand="Nathan Johnson">
+  <div class="cand-head"><h4>Nathan Johnson</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Dallas state senator (elected 2018); attorney; born in Fort Worth. Beat Joe Jaworski in the runoff.</li><li>Platform: a back-to-basics office that rebuilds trust after Paxton-era scandals.</li><li>Endorsed by the Dallas Morning News.</li><li>Poll: 42% (UH Hobby); Axios cited another poll with him ahead.</li></ul><p class="links"><a href="https://www.texastribune.org/2026/10/08/texas-attorney-general-election-nathan-johnson-mayes-middleton/" target="_blank" rel="noopener">Tribune profile</a> <a href="https://www.tpr.org/podcast/the-source/2026-10-14/texas-attorney-general-race-pits-democrat-nathan-johnson-against-republican-mayes-middleton" target="_blank" rel="noopener">TPR interview</a></p>
+</div><div class="cand" data-cand="Tom Oxford">
+  <div class="cand-head"><h4>Tom Oxford</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Poll: 3%. Listed in the Tribune guide with little detail.</li></ul>
+</div></div>
+</article><article class="race" id="r6" data-contest="6">
+  <header class="race-head">
+    <span class="num">6</span>
+    <div><h3>Comptroller of Public Accounts</h3><p class="meta">Ballot page 1 · 4 candidates</p></div>
+  </header>
+  <p class="office">State tax collector and chief accountant. Its revenue estimate caps how much the Legislature may spend.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, Texas Votes 2026</span></p><div class="bar-row"><span class="bn">Don Huffines</span><span class="track"><span class="fill p-rep" style="width:78.3%"></span></span><span class="bv">47%</span></div><div class="bar-row"><span class="bn">Sarah Eckhardt</span><span class="track"><span class="fill p-dem" style="width:66.7%"></span></span><span class="bv">40%</span></div><div class="bar-row"><span class="bn">V. Alonzo Echavarria-Garza</span><span class="track"><span class="fill p-lib" style="width:0.0%"></span></span><span class="bv">n/a</span></div><div class="bar-row"><span class="bn">Shehla Faizi</span><span class="track"><span class="fill p-grn" style="width:0.0%"></span></span><span class="bv">n/a</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Don Huffines">
+  <div class="cand-head"><h4>Don Huffines</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Acting comptroller; former Dallas state senator.</li><li>Poll: 47%.</li><li>DMN recommended against him, citing doubts he would run the office professionally.</li></ul>
+</div><div class="cand" data-cand="Sarah Eckhardt">
+  <div class="cand-head"><h4>Sarah Eckhardt</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Austin state senator since 2020; former Travis County judge and commissioner.</li><li>Poll: 40% (UH Hobby).</li><li>Endorsed by the DMN.</li></ul>
+</div><div class="cand" data-cand="V. Alonzo Echavarria-Garza">
+  <div class="cand-head"><h4>V. Alonzo Echavarria-Garza</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Almost nothing published. Check VOTE411.</li></ul>
+</div><div class="cand" data-cand="Shehla Faizi">
+  <div class="cand-head"><h4>Shehla Faizi</h4><div class="tags"><span class="party p-grn" title="Green">GRN</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Almost nothing published. Check VOTE411.</li></ul>
+</div></div>
+</article><article class="race" id="r7" data-contest="7">
+  <header class="race-head">
+    <span class="num">7</span>
+    <div><h3>Commissioner of the General Land Office</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">Manages about 13 million acres of state land and 3,400 miles of coastline. Royalties feed the Permanent School Fund (about $57B in assets; $2.4B a year to K-12 schools). Also handles coastal protection, the Alamo, veterans&#x27; land loans and disaster-recovery money.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, Texas Votes 2026</span></p><div class="bar-row"><span class="bn">Dawn Buckingham</span><span class="track"><span class="fill p-rep" style="width:78.3%"></span></span><span class="bv">47%</span></div><div class="bar-row"><span class="bn">Benjamin Flores</span><span class="track"><span class="fill p-dem" style="width:66.7%"></span></span><span class="bv">40%</span></div><div class="bar-row"><span class="bn">Neill Snider</span><span class="track"><span class="fill p-lib" style="width:3.3%"></span></span><span class="bv">2%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Dawn Buckingham">
+  <div class="cand-head"><h4>Dawn Buckingham</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Former state senator and physician.</li><li>Poll: 47%.</li><li>Endorsed by the DMN.</li></ul>
+</div><div class="cand" data-cand="Benjamin Flores">
+  <div class="cand-head"><h4>Benjamin Flores</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Cybersecurity professional; Bay City council member.</li><li>Opposing school vouchers is a central theme.</li><li>Poll: 40% (UH Hobby).</li><li>Announced a leukemia diagnosis in June 2026 and said he would keep campaigning during treatment.</li></ul><p class="links"><a href="https://thetexan.news/elections/2026/democratic-land-commissioner-nominee-diagnosed-with-leukemia-will-continue-campaign/article_b1f42f80-1dd1-4e2f-80db-abf9d6d21d49.html" target="_blank" rel="noopener">The Texan</a></p>
+</div><div class="cand" data-cand="Neill Snider">
+  <div class="cand-head"><h4>Neill Snider</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Poll: 2%. Little else found.</li></ul>
+</div></div>
+</article><article class="race" id="r8" data-contest="8">
+  <header class="race-head">
+    <span class="num">8</span>
+    <div><h3>Commissioner of Agriculture</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">Runs the Texas Department of Agriculture: farm regulation, fuel-pump and scale inspection, parts of food safety, school-lunch programs. By law the commissioner must have been in “the business of agriculture” five of the past ten years.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, Texas Votes 2026</span></p><div class="bar-row"><span class="bn">Nate Sheets</span><span class="track"><span class="fill p-rep" style="width:76.7%"></span></span><span class="bv">46%</span></div><div class="bar-row"><span class="bn">Clayton Tucker</span><span class="track"><span class="fill p-dem" style="width:66.7%"></span></span><span class="bv">40%</span></div><div class="bar-row"><span class="bn">Austin R. Kelly</span><span class="track"><span class="fill p-lib" style="width:0.0%"></span></span><span class="bv">n/a</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Nate Sheets">
+  <div class="cand-head"><h4>Nate Sheets</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Founder of Nature Nate&#x27;s honey; first run for office. Beat incumbent Sid Miller 52.7%–47% in the primary with Gov. Abbott&#x27;s backing.</li><li>Platform: rural jobs turning farm products into finished goods.</li><li>Poll: 46%. Endorsed by the DMN.</li><li>Eligibility dispute: Tucker&#x27;s side argues honey production isn&#x27;t “the business of agriculture”; Sheets says he has owned a separate farm since 2012. Neither plans to sue.</li></ul><p class="links"><a href="https://ballotpedia.org/Nate_Sheets" target="_blank" rel="noopener">Ballotpedia</a> <a href="https://texasstandard.org/stories/texas-agriculture-commission-race-eligibility-sue-tucker-sheets/" target="_blank" rel="noopener">Texas Standard</a></p>
+</div><div class="cand" data-cand="Clayton Tucker">
+  <div class="cand-head"><h4>Clayton Tucker</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>35; rancher on family land; progressive activist (member of the Texas Progressive Caucus, per the Texas Tribune).</li><li>Outgoing GOP commissioner Sid Miller has spoken in his support, citing water, farmland and property rights.</li><li>Poll: 40%.</li><li>Sheets&#x27;s side says Tucker owns no land and listed “community organizer” as his occupation on his financial disclosure.</li></ul><p class="links"><a href="https://www.texastribune.org/2026/09/29/texas-agriculture-commissioner-clayton-tucker-nate-sheets-ineligibility/" target="_blank" rel="noopener">Texas Tribune</a> <a href="https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/09/30/563123/texas-ag-commissioner-race-qualification-alligations/" target="_blank" rel="noopener">Houston Public Media</a></p>
+</div><div class="cand" data-cand="Austin R. Kelly">
+  <div class="cand-head"><h4>Austin R. Kelly</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>No coverage found.</li></ul>
+</div></div>
+</article><article class="race" id="r9" data-contest="9">
+  <header class="race-head">
+    <span class="num">9</span>
+    <div><h3>Railroad Commissioner</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">Despite the name, it does not regulate railroads. It regulates oil and gas: drilling permits, production, pipeline safety, gas-utility rates and plugging orphan wells. Six-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll <span>UH Hobby School, likely voters, Oct. 10–14, ±2.2</span></p><div class="bar-row"><span class="bn">Bo French</span><span class="track"><span class="fill p-rep" style="width:75.0%"></span></span><span class="bv">45%</span></div><div class="bar-row"><span class="bn">Jon Rosenthal</span><span class="track"><span class="fill p-dem" style="width:71.7%"></span></span><span class="bv">43%</span></div><div class="bar-row"><span class="bn">Arthur DiBianca</span><span class="track"><span class="fill p-lib" style="width:3.3%"></span></span><span class="bv">2%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Bo French">
+  <div class="cand-head"><h4>Bo French</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Former Tarrant County GOP chair. Beat incumbent Jim Wright in the May 26 Republican runoff.</li><li>Platform: end DEI at the commission; remove Chinese Communist Party influence from the industry; criticizes the state&#x27;s HUB contracting program. Wright and others say much of this is outside the commission&#x27;s authority.</li><li>Some of his social-media posts have been described by news outlets as racist and drew criticism, including from Republicans.</li><li>Poll: UH Hobby (Oct. 10–14), French 45% – Rosenthal 43% – DiBianca 2%. An earlier Barbara Jordan Center/TSU poll had 44–42.</li><li>Cash on hand $530K vs. $378K (The Texan).</li></ul><p class="links"><a href="https://www.kxan.com/news/texas-politics/the-race-for-texas-railroad-commission-bo-french-v-jon-rosenthal/" target="_blank" rel="noopener">KXAN</a> <a href="https://www.houstonpublicmedia.org/articles/news/politics/election-2026/2026/10/14/564363/texas-railroad-commissioner-race-2026-midterm/" target="_blank" rel="noopener">Houston Public Media</a></p>
+</div><div class="cand" data-cand="Jon Rosenthal">
+  <div class="cand-head"><h4>Jon Rosenthal</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Engineer; four-term Houston-area state representative; calls himself a “drill-baby-drill Democrat.”</li><li>Platform: grid reliability after 2021; plugging orphan wells; rename the agency the Texas oil and gas commission.</li><li>Out-raised French July–Sept. ($488K vs. $440K).</li><li>76% of voters don&#x27;t know enough to rate him.</li></ul><p class="links"><a href="https://cbsaustin.com/news/local/democrat-jon-rosenthal-outraises-bo-french-in-texas-railroad-commission-race-report" target="_blank" rel="noopener">CBS Austin</a></p>
+</div><div class="cand" data-cand="Arthur DiBianca">
+  <div class="cand-head"><h4>Arthur DiBianca</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Poll: 3%. Brief mention only.</li></ul>
+</div></div>
+</article>
+</section>
+<section class="sec" id="sec-sc">
+  <h2>Texas Supreme Court <span class="rng">#10–13</span></h2>
+  <p class="sec-intro">Highest court for civil and juvenile cases. Nine justices, six-year terms. All four Republican incumbents were first appointed by Gov. Abbott; two of the Democratic challengers, Chari Kelly and Gisela Triana, sat on the 2021 Third Court of Appeals panel that let the Paxton whistleblower suit proceed. “State Bar poll” = lawyer votes in the State Bar of Texas 2026 Judicial Poll (final summary dated Feb. 10, 2026, before the primaries). We could not re-open that page to re-verify the figures; check texasbar.com/pollresults.</p>
+  
+  <article class="race" id="r10" data-contest="10">
+  <header class="race-head">
+    <span class="num">10</span>
+    <div><h3>Chief Justice</h3><p class="meta">Ballot page 1 · 2 candidates</p></div>
+  </header>
+  <p class="office">Leads the court and the state judiciary&#x27;s administration.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Jimmy Blacklock</span><span class="track"><span class="fill p-rep" style="width:100.0%"></span></span><span class="bv">1,678</span></div><div class="bar-row"><span class="bn">Maggie Ellis</span><span class="track"><span class="fill p-dem" style="width:75.0%"></span></span><span class="bv">1,259</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Jimmy Blacklock">
+  <div class="cand-head"><h4>Jimmy Blacklock</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>On the court since 2018; chief justice since January 2025. Yale Law; former general counsel to Gov. Abbott; former attorney in the AG&#x27;s office.</li><li>Originalist; has declared the “living constitution” dead on this court.</li><li>State Bar poll: 1,678.</li></ul>
+</div><div class="cand" data-cand="Maggie Ellis">
+  <div class="cand-head"><h4>Maggie Ellis</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Third Court of Appeals justice since January 2025; former administrative law judge.</li><li>Platform: less politics in the judiciary; access to justice.</li><li>State Bar poll: 1,259.</li></ul>
+</div></div>
+</article><article class="race" id="r11" data-contest="11">
+  <header class="race-head">
+    <span class="num">11</span>
+    <div><h3>Justice, Place 2 (Unexpired Term)</h3><p class="meta">Ballot page 1 · 2 candidates</p></div>
+  </header>
+  <p class="office">Finishes the remainder of a vacated six-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">James P. Sullivan</span><span class="track"><span class="fill p-rep" style="width:71.4%"></span></span><span class="bv">1,508</span></div><div class="bar-row"><span class="bn">Chari Kelly</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">2,112</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="James P. Sullivan">
+  <div class="cand-head"><h4>James P. Sullivan</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Appointed January 2025. Rice and Harvard Law; former Abbott general counsel; former assistant solicitor general.</li><li>Wrote the June 2026 opinion letting a former Fort Worth resident sue her providers over gender-transition surgery.</li><li>State Bar poll: 1,508.</li></ul>
+</div><div class="cand" data-cand="Chari Kelly">
+  <div class="cand-head"><h4>Chari Kelly</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Third Court of Appeals justice since 2019. Army JAG veteran; former felony prosecutor and assistant AG; board-certified in criminal law; 800+ opinions.</li><li>Says the court defers too much to the executive branch.</li><li>State Bar poll: 2,112. Houston Chronicle endorsement.</li></ul>
+</div></div>
+</article><article class="race" id="r12" data-contest="12">
+  <header class="race-head">
+    <span class="num">12</span>
+    <div><h3>Justice, Place 7</h3><p class="meta">Ballot page 1 · 2 candidates</p></div>
+  </header>
+  <p class="office">Six-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Kyle Hawkins</span><span class="track"><span class="fill p-rep" style="width:70.6%"></span></span><span class="bv">1,203</span></div><div class="bar-row"><span class="bn">Kristen Hawkins</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">1,705</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Kyle Hawkins">
+  <div class="cand-head"><h4>Kyle Hawkins</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Appointed October 2025. Former Texas Solicitor General; former counselor to the U.S. Solicitor General; clerked for Justice Alito.</li><li>As solicitor general, declined to sign Paxton&#x27;s 2020 election lawsuit.</li><li>State Bar poll: 1,203.</li></ul>
+</div><div class="cand" data-cand="Kristen Hawkins">
+  <div class="cand-head"><h4>Kristen Hawkins</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>No relation to Kyle Hawkins.</li><li>Presiding judge, Harris County 11th District Court, 9+ years. Board-certified in civil trial and personal-injury law; 2021 Tex-ABOTA Jurist of the Year.</li><li>State Bar poll: 1,705. Houston Chronicle endorsement.</li></ul>
+</div></div>
+</article><article class="race" id="r13" data-contest="13">
+  <header class="race-head">
+    <span class="num">13</span>
+    <div><h3>Justice, Place 8</h3><p class="meta">Ballot page 1 · 2 candidates</p></div>
+  </header>
+  <p class="office">Six-year term. Rematch of the 2020 race.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Brett Busby</span><span class="track"><span class="fill p-rep" style="width:96.2%"></span></span><span class="bv">1,913</span></div><div class="bar-row"><span class="bn">Gisela D. Triana</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">1,989</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Brett Busby">
+  <div class="cand-head"><h4>Brett Busby</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Appointed 2019, elected 2020. Former 14th Court of Appeals justice; board-certified in civil appellate law; clerked for two U.S. Supreme Court justices.</li><li>State Bar poll: 1,913.</li></ul>
+</div><div class="cand" data-cand="Gisela D. Triana">
+  <div class="cand-head"><h4>Gisela D. Triana</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Third Court of Appeals justice since 2019.</li><li>State Bar poll: 1,989.</li></ul>
+</div></div>
+</article>
+</section>
+<section class="sec" id="sec-cca">
+  <h2>Texas Court of Criminal Appeals <span class="rng">#14–16</span></h2>
+  <p class="sec-intro">Highest criminal court: final word on criminal appeals, every death-penalty case and wrongful-conviction claims. Nine judges, six-year terms.</p>
+  
+  <article class="race" id="r14" data-contest="14">
+  <header class="race-head">
+    <span class="num">14</span>
+    <div><h3>Judge, Place 3 (open seat)</h3><p class="meta">Ballot page 1 · 3 candidates</p></div>
+  </header>
+  <p class="office">Bert Richardson is retiring.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Thomas Smith</span><span class="track"><span class="fill p-rep" style="width:37.8%"></span></span><span class="bv">391</span></div><div class="bar-row"><span class="bn">Okey Anyiam</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">1,034</span></div><div class="bar-row"><span class="bn">Mark Ash</span><span class="track"><span class="fill p-lib" style="width:32.6%"></span></span><span class="bv">337</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Thomas Smith">
+  <div class="cand-head"><h4>Thomas Smith</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Special assistant attorney general; appellate experience; formerly counsel in Paxton&#x27;s Texas Senate office.</li><li>Won the GOP runoff with Paxton&#x27;s endorsement.</li><li>State Bar poll: 391 (crowded pre-primary field).</li></ul>
+</div><div class="cand" data-cand="Okey Anyiam">
+  <div class="cand-head"><h4>Okey Anyiam</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Dallas criminal-defense lawyer, nearly 30 years.</li><li>Platform: equal access to justice; follow legislative intent.</li><li>State Bar poll: 1,034, the most in this race.</li></ul>
+</div><div class="cand" data-cand="Mark Ash">
+  <div class="cand-head"><h4>Mark Ash</h4><div class="tags"><span class="party p-lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>State Bar poll: 337. Little else found.</li></ul>
+</div></div>
+</article><article class="race" id="r15" data-contest="15">
+  <header class="race-head">
+    <span class="num">15</span>
+    <div><h3>Judge, Place 4</h3><p class="meta">Ballot page 1 · 2 candidates</p></div>
+  </header>
+  <p class="office">Six-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Kevin Patrick Yeary</span><span class="track"><span class="fill p-rep" style="width:79.8%"></span></span><span class="bv">1,467</span></div><div class="bar-row"><span class="bn">Audra Riley</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">1,839</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Kevin Patrick Yeary">
+  <div class="cand-head"><h4>Kevin Patrick Yeary</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>On the court since 2015. Former prosecutor in Bexar, Harris and Dallas counties; former briefing attorney at the court.</li><li>State Bar poll: 1,467.</li></ul>
+</div><div class="cand" data-cand="Audra Riley">
+  <div class="cand-head"><h4>Audra Riley</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Judge, Dallas County Criminal District Court No. 3, since 2020. Thurgood Marshall School of Law.</li><li>State Bar poll: 1,839.</li></ul>
+</div></div>
+</article><article class="race" id="r16" data-contest="16">
+  <header class="race-head">
+    <span class="num">16</span>
+    <div><h3>Judge, Place 9 (open seat)</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">David Newell is not running.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">John Messinger</span><span class="track"><span class="fill p-rep" style="width:52.3%"></span></span><span class="bv">799</span></div><div class="bar-row"><span class="bn">Holly Taylor</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">1,529</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="John Messinger">
+  <div class="cand-head"><h4>John Messinger</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Office of the State Prosecuting Attorney; has argued dozens of appellate cases.</li><li>State Bar poll: 799.</li></ul>
+</div><div class="cand" data-cand="Holly Taylor">
+  <div class="cand-head"><h4>Holly Taylor</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Former rules attorney at the court; senior roles in the Travis County DA&#x27;s office (public integrity, conviction integrity); has taught at UT Law. Ran for presiding judge in 2024.</li><li>State Bar poll: 1,529. Houston Chronicle five-star rating.</li></ul>
+</div></div>
+</article>
+</section>
+<section class="sec" id="sec-leg">
+  <h2>Texas Legislature <span class="rng">#17–18</span></h2>
+  <p class="sec-intro">Your Texas Senate and Texas House members in Austin.</p>
+  
+  <article class="race" id="r17" data-contest="17">
+  <header class="race-head">
+    <span class="num">17</span>
+    <div><h3>State Senator, District 9</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Texas Senate seat covering most of Tarrant County; four-year term. The winner serves in the 2027 session.</p>
+  <div class="info"><div class="ib"><p class="ib-t">No voter poll found <span>Jan. 31, 2026 special runoff (actual result)</span></p><div class="bar-row"><span class="bn">Leigh Wambsganss</span><span class="track"><span class="fill p-rep" style="width:42.7%"></span></span><span class="bv">42.7%</span></div><div class="bar-row"><span class="bn">Taylor Rehmet</span><span class="track"><span class="fill p-dem" style="width:57.3%"></span></span><span class="bv">57.3%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Leigh Wambsganss">
+  <div class="cand-head"><h4>Leigh Wambsganss</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Longtime GOP activist; former chief communications officer of Patriot Mobile and head of its PAC; co-founded the Southlake Families PAC (2021).</li><li>Lost the Jan. 31, 2026 special-election runoff to Rehmet, 42.7% to 57.3%.</li><li>Texas Tribune: raised about $1.2M July–Sept.; Lt. Gov. Patrick loaned her campaign $150,000.</li></ul><p class="links"><a href="https://ballotpedia.org/Leigh_Wambsganss" target="_blank" rel="noopener">Ballotpedia</a></p>
+</div><div class="cand" data-cand="Taylor Rehmet">
+  <div class="cand-head"><h4>Taylor Rehmet</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>34; Air Force veteran; Lockheed Martin machinist / aircraft technician; union president.</li><li>Sworn in Feb. 19, 2026: first Democrat in the seat in 30+ years, in a district Trump won by 17 points in 2024.</li><li>Texas Tribune: raised $192,247 July–Sept.</li><li>Dallas Morning News endorsed him in the January runoff.</li></ul><p class="links"><a href="https://www.keranews.org/elections-2026/2026-09-24/tarrant-countys-now-blue-texas-senate-seat-returns-for-rematch-election-in-november" target="_blank" rel="noopener">KERA / Fort Worth Report</a></p>
+</div></div>
+</article><article class="race" id="r18" data-contest="18">
+  <header class="race-head">
+    <span class="num">18</span>
+    <div><h3>State Representative, District 98</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Texas House seat, two-year term. Covers Keller, Colleyville and parts of Southlake, Grapevine, Euless and Westlake. Open seat: incumbent Giovanni Capriglione is not on the ballot.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Armin Mizani">
+  <div class="cand-head"><h4>Armin Mizani</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Attorney with his own law firm. Purdue (BA), Michigan State (JD).</li><li>Mayor of Keller since 2020 (second term); Keller City Council 2014–2020. Lost a 2018 primary challenge to Capriglione for this seat.</li><li>Won the March 2026 GOP primary with 53.1% over Fred Tate and Zdenka Wilcox.</li><li>Priorities (per campaign site, via Ballot Brief): cut property taxes and spending; higher pay for police and immigration enforcement; school choice plus higher teacher pay.</li><li>Record cited by Branch.vote: raised Keller&#x27;s homestead exemption; raised police and fire pay; opposes gun control; opposes abortion access.</li><li>Has said he wants to reform the school-finance “Robin Hood” recapture system.</li><li>Announced endorsements from 15 sitting Texas legislators (January).</li><li>As Keller mayor during the January 2025 Keller ISD split debate, told CBS News he saw advantages in a smaller district (school-funding effects, curriculum flexibility).</li><li>Did not respond to the 2026 ATPE (teachers&#x27; association) candidate survey.</li><li>If elected, he must leave the mayor&#x27;s office; Mayor Pro Tem Ross McMullin would serve as acting mayor.</li></ul><p class="links"><a href="https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-98/candidates/armin-mizani" target="_blank" rel="noopener">Branch.vote profile</a> <a href="https://theballotbrief.com/candidate/armin-mizani-tx" target="_blank" rel="noopener">Ballot Brief</a> <a href="https://www.keranews.org/elections-2026/2026-03-04/armin-mizani-cate-brennan-lead-race-for-texas-house-district-98-primary-here-are-tarrant-election-results" target="_blank" rel="noopener">KERA primary results</a></p>
+</div><div class="cand" data-cand="Cate Brennan">
+  <div class="cand-head"><h4>Cate Brennan</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Retired healthcare executive: former CEO of the National Association of Pediatric Nurse Practitioners; interim CEO of the Association for Vascular Access. MBA, Texas Woman&#x27;s University. Lives in Grapevine.</li><li>First run for office. Won the March 2026 Democratic primary with 78.2% over Aaron Hendley.</li><li>Positions (Branch.vote): expand Medicaid and rein in healthcare costs; repeal the Education Savings Account (voucher) program; more public-school funding; $20 minimum wage; subsidized child care; new revenue from legalized gambling and marijuana; supports abortion access.</li><li>On the border: says it matters but Operation Lone Star&#x27;s budget can be trimmed.</li><li>Completed Ballotpedia&#x27;s Candidate Connection survey; signed the Mental Health Now statement of support.</li></ul><p class="links"><a href="https://ballotpedia.org/Cate_Brennan" target="_blank" rel="noopener">Ballotpedia</a> <a href="https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-98/candidates/cate-brennan" target="_blank" rel="noopener">Branch.vote profile</a> <a href="https://communityimpact.com/keller-roanoke-northeast-fort-worth/election/brennan-wins-texas-house-district-98-democratic-primary-race/" target="_blank" rel="noopener">Community Impact results</a></p>
+</div></div>
+</article>
+</section>
+<section class="sec" id="sec-app">
+  <h2>Courts of Appeals <span class="rng">#19–23</span></h2>
+  <p class="sec-intro">New statewide appeals court (opened Sept. 2024) for cases involving the State of Texas, its agencies and challenges to state laws. All Texas voters elect it. The Republican incumbents were appointed by Abbott; this is the first election for these seats. Coverage of the challengers is thin; VOTE411 and texasjudges.org have more. The 2nd Court of Appeals (Fort Worth) seats are uncontested.</p>
+  
+  <article class="race" id="r19" data-contest="19">
+  <header class="race-head">
+    <span class="num">19</span>
+    <div><h3>Chief Justice</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Leads the 15th Court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Scott Brister</span><span class="track"><span class="fill p-rep" style="width:100.0%"></span></span><span class="bv">1,957</span></div><div class="bar-row"><span class="bn">Jerry Zimmerer</span><span class="track"><span class="fill p-dem" style="width:81.5%"></span></span><span class="bv">1,594</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Scott Brister">
+  <div class="cand-head"><h4>Scott Brister</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Former Texas Supreme Court justice.</li><li>State Bar poll: 1,957.</li></ul>
+</div><div class="cand" data-cand="Jerry Zimmerer">
+  <div class="cand-head"><h4>Jerry Zimmerer</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Former 14th Court of Appeals justice; 12 years at AT&amp;T Mobility.</li><li>State Bar poll: 1,594.</li></ul><p class="links"><a href="https://sanantonioreport.org/voter-guide-meet-the-judicial-candidates-on-the-nov-3-ballot/" target="_blank" rel="noopener">San Antonio Report</a></p>
+</div></div>
+</article><article class="race" id="r20" data-contest="20">
+  <header class="race-head">
+    <span class="num">20</span>
+    <div><h3>Justice, Place 2</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Six-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">Scott K. Field</span><span class="track"><span class="fill p-rep" style="width:90.0%"></span></span><span class="bv">1,523</span></div><div class="bar-row"><span class="bn">Tom Baker</span><span class="track"><span class="fill p-dem" style="width:100.0%"></span></span><span class="bv">1,692</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Scott K. Field">
+  <div class="cand-head"><h4>Scott K. Field</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>State Bar poll: 1,523.</li></ul>
+</div><div class="cand" data-cand="Tom Baker">
+  <div class="cand-head"><h4>Tom Baker</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Navy veteran; former state appeals-court justice.</li><li>State Bar poll: 1,692.</li></ul><p class="links"><a href="https://sanantonioreport.org/voter-guide-meet-the-judicial-candidates-on-the-nov-3-ballot/" target="_blank" rel="noopener">San Antonio Report</a></p>
+</div></div>
+</article><article class="race" id="r21" data-contest="21">
+  <header class="race-head">
+    <span class="num">21</span>
+    <div><h3>Justice, Place 3</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Six-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar of Texas lawyer votes, Feb. 10, 2026 summary (not re-verified)</span></p><div class="bar-row"><span class="bn">April Farris</span><span class="track"><span class="fill p-rep" style="width:100.0%"></span></span><span class="bv">1,878</span></div><div class="bar-row"><span class="bn">Marc M. Meyer</span><span class="track"><span class="fill p-dem" style="width:75.5%"></span></span><span class="bv">1,417</span></div></div></div>
+  <div class="cands c2"><div class="cand" data-cand="April Farris">
+  <div class="cand-head"><h4>April Farris</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>State Bar poll: 1,878. Houston Chronicle four-star rating.</li></ul>
+</div><div class="cand" data-cand="Marc M. Meyer">
+  <div class="cand-head"><h4>Marc M. Meyer</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Attorney, retired Houston firefighter and registered nurse; lives in Montgomery.</li><li>State Bar poll: 1,417.</li></ul><p class="links"><a href="https://sanantonioreport.org/voter-guide-meet-the-judicial-candidates-on-the-nov-3-ballot/" target="_blank" rel="noopener">San Antonio Report</a></p>
+</div></div>
+</article><div class="unc-row" id="r22" data-contest="22"><span class="num">22</span><span class="uo-office">Justice, 2nd Court of Appeals District, Place 2</span><span class="uo-name" data-cand="Chris Taylor">Chris Taylor <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><div class="unc-row" id="r23" data-contest="23"><span class="num">23</span><span class="uo-office">Justice, 2nd Court of Appeals District, Place 7</span><span class="uo-name" data-cand="Brian Walker">Brian Walker <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div>
+</section>
+<section class="sec" id="sec-dc">
+  <h2>Tarrant County District Courts <span class="rng">#24–40</span></h2>
+  <p class="sec-intro">Main state trial courts: felonies, major civil suits, or family and juvenile cases depending on the court. Four-year terms. TCBA = Tarrant County Bar Association 2026 poll (Jan. 6–29; 441 of 2,026 members voted). Shown as Strongly Recommend / Recommend / Neutral / Not Recommend / Strongly Not Recommend, with the share who skipped. Full poll: tarrantbar.org.</p>
+  
+  <div class="unc-row" id="r24" data-contest="24"><span class="num">24</span><span class="uo-office">District Judge, 141st Judicial District</span><span class="uo-name" data-cand="John P. Chupp">John P. Chupp <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><article class="race" id="r25" data-contest="25">
+  <header class="race-head">
+    <span class="num">25</span>
+    <div><h3>District Judge, 213th District (Unexpired Term)</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Felony court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Michael Ferry">
+  <div class="cand-head"><h4>Michael Ferry</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Appointed by Abbott May 4, 2026 (after the bar poll).</li><li>Former Tarrant assistant DA (narcotics); Special Assistant U.S. Attorney; DEA special agent; Navy surface warfare officer. USC (BA), Univ. of San Francisco (JD). Federalist Society member.</li><li>Says judges must apply the law as written.</li></ul><p class="links"><a href="https://www.michaelferryforjudge.com" target="_blank" rel="noopener">Campaign site</a> <a href="https://onyourballot.vote411.org/race-detail.do?id=6505151" target="_blank" rel="noopener">VOTE411</a></p>
+</div><div class="cand" data-cand="Arthurine “AnhThu” Kamphaus">
+  <div class="cand-head"><h4>Arthurine “AnhThu” Kamphaus</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Attorney (per VOTE411). No campaign website found.</li></ul><p class="links"><a href="https://www.instagram.com/kamphaus.arthurine/" target="_blank" rel="noopener">Instagram</a> <a href="https://onyourballot.vote411.org/race-detail.do?id=6505151" target="_blank" rel="noopener">VOTE411</a></p>
+</div></div>
+</article><article class="race" id="r26" data-contest="26">
+  <header class="race-head">
+    <span class="num">26</span>
+    <div><h3>District Judge, 236th District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Civil court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>Tarrant County Bar, Jan. 2026: recommend / not recommend (via Vote the Person; not re-verified)</span></p><div class="bar-row"><span class="bn">Dusty Fillmore</span><span class="track stack"><span class="fill p-rep" style="width:54.0%"></span><span class="seg neu" style="width:8.7%"></span><span class="seg neg" style="width:4.5%"></span></span><span class="bv">54.0% / 4.5%</span></div><div class="bar-row"><span class="bn">Katherine Kate Kim</span><span class="track stack"><span class="fill p-dem" style="width:6.6%"></span><span class="seg neu" style="width:14.6%"></span><span class="seg neg" style="width:15.0%"></span></span><span class="bv">6.6% / 15.0%</span></div><p class="key"><i class="k rec"></i>Recommend <i class="k neu"></i>Neutral <i class="k neg"></i>Not recommend <i class="k sk"></i>Skipped</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Dusty Fillmore">
+  <div class="cand-head"><h4>Dusty Fillmore</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Appointed Jan. 15, 2026. Former partner, The Fillmore Law Firm. Baylor; St. Mary&#x27;s Law. Federalist Society.</li><li>TCBA: 36.9 / 17.1 / 8.7 / 1.7 / 2.8% (32.8% skipped).</li></ul><p class="links"><a href="https://votetheperson.org/races/district-judge-236th-judicial-district-2026/" target="_blank" rel="noopener">Vote the Person</a></p>
+</div><div class="cand" data-cand="Katherine “Kate” Kim">
+  <div class="cand-head"><h4>Katherine “Kate” Kim</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Self-employed attorney.</li><li>TCBA: 3.8 / 2.8 / 14.6 / 6.6 / 8.4% (63.8% skipped).</li></ul>
+</div></div>
+</article><article class="race" id="r27" data-contest="27">
+  <header class="race-head">
+    <span class="num">27</span>
+    <div><h3>District Judge, 297th District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Felony court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Amy Allin">
+  <div class="cand-head"><h4>Amy Allin</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Former Tarrant assistant criminal DA; first term after a governor&#x27;s appointment (sources disagree on 2023 vs. 2025).</li><li>No campaign website as of July 2026.</li></ul><p class="links"><a href="https://www.branch.vote/races/2026-texas-general-election-tx-state-district-judge-tx-judicial-district-297/candidates/amy-allin" target="_blank" rel="noopener">Branch.vote</a></p>
+</div><div class="cand" data-cand="Fred Howey">
+  <div class="cand-head"><h4>Fred Howey</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>No background found. Unopposed in primary.</li></ul>
+</div></div>
+</article><article class="race" id="r28" data-contest="28">
+  <header class="race-head">
+    <span class="num">28</span>
+    <div><h3>District Judge, 371st District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Felony court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Ryan Hill">
+  <div class="cand-head"><h4>Ryan Hill</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Appointed March 2022 (Ballotpedia).</li></ul><p class="links"><a href="https://tarrantgop.org/2026-republican-candidates/" target="_blank" rel="noopener">Tarrant GOP list</a></p>
+</div><div class="cand" data-cand="Marquetta “MarQ” Clayton">
+  <div class="cand-head"><h4>Marquetta “MarQ” Clayton</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>No background found.</li></ul><p class="links"><a href="https://www.branch.vote/races/2026-texas-general-election-tx-state-district-judge-tx-judicial-district-371" target="_blank" rel="noopener">Branch.vote</a></p>
+</div></div>
+</article><div class="unc-row" id="r29" data-contest="29"><span class="num">29</span><span class="uo-office">District Judge, 372nd Judicial District</span><span class="uo-name" data-cand="Julie Lugo">Julie Lugo <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><article class="race" id="r30" data-contest="30">
+  <header class="race-head">
+    <span class="num">30</span>
+    <div><h3>District Judge, 432nd District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Felony court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>Tarrant County Bar, Jan. 2026: recommend / not recommend (via Vote the Person; not re-verified)</span></p><div class="bar-row"><span class="bn">Lee Sorrells</span><span class="track stack"><span class="fill p-rep" style="width:47.3%"></span><span class="seg neu" style="width:10.8%"></span><span class="seg neg" style="width:15.0%"></span></span><span class="bv">47.3% / 15.0%</span></div><div class="bar-row"><span class="bn">Courtney Miller</span><span class="track stack"><span class="fill p-dem" style="width:27.9%"></span><span class="seg neu" style="width:7.5%"></span><span class="seg neg" style="width:20.5%"></span></span><span class="bv">27.9% / 20.5%</span></div><p class="key"><i class="k rec"></i>Recommend <i class="k neu"></i>Neutral <i class="k neg"></i>Not recommend <i class="k sk"></i>Skipped</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Lee Sorrells">
+  <div class="cand-head"><h4>Lee Sorrells</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Associate judge, 323rd (juvenile) court, since Nov. 2024. Former Juvenile Division chief in the DA&#x27;s office (prosecutor from 2015); former sheriff&#x27;s sergeant. Texas Wesleyan Law; board-certified in criminal law (2021).</li><li>TCBA: 32.8 / 14.5 / 10.8 / 5.9 / 9.1% (26.9% skipped).</li></ul><p class="links"><a href="https://votetheperson.org/races/district-judge-432nd-judicial-district-2026/" target="_blank" rel="noopener">Vote the Person</a></p>
+</div><div class="cand" data-cand="Courtney Miller">
+  <div class="cand-head"><h4>Courtney Miller</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Criminal-defense attorney, Manuel Diaz Law Firm, since 2021; Collin County prosecutor 2006–08. TCU; Texas Tech Law.</li><li>TCBA: 17.7 / 10.2 / 7.5 / 8.1 / 12.4% (44.1% skipped).</li></ul>
+</div></div>
+</article><div class="unc-row" id="r31" data-contest="31"><span class="num">31</span><span class="uo-office">District Judge, 485th Judicial District</span><span class="uo-name" data-cand="Steven Jumes">Steven Jumes <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><article class="race" id="r32" data-contest="32">
+  <header class="race-head">
+    <span class="num">32</span>
+    <div><h3>Criminal District Judge, Court No. 1 (open seat)</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Felony court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Sherri Wagner">
+  <div class="cand-head"><h4>Sherri Wagner</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Associate judge, 323rd, since 2023; criminal prosecutor 20+ years.</li></ul><p class="links"><a href="https://wagnerforjudge.net/" target="_blank" rel="noopener">Campaign site</a></p>
+</div><div class="cand" data-cand="Cindy Stormer">
+  <div class="cand-head"><h4>Cindy Stormer</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Former police officer; elected DA of the 235th District (Cooke County), 2005–08; former head of the Dallas DA&#x27;s Mental Health Division; government professor and author.</li><li>Endorsed by Tarrant AFL-CIO and local Democratic clubs.</li></ul><p class="links"><a href="https://www.stormerfortexas.com" target="_blank" rel="noopener">Campaign site</a> <a href="https://ballotpedia.org/Cindy_Stormer" target="_blank" rel="noopener">Ballotpedia</a></p>
+</div></div>
+</article><div class="unc-row" id="r33" data-contest="33"><span class="num">33</span><span class="uo-office">Criminal District Judge, Court No. 3</span><span class="uo-name" data-cand="Douglas Allen">Douglas Allen <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><article class="race" id="r34" data-contest="34">
+  <header class="race-head">
+    <span class="num">34</span>
+    <div><h3>Criminal District Judge, Court No. 4</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Felony court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>Tarrant County Bar, Jan. 2026: recommend / not recommend (via Vote the Person; not re-verified)</span></p><div class="bar-row"><span class="bn">Andy Porter</span><span class="track stack"><span class="fill p-rep" style="width:35.5%"></span><span class="seg neu" style="width:9.1%"></span><span class="seg neg" style="width:22.6%"></span></span><span class="bv">35.5% / 22.6%</span></div><div class="bar-row"><span class="bn">John Brender</span><span class="track stack"><span class="fill p-dem" style="width:33.4%"></span><span class="seg neu" style="width:11.8%"></span><span class="seg neg" style="width:17.200000000000003%"></span></span><span class="bv">33.4% / 17.2%</span></div><p class="key"><i class="k rec"></i>Recommend <i class="k neu"></i>Neutral <i class="k neg"></i>Not recommend <i class="k sk"></i>Skipped</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Andy Porter">
+  <div class="cand-head"><h4>Andy Porter</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Judge since 2023. Campaign says he cut the docket from about 2,300 to 1,300 cases (unverified).</li><li>TCBA: 21.5 / 14.0 / 9.1 / 8.6 / 14.0% (32.8% skipped).</li></ul><p class="links"><a href="https://votetheperson.org/races/criminal-district-judge-4-tarrant-county-2026/" target="_blank" rel="noopener">Vote the Person</a></p>
+</div><div class="cand" data-cand="John Brender">
+  <div class="cand-head"><h4>John Brender</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Brender Law Firm, Fort Worth (criminal defense, injury).</li><li>TCBA: 23.7 / 9.7 / 11.8 / 5.9 / 11.3% (37.6% skipped).</li></ul>
+</div></div>
+</article><article class="race" id="r35" data-contest="35">
+  <header class="race-head">
+    <span class="num">35</span>
+    <div><h3>Family District Judge, 231st District (open seat)</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Divorce, custody, child support.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Leslie Barrows">
+  <div class="cand-head"><h4>Leslie Barrows</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Family-law attorney; founder of the Barrows Firm; collaborative-law trained mediator. Won a four-way Republican primary.</li></ul><p class="links"><a href="https://www.barrowsforjudge.com/" target="_blank" rel="noopener">Campaign site</a></p>
+</div><div class="cand" data-cand="Lyndsay Newell">
+  <div class="cand-head"><h4>Lyndsay Newell</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>On Tarrant Democratic slate. No background found.</li></ul>
+</div></div>
+</article><div class="unc-row" id="r36" data-contest="36"><span class="num">36</span><span class="uo-office">Family District Judge, 233rd Judicial District</span><span class="uo-name" data-cand="Kenneth E. Newell">Kenneth E. Newell <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><div class="unc-row" id="r37" data-contest="37"><span class="num">37</span><span class="uo-office">Family District Judge, 322nd Judicial District</span><span class="uo-name" data-cand="James B. Munford">James B. Munford <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.2</span></div><article class="race" id="r38" data-contest="38">
+  <header class="race-head">
+    <span class="num">38</span>
+    <div><h3>Family District Judge, 323rd District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Juvenile court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Alex Kim">
+  <div class="cand-head"><h4>Alex Kim</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Sitting judge; no detailed 2026 coverage found.</li></ul>
+</div><div class="cand" data-cand="Brian Willett">
+  <div class="cand-head"><h4>Brian Willett</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>On Tarrant Democratic slate. No background found.</li></ul>
+</div></div>
+</article><article class="race" id="r39" data-contest="39">
+  <header class="race-head">
+    <span class="num">39</span>
+    <div><h3>Family District Judge, 324th District (open seat)</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Family court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>Tarrant County Bar, Jan. 2026: recommend / not recommend (via Vote the Person; not re-verified)</span></p><div class="bar-row"><span class="bn">Andy Hsu</span><span class="track stack"><span class="fill p-rep" style="width:16.0%"></span><span class="seg neu" style="width:8.9%"></span><span class="seg neg" style="width:31.5%"></span></span><span class="bv">16.0% / 31.5%</span></div><div class="bar-row"><span class="bn">Crystal Gayden</span><span class="track stack"><span class="fill p-dem" style="width:23.5%"></span><span class="seg neu" style="width:11.3%"></span><span class="seg neg" style="width:20.6%"></span></span><span class="bv">23.5% / 20.6%</span></div><p class="key"><i class="k rec"></i>Recommend <i class="k neu"></i>Neutral <i class="k neg"></i>Not recommend <i class="k sk"></i>Skipped</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Andy Hsu">
+  <div class="cand-head"><h4>Andy Hsu</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span></div></div>
+  <ul><li>Founding shareholder, Martinez Hsu P.C., Bedford; raised in Tarrant County. Describes himself as an originalist.</li><li>TCBA: 9.4 / 6.6 / 8.9 / 6.1 / 25.4% (43.7% skipped).</li></ul><p class="links"><a href="https://votetheperson.org/races/district-judge-324th-judicial-district-2026/" target="_blank" rel="noopener">Vote the Person</a></p>
+</div><div class="cand" data-cand="Crystal Gayden">
+  <div class="cand-head"><h4>Crystal Gayden</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Runs her own family-law firm; campaign claims 15+ years&#x27; experience. Texas Wesleyan Law. Tarrant Democratic Party chair 2023–25; president, Black Women Lawyers Association of Tarrant County. Ran for this seat in 2022.</li><li>TCBA: 13.6 / 9.9 / 11.3 / 10.3 / 10.3% (44.6% skipped).</li></ul>
+</div></div>
+</article><article class="race" id="r40" data-contest="40">
+  <header class="race-head">
+    <span class="num">40</span>
+    <div><h3>Family District Judge, 325th District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">Family court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Cynthia Terry">
+  <div class="cand-head"><h4>Cynthia Terry</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>No detailed 2026 coverage found.</li></ul>
+</div><div class="cand" data-cand="Andy Griffin">
+  <div class="cand-head"><h4>Andy Griffin</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>No background found.</li></ul>
+</div></div>
+</article>
+</section>
+<section class="sec" id="sec-co">
+  <h2>Tarrant County Offices &amp; County Courts <span class="rng">#41–60</span></h2>
+  <p class="sec-intro">County-level executive, prosecutorial, misdemeanor-court and clerk offices. Four-year terms. Most county-court benches are uncontested this year.</p>
+  
+  <article class="race" id="r41" data-contest="41">
+  <header class="race-head">
+    <span class="num">41</span>
+    <div><h3>Criminal District Attorney</h3><p class="meta">Ballot page 2 · 2 candidates</p></div>
+  </header>
+  <p class="office">County&#x27;s chief prosecutor, from capital murder to misdemeanor theft; 300+ staff; also advises county officials.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Phil Sorrells">
+  <div class="cand-head"><h4>Phil Sorrells</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>DA since 2023; previously judge of County Criminal Court No. 10 for 25 years.</li></ul><p class="links"><a href="https://fortworthreport.org/fort-worth-tarrant-county-voter-guide/" target="_blank" rel="noopener">FWR voter guide</a></p>
+</div><div class="cand" data-cand="Tiffany Burks">
+  <div class="cand-head"><h4>Tiffany Burks</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>Attorney; 2022 Democratic nominee for this office. Little 2026 coverage captured; check FWR and DMN guides.</li></ul>
+</div></div>
+</article><article class="race" id="r42" data-contest="42">
+  <header class="race-head">
+    <span class="num">42</span>
+    <div><h3>County Judge</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Presides over Commissioners Court, which sets the county budget and tax rate and funds roads, elections, the jail and public safety. Mostly administrative, not a courtroom role.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Tim O&#x27;Hare">
+  <div class="cand-head"><h4>Tim O&#x27;Hare</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>County judge since January 2023; former Tarrant GOP chair. Beat Robert Trevor Buker in the primary.</li><li>Under him the court added a homestead exemption and set county and hospital-district rates below the no-new-revenue rate.</li></ul><p class="links"><a href="https://www.electtimohare.com/" target="_blank" rel="noopener">Campaign site</a> <a href="https://ballotpedia.org/Tim_O&#x27;Hare" target="_blank" rel="noopener">Ballotpedia</a></p>
+</div><div class="cand" data-cand="Alisa Simmons">
+  <div class="cand-head"><h4>Alisa Simmons</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Tarrant County Commissioner, Precinct 2.</li><li>Won the Democratic primary; U.S. Rep. Marc Veasey had withdrawn in December 2025 but remained on the primary ballot.</li></ul><p class="links"><a href="https://communityimpact.com/keller-roanoke-northeast-fort-worth/election/simmons-wins-democratic-tarrant-county-judge-primary/" target="_blank" rel="noopener">Community Impact</a> <a href="https://www.keranews.org/news/2025-12-15/rep-marc-veasey-drops-bid-for-tarrant-county-judge" target="_blank" rel="noopener">KERA</a></p>
+</div></div>
+</article><div class="unc-row" id="r43" data-contest="43"><span class="num">43</span><span class="uo-office">Judge, County Court at Law No. 1</span><span class="uo-name" data-cand="Don Pierson">Don Pierson <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r44" data-contest="44"><span class="num">44</span><span class="uo-office">Judge, County Court at Law No. 2</span><span class="uo-name" data-cand="Jennifer Rymell">Jennifer Rymell <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r45" data-contest="45"><span class="num">45</span><span class="uo-office">Judge, County Court at Law No. 3</span><span class="uo-name" data-cand="Mike Hrabal">Mike Hrabal <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r46" data-contest="46"><span class="num">46</span><span class="uo-office">Judge, County Criminal Court No. 1</span><span class="uo-name" data-cand="David Cook">David Cook <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r47" data-contest="47"><span class="num">47</span><span class="uo-office">Judge, County Criminal Court No. 2</span><span class="uo-name" data-cand="Carey Walker">Carey Walker <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r48" data-contest="48"><span class="num">48</span><span class="uo-office">Judge, County Criminal Court No. 3</span><span class="uo-name" data-cand="Bob McCoy">Bob McCoy <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r49" data-contest="49"><span class="num">49</span><span class="uo-office">Judge, County Criminal Court No. 4</span><span class="uo-name" data-cand="Deborah Nekhom">Deborah Nekhom <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><article class="race" id="r50" data-contest="50">
+  <header class="race-head">
+    <span class="num">50</span>
+    <div><h3>Judge, County Criminal Court No. 5</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Misdemeanor court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Brad Clark">
+  <div class="cand-head"><h4>Brad Clark</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>No detailed coverage found.</li></ul>
+</div><div class="cand" data-cand="Julya “Jujubill” Billhymer">
+  <div class="cand-head"><h4>Julya “Jujubill” Billhymer</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>On Tarrant Democratic slate. No background found.</li></ul>
+</div></div>
+</article><div class="unc-row" id="r51" data-contest="51"><span class="num">51</span><span class="uo-office">Judge, County Criminal Court No. 6</span><span class="uo-name" data-cand="Randi Hartin">Randi Hartin <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r52" data-contest="52"><span class="num">52</span><span class="uo-office">Judge, County Criminal Court No. 7</span><span class="uo-name" data-cand="Eric Starnes">Eric Starnes <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r53" data-contest="53"><span class="num">53</span><span class="uo-office">Judge, County Criminal Court No. 8</span><span class="uo-name" data-cand="Charles L. &#x27;Chuck&#x27; Vanover">Charles L. &#x27;Chuck&#x27; Vanover <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><article class="race" id="r54" data-contest="54">
+  <header class="race-head">
+    <span class="num">54</span>
+    <div><h3>Judge, County Criminal Court No. 9</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Misdemeanor court.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">Bar poll results for this race were not captured; see tarrantbar.org.</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Brian Bolton">
+  <div class="cand-head"><h4>Brian Bolton</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div>
+  <ul><li>Former chief prosecutor, Dallas DA&#x27;s office; also former defense attorney (Branch.vote).</li></ul>
+</div><div class="cand" data-cand="Lesa Pamplin">
+  <div class="cand-head"><h4>Lesa Pamplin</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>On Tarrant Democratic slate.</li><li>Bolton has questioned her temperament over past social-media posts; reported only by the Dallas Express, a partisan-leaning outlet.</li></ul>
+</div></div>
+</article><div class="unc-row" id="r55" data-contest="55"><span class="num">55</span><span class="uo-office">Judge, County Criminal Court No. 10</span><span class="uo-name" data-cand="Trent Loftin">Trent Loftin <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r56" data-contest="56"><span class="num">56</span><span class="uo-office">Judge, County Probate Court No. 1</span><span class="uo-name" data-cand="Patricia Burns">Patricia Burns <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><div class="unc-row" id="r57" data-contest="57"><span class="num">57</span><span class="uo-office">Judge, County Probate Court No. 2</span><span class="uo-name" data-cand="Brook Bell">Brook Bell <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div><article class="race" id="r58" data-contest="58">
+  <header class="race-head">
+    <span class="num">58</span>
+    <div><h3>District Clerk</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Keeps district-court records (felony, civil, family), jury summons and court-ordered payments.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Tom Wilder">
+  <div class="cand-head"><h4>Tom Wilder</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>District clerk since 1995. No 2026 campaign coverage found.</li></ul>
+</div><div class="cand" data-cand="Nathan Smith">
+  <div class="cand-head"><h4>Nathan Smith</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Public affairs officer.</li><li>Endorsements: Tarrant Democratic Party, VoteVets, Texas Working Families Party and others.</li></ul>
+</div></div>
+</article><article class="race" id="r59" data-contest="59">
+  <header class="race-head">
+    <span class="num">59</span>
+    <div><h3>County Clerk</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Records deeds, issues marriage licenses, keeps county-court and probate records, clerks for Commissioners Court. (Elections are run by a separate administrator.)</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Mary Louise Nicholson">
+  <div class="cand-head"><h4>Mary Louise Nicholson</h4><div class="tags"><span class="party p-rep" title="Republican">REP</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div></div>
+  <ul><li>County clerk since 2011. No 2026 campaign coverage found.</li></ul>
+</div><div class="cand" data-cand="Lydia Bean">
+  <div class="cand-head"><h4>Lydia Bean</h4><div class="tags"><span class="party p-dem" title="Democrat">DEM</span></div></div>
+  <ul><li>Sociologist (Harvard PhD) and management consultant; author of The Politics of Evangelical Identity. 2020 Texas House nominee (HD 93). Won this primary with 79.3%.</li></ul><p class="links"><a href="https://en.wikipedia.org/wiki/Lydia_Bean" target="_blank" rel="noopener">Wikipedia</a></p>
+</div></div>
+</article><div class="unc-row" id="r60" data-contest="60"><span class="num">60</span><span class="uo-office">Justice of the Peace, Precinct 3</span><span class="uo-name" data-cand="William P. &#x27;Bill&#x27; Brandt">William P. &#x27;Bill&#x27; Brandt <span class="party p-rep">REP</span></span><span class="uo-tag">Unopposed · p.3</span></div>
+</section>
+<section class="sec" id="sec-tad">
+  <h2>Tarrant Appraisal District Board <span class="rng">#61–63</span></h2>
+  <p class="sec-intro">Nonpartisan. TAD sets taxable property values for 73 taxing units; it does not set tax rates. The board hires the chief appraiser and adopts the budget. Three of nine directors are voter-elected (law passed 2023; first elected May 2024); unpaid; four-year terms. Main debate: return to yearly appraisals vs. every two years. Candidate panel: Fort Worth Report.</p>
+  
+  <article class="race" id="r61" data-contest="61">
+  <header class="race-head">
+    <span class="num">61</span>
+    <div><h3>Board of Directors, At-Large Place 1 (open seat)</h3><p class="meta">Ballot page 3 · 4 candidates</p></div>
+  </header>
+  <p class="office">Eric Morris is not running.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Rebecca Hardy">
+  <div class="cand-head"><h4>Rebecca Hardy</h4><div class="tags"></div></div>
+  <ul><li>Nonprofit CEO; two years on the Tarrant Appraisal Review Board; Colleyville P&amp;Z / CIP Advisory 2019–24.</li></ul><p class="links"><a href="https://www.HardyforTAD.com" target="_blank" rel="noopener">Campaign site</a></p>
+</div><div class="cand" data-cand="Byron Haynes">
+  <div class="cand-head"><h4>Byron Haynes</h4><div class="tags"><span class="tag thin">Little info</span></div></div>
+  <ul><li>Sway.co lists 4 recommending groups (unnamed). Limited background.</li></ul>
+</div><div class="cand" data-cand="Phyllis Durbin Grissom">
+  <div class="cand-head"><h4>Phyllis Durbin Grissom</h4><div class="tags"><span class="tag thin">Little info</span></div></div>
+  <ul><li>Sway.co lists 4 recommending groups (unnamed). Limited background.</li></ul>
+</div><div class="cand" data-cand="Sayeda Bilquees Syed">
+  <div class="cand-head"><h4>Sayeda Bilquees Syed</h4><div class="tags"><span class="tag thin">Little info</span></div></div>
+  <ul><li>Two years on the Appraisal Review Board. Little else found.</li></ul>
+</div></div><p class="links race-links"><a href="https://communityimpact.com/keller-roanoke-northeast-fort-worth/government/q-a-meet-the-candidates-running-for-place-1-on-the-tarrant-appraisal-district-board/" target="_blank" rel="noopener">Community Impact Q&amp;A</a></p>
+</article><article class="race" id="r62" data-contest="62">
+  <header class="race-head">
+    <span class="num">62</span>
+    <div><h3>Board of Directors, At-Large Place 2 (open seat)</h3><p class="meta">Ballot page 3 · 4 candidates</p></div>
+  </header>
+  <p class="office">Callie Rigney is not running.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Ambika Sharma">
+  <div class="cand-head"><h4>Ambika Sharma</h4><div class="tags"></div></div>
+  <ul><li>Background in public administration, auditing and education. Points to Aug. 2026 data showing homes under $200K appraised at 106% of value vs. 71% for homes over $1M; argues for equal, uniform appraisal.</li></ul>
+</div><div class="cand" data-cand="Cary Cheshire">
+  <div class="cand-head"><h4>Cary Cheshire</h4><div class="tags"><span class="tag thin">Little info</span></div></div>
+  <ul><li>Limited information.</li></ul>
+</div><div class="cand" data-cand="Paul Stockard">
+  <div class="cand-head"><h4>Paul Stockard</h4><div class="tags"><span class="tag thin">Little info</span></div></div>
+  <ul><li>Limited information.</li></ul>
+</div><div class="cand" data-cand="Marshall Hobbs">
+  <div class="cand-head"><h4>Marshall Hobbs</h4><div class="tags"></div></div>
+  <ul><li>Appraisal Review Board experience. Says the board should scrutinize staff proposals rather than approve them by default.</li></ul><p class="links"><a href="https://hobbs4us.com/" target="_blank" rel="noopener">Campaign site</a></p>
+</div></div><p class="links race-links"><a href="https://communityimpact.com/grapevine-colleyville-southlake/election/q-a-meet-the-candidates-running-for-tarrant-appraisal-district-board-of-directors-place-2/" target="_blank" rel="noopener">Community Impact Q&amp;A</a></p>
+</article><article class="race" id="r63" data-contest="63">
+  <header class="race-head">
+    <span class="num">63</span>
+    <div><h3>Board of Directors, At-Large Place 3</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Four-year term.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="John Adams">
+  <div class="cand-head"><h4>John Adams</h4><div class="tags"></div></div>
+  <ul><li>43; 40-year county resident; UT Arlington (BS); 20+ years in mortgage lending; real-estate license since 2006; first-time candidate.</li></ul><p class="links"><a href="https://www.johnadamsfortarrant.com" target="_blank" rel="noopener">Campaign site</a> <a href="https://www.facebook.com/profile.php?id=61593655852380" target="_blank" rel="noopener">Facebook</a> <a href="https://fortworthreport.org/2026/10/04/john-adams-candidate-for-tarrant-appraisal-district-place-3/" target="_blank" rel="noopener">FWR Q&amp;A</a></p>
+</div><div class="cand" data-cand="Matt Bryant">
+  <div class="cand-head"><h4>Matt Bryant</h4><div class="tags"><span class="tag">Incumbent</span></div></div>
+  <ul><li>56; on the board since July 2024 (ARB subcommittee chair; IT subcommittee); Carroll ISD trustee 2018–21; residential real-estate investor.</li><li>Running on modernizing TAD systems and more online protest options. Reports raising no money.</li></ul><p class="links"><a href="https://electmattbryant.com" target="_blank" rel="noopener">Campaign site</a> <a href="https://fortworthreport.org/2026/10/04/matt-bryant-candidate-for-tarrant-appraisal-district-place-3/" target="_blank" rel="noopener">FWR Q&amp;A</a></p>
+</div></div>
+</article>
+</section>
+<section class="sec" id="sec-kisd">
+  <h2>Keller ISD Board of Trustees <span class="rng">#64–66</span></h2>
+  <p class="sec-intro">Nonpartisan. Context: enrollment down 17.4% in nine years (about 29,000 students in 2026–27); trustees voted May 14 to close Bear Creek, Parkwood Hill and Trinity Meadows intermediate schools after 2026–27. A plan to split the district was dropped after heavy opposition; every candidate opposes splitting. Tax rate held at $1.0852 for a third year. The $828M bond is the main issue. The True Texas Project recommends Parrish, Coker and Johnson and opposes the bond; the Tarrant County Democratic Party endorses Weatherington and Walsh; Patriot Mobile&#x27;s PAC has been active in past races.</p>
+  
+<div class="race split-box" id="split">
+  <header class="race-head"><span class="num">§</span><div><h3>The 2025 split: background and where candidates stand</h3><p class="meta">Context for the three trustee races below</p></div></header>
+  <div class="split-body">
+    <ul class="timeline">
+      <li><b>2024:</b> A plan to split the district along U.S. 377 is discussed in closed session with a consultant (a lawsuit cites an Oct. 10, 2024 session and says the idea dates to 2022). Two trustees say they first learned of it Dec. 19. Board president Charles Randklev cited about $45M in budget cuts and a goal of keeping tax dollars local; supporters also cited falling enrollment and thin state funding.</li>
+      <li><b>The math:</b> A MoakCasey study projected about 21,700 students on the west (mostly Fort Worth) side and 9,100 on the east (Keller) side. Per-student funding would be roughly $10,200 west and $9,200 east, largely because the west would draw more state aid for special education, low-income and bilingual students. A consultant's email warned costs for underfunded programs would shift to the new western district.</li>
+      <li><b>Jan.–Mar. 2025:</b> Heavy backlash, student walkouts and the superintendent's resignation. A Fort Worth resident sued, later joined by the Heritage HOA, which petitioned to remove five trustees it said backed the plan: Randklev, John Birt, Micah Young, Chris Coker and Heather Washington. The plan was dropped March 14.</li>
+      <li><b>Feb. 2025:</b> During the split debate, Fort Worth council members moved to rezone 23 KISD properties to community-facility use only. None of the candidates' public statements found address Fort Worth annexation of the western area.</li>
+      <li><b>May 2025:</b> The board voted unanimously not to pursue detachment. A bill requiring a public vote on any split (HB 5089) stalled in the Texas House and did not pass.</li>
+    </ul>
+    <div class="tablewrap"><table class="stance">
+      <thead><tr><th>Candidate</th><th>Seat</th><th>Stance on a split</th><th>Party signal</th></tr></thead>
+      <tbody>
+        <tr><td>Chris Coker</td><td>Place 5 (inc.)</td><td>Named as a 2025 backer; defends exploring it as legitimate. Voted to end it. Closest to the split side in this field.</td><td><span class="lean r">Republican</span> self-identified; True Texas pick</td></tr>
+        <tr><td>Geramie Parrish</td><td>Place 4</td><td>Objects to how it was done (no public vote); calls it a nonissue now. Keep tax revenue in KISD.</td><td><span class="lean r">R-aligned</span> True Texas pick</td></tr>
+        <tr><td>Colin Hodges</td><td>Place 5</td><td>Opposes any split without a public vote. Silent on a voter-approved split.</td><td><span class="lean r">Republican</span> GOP precinct chair</td></tr>
+        <tr><td>Rachel Weatherington</td><td>Place 4</td><td>Opposed; community was blindsided; unity priority.</td><td><span class="lean d">D-aligned</span> Tarrant Democratic Party endorsement</td></tr>
+        <tr><td>Andrew Walsh</td><td>Place 5</td><td>Opposed; says it caused a rift.</td><td><span class="lean d">D-aligned</span> Tarrant Democratic Party endorsement</td></tr>
+        <tr><td>Tommie Johnson</td><td>Place 6</td><td>Opposed; “One KISD.”</td><td><span class="lean n">Weak</span> unsought True Texas pick</td></tr>
+        <tr><td>Barbara Brewer</td><td>Place 6</td><td>Strongly opposed; North Fort Worth homeowner-association leader and 2025 protest organizer.</td><td><span class="lean r">Republican</span> self-identified</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">No candidate in 2026 publicly advocates splitting the district. All seven say they oppose it in some form; the table orders them from most open to the idea to most opposed, based on their records and statements. Party signals come only from public party roles, partisan endorsements and the candidates' own answers on public questionnaires (iVoterGuide), never from voter files. A party label here doesn't determine a candidate's position on the split.</p>
+    <p class="links"><a href="https://www.cbsnews.com/texas/news/new-legal-filing-calls-for-immediate-removal-of-keller-isd-board-members-who-supported-plan-to-split" target="_blank" rel="noopener">CBS: petition naming trustees</a> <a href="https://communityimpact.com/keller-roanoke-northeast-fort-worth/education/keller-isd-board-votes-unanimously-not-to-pursue-detachment/" target="_blank" rel="noopener">Community Impact: detachment vote</a> <a href="https://www.yahoo.com/news/study-shows-revenue-projections-keller-024654985.html" target="_blank" rel="noopener">Star-Telegram: revenue study</a> <a href="https://www.texastribune.org/2025/04/29/texas-school-districts-split-keller-isd" target="_blank" rel="noopener">Texas Tribune</a> <a href="https://www.yahoo.com/news/politics/articles/828m-bond-takes-center-stage-162541823.html" target="_blank" rel="noopener">Star-Telegram: 2026 candidates</a> <a href="https://www.yahoo.com/news/fort-worth-city-council-calls-003716603.html" target="_blank" rel="noopener">Fort Worth rezoning</a></p>
+  </div>
+</div>
+
+  <article class="race" id="r64" data-contest="64">
+  <header class="race-head">
+    <span class="num">64</span>
+    <div><h3>Trustee, Place 4 (Three-Year Term, open seat)</h3><p class="meta">Ballot page 3 · 2 candidates</p></div>
+  </header>
+  <p class="office">Board president John Birt is not running.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Rachel Weatherington">
+  <div class="cand-head"><h4>Rachel Weatherington</h4><div class="tags"></div></div>
+  <ul><li>Former Keller ISD teacher (resigned to run); special-education advocate; Grapevine-Colleyville ISD teacher 2019–23, then Keller ISD ESL and intervention specialist; first-time candidate.</li><li>Bond: supports all five propositions, citing 1,000+ hours of committee work.</li><li>Split: says the 2025 plan blindsided the community; lists rebuilding unity and trust as a top priority.</li><li>Party signals: endorsed by the Tarrant County Democratic Party (listed on iVoterGuide). Did not state a party affiliation.</li><li>Agrees with the closure plan given the budget. Priority: teacher recruitment and retention.</li></ul><p class="links"><a href="https://ivoterguide.com/candidate/95685/race/33859/election/1471" target="_blank" rel="noopener">iVoterGuide</a> <a href="https://www.rachelforkisd.com/" target="_blank" rel="noopener">Campaign site</a> <a href="https://fortworthreport.org/2026/10/16/rachel-weatherington-candidate-for-keller-isd-place-4/" target="_blank" rel="noopener">FWR Q&amp;A</a> <a href="https://communityimpact.com/keller-roanoke-northeast-fort-worth/education/q-a-meet-the-candidates-for-keller-isd-place-4/" target="_blank" rel="noopener">Community Impact Q&amp;A</a></p>
+</div><div class="cand" data-cand="Geramie Parrish">
+  <div class="cand-head"><h4>Geramie Parrish</h4><div class="tags"></div></div>
+  <ul><li>Sales manager; former construction-business owner; UNT; father of three district students; first-time candidate.</li><li>Bond: supports C, D and E; opposes A and B. Says the repair and safety work shouldn&#x27;t be bundled into one $756M measure.</li><li>Budget: cut central administration, contracts, travel and consultants first.</li><li>Split: a Fort Worth resident; says he was angry the 2025 plan moved forward without a public vote, and now calls it a nonissue because most trustees involved have left. Pledges to keep KISD tax revenue in KISD.</li><li>Party signals: recommended by True Texas Project, a conservative group that urges straight-Republican voting. No party office on record.</li></ul><p class="links"><a href="https://www.parrish4kisd.com/" target="_blank" rel="noopener">Campaign site</a> <a href="https://fortworthreport.org/2026/10/16/geramie-parrish-candidate-for-keller-isd-place-4/" target="_blank" rel="noopener">FWR Q&amp;A</a></p>
+</div></div>
+</article><article class="race" id="r65" data-contest="65">
+  <header class="race-head">
+    <span class="num">65</span>
+    <div><h3>Trustee, Place 5 (Three-Year Term)</h3><p class="meta">Ballot page 3 · 3 candidates</p></div>
+  </header>
+  <p class="office">Three candidates.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Chris Coker">
+  <div class="cand-head"><h4>Chris Coker</h4><div class="tags"><span class="tag">Incumbent</span></div></div>
+  <ul><li>Trustee since May 2023; self-employed business owner.</li><li>Bond: the board&#x27;s only “no” vote; his motion to cut Prop A to $400M died without a second. Supports legitimate HVAC/roof/plumbing work but objects to the total.</li><li>Split: one of five trustees (with Randklev, Birt, Young and Washington) named in a 2025 HOA court petition as backing the plan. Now says the board legitimately explored whether a split made financial or operational sense and that misinformation surrounds it. Voted with the unanimous May 2025 resolution ending detachment, saying he was glad the community could move forward together.</li><li>Lists responsible land use among his priorities.</li><li>Party signals: describes himself as Republican and conservative (iVoterGuide questionnaire); recommended by True Texas Project. Unseated incumbent Beverly Dixon in 2023, 53.9% to 46.1%.</li><li>Platform: financial discipline; teacher pay and retention.</li></ul><p class="links"><a href="https://citizenportal.ai/articles/9649148/Texas/School-Districts/KELLER-ISD/Keller-ISD-board-adopts-order-calling-bond-election-proposal-to-cut-Proposition-A-to-400M-fails" target="_blank" rel="noopener">Board vote on Prop A cut</a> <a href="https://ivoterguide.com/candidate/62032/race/33860/election/1471" target="_blank" rel="noopener">iVoterGuide</a> <a href="https://www.cokerforkisd.com/" target="_blank" rel="noopener">Campaign site</a> <a href="https://communityimpact.com/keller-roanoke-northeast-fort-worth/election/q-a-meet-the-candidates-running-for-keller-isd-place-5/" target="_blank" rel="noopener">Community Impact Q&amp;A</a></p>
+</div><div class="cand" data-cand="Andrew Walsh">
+  <div class="cand-head"><h4>Andrew Walsh</h4><div class="tags"></div></div>
+  <ul><li>Engineer; four children in the district; in Keller four years (per Star-Telegram profile).</li><li>Bond: supports it; ties aging buildings to teacher retention.</li><li>Cites Patriot Mobile PAC&#x27;s influence in past races as a reason for running.</li><li>Split: says the discussions caused a rift and trustees should stay out of politics.</li><li>Party signals: endorsed by the Tarrant County Democratic Party (listed on iVoterGuide). Did not state a party affiliation. Campaigns against Patriot Mobile PAC influence.</li></ul><p class="links"><a href="https://ivoterguide.com/candidate/95687/race/33860/election/1471" target="_blank" rel="noopener">iVoterGuide</a> <a href="https://www.yahoo.com/news/politics/articles/828m-bond-takes-center-stage-162541823.html" target="_blank" rel="noopener">Star-Telegram</a> <a href="https://www.walshforkisd.com/" target="_blank" rel="noopener">Campaign site</a></p>
+</div><div class="cand" data-cand="Colin Hodges">
+  <div class="cand-head"><h4>Colin Hodges</h4><div class="tags"></div></div>
+  <ul><li>Sales manager; Creighton; first-time candidate; elected GOP precinct chair March 2026. Says he isn&#x27;t running for any PAC; calls Coker divisive.</li><li>Bond: prefers a narrower package built with community input.</li><li>Split: on his first day, would ask the board to oppose any split that lacks a public vote. A process position; he has not said whether he would back a split voters approved.</li><li>Party signals: Republican. Elected a Republican Party precinct chair in March 2026, while running against the True Texas-backed incumbent.</li></ul><p class="links"><a href="https://www.facebook.com/HodgesforKISD/" target="_blank" rel="noopener">Facebook</a> <a href="https://fortworthreport.org/2026/10/16/colin-hodges-candidate-for-keller-isd-place-5/" target="_blank" rel="noopener">FWR Q&amp;A</a></p>
+</div></div>
+</article><article class="race" id="r66" data-contest="66">
+  <header class="race-head">
+    <span class="num">66</span>
+    <div><h3>Trustee, Place 6 (Unexpired Term, special election)</h3><p class="meta">Ballot page 4 · 2 candidates</p></div>
+  </header>
+  <p class="office">About one year remaining; Charles Randklev resigned to run for Keller City Council.</p>
+  <div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div>
+  <div class="cands c2"><div class="cand" data-cand="Barbara Brewer">
+  <div class="cand-head"><h4>Barbara Brewer</h4><div class="tags"></div></div>
+  <ul><li>Substitute teacher and caregiver; former PTA president; served on the Long-Range Planning Committee; first-time candidate.</li><li>Bond: supports it with transparent spending and oversight.</li><li>Split: the most outspoken opponent in the field. Board director of a North Fort Worth residential association (about 4,600 homes). Tied ribbons on trees as a unity protest in 2025 and told the Texas Tribune she feared North Fort Worth would lose taxpayer-funded facilities such as the varsity stadium. Says the district does not belong to Keller.</li><li>Not happy with the closure plan.</li><li>Party signals: Republican. Lists her party as Republican and calls herself conservative on her iVoterGuide questionnaire.</li></ul><p class="links"><a href="https://ivoterguide.com/candidate/95688/race/34293/election/1471" target="_blank" rel="noopener">iVoterGuide</a> <a href="https://brewerforkisd.com/home" target="_blank" rel="noopener">Campaign site</a> <a href="https://fortworthreport.org/2026/10/16/barbara-brewer-candidate-for-keller-isd-place-6/" target="_blank" rel="noopener">FWR Q&amp;A</a></p>
+</div><div class="cand" data-cand="Tommie Johnson">
+  <div class="cand-head"><h4>Tommie Johnson</h4><div class="tags"></div></div>
+  <ul><li>Career educator; former Keller ISD principal and assistant superintendent of HR (per her campaign and Fort Worth Report Q&amp;A).</li><li>Bond: supports all of it; notes bond money isn&#x27;t subject to state recapture.</li><li>Supports consolidation as data-driven.</li><li>Split: runs on “One KISD” and fair treatment of every campus and community; says major decisions need public input.</li><li>Party signals: weak. Recommended by True Texas Project, but says she never spoke with the group; gave no party on her iVoterGuide questionnaire.</li></ul><p class="links"><a href="https://tommieforkisd.com/" target="_blank" rel="noopener">Campaign site</a> <a href="https://fortworthreport.org/2026/10/16/tommie-johnson-candidate-for-keller-isd-place-6/" target="_blank" rel="noopener">FWR Q&amp;A</a></p>
+</div></div>
+</article>
+</section>
+<section class="sec" id="bond">
+  <h2>Keller ISD Bond Propositions A–E <span class="rng">#67–71</span></h2>
+  <p class="sec-intro">$828.1M total; each proposition is voted on separately. State law requires each to be labeled a “property tax increase” because the bonds are repaid from property taxes.</p>
+  <article class="race" id="r67" data-contest="67-71">
+    <header class="race-head"><span class="num">67–71</span><div><h3>Propositions A–E</h3><p class="meta">Ballot pages 4–5 · For / Against on each</p></div></header>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Prop</th><th class="amt">Amount</th><th>Pays for</th><th>Debate</th></tr></thead>
+      <tbody>
+        <tr><td><b>#67 · A</b></td><td class="amt">$756,300,896</td><td>Repairs and renovations at 34 campuses: roofing, HVAC, plumbing, electrical, code compliance, safety and security, technology network; partial rebuild of Keller Middle School.</td><td>District cites aging buildings and repeated HVAC failures. Critics call it too large and bundled; Coker's motion to cut it to $400M failed.</td></tr>
+        <tr><td><b>#68 · B</b></td><td class="amt">$28,000,000</td><td>Student and staff devices (repaid within 5 years).</td><td>Supporters cite instruction and cybersecurity. Parrish opposes.</td></tr>
+        <tr><td><b>#69 · C</b></td><td class="amt">$8,867,510</td><td>Natatorium filtration, dehumidifier and HVAC.</td><td>Repairs existing systems. Parrish supports.</td></tr>
+        <tr><td><b>#70 · D</b></td><td class="amt">$11,025,446</td><td>Athletics Complex site repairs; Keller HS Field House renovation.</td><td>Restores existing facilities.</td></tr>
+        <tr><td><b>#71 · E</b></td><td class="amt">$23,913,963</td><td>Artificial turf at MS competition fields and HS baseball/softball.</td><td>District says three MS fields can't host competition now. Parrish supports.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="cands c2">
+      <div class="cand"><div class="cand-head"><h4>District's case</h4></div><ul>
+        <li>First bond since 2019 ($315M, which the district says finished on budget).</li>
+        <li>Citizens Bond Advisory Committee approved each item by two-thirds; trustees approved 5–1.</li>
+        <li>The district projects all five can be paid for at the existing 33¢ debt rate, which it says would stay the same whether or not they pass.</li>
+        <li>District estimates delay could cost about $50M as construction costs rise 6%+ a year; bond money isn't subject to recapture.</li>
+      </ul></div>
+      <div class="cand"><div class="cand-head"><h4>Opposition and caveats</h4></div><ul>
+        <li>True Texas Project urges “no.” Coker, Parrish (A and B) and Hodges question size or structure.</li>
+        <li>No formal pro-bond PAC found. Weatherington, Walsh, Brewer and Johnson support it.</li>
+        <li>“No rate increase” is a projection that depends on property values and interest rates. The district's fiscal page says the rate would stay the same whether or not the propositions pass. No per-home estimate was published.</li>
+      </ul><p class="links"><a href="https://www.kellerisd.net/about-kisd/bond" target="_blank" rel="noopener">KISD bond page</a> <a href="https://www.kellerisd.net/about-kisd/bond/fiscal-information" target="_blank" rel="noopener">Fiscal info</a> <a href="https://www.nbcdfw.com/news/politics/lone-star-politics/keller-isd-asks-voters-to-decide-on-more-than-828-million-in-school-bonds-in-midterm-election/4091913/" target="_blank" rel="noopener">NBC DFW</a></p></div>
+    </div>
+  </article>
+</section>
+
+  <section class="resources">
+    <h2>Resources</h2>
+    <ul>
+      <li><a href="https://www.vote411.org" target="_blank" rel="noopener">VOTE411 (League of Women Voters)</a>: candidate answers</li>
+      <li><a href="https://www.tarrantcountytx.gov/en/elections.html" target="_blank" rel="noopener">Tarrant County Elections</a>: vote centers, hours</li>
+      <li><a href="https://www.tarrantbar.org/index.cfm?pg=judicial-polls-and-links" target="_blank" rel="noopener">Tarrant County Bar judicial poll</a></li>
+      <li><a href="https://www.texasbar.com/pollresults/" target="_blank" rel="noopener">State Bar of Texas 2026 judicial poll</a></li>
+      <li><a href="https://fortworthreport.org/fort-worth-tarrant-county-voter-guide/" target="_blank" rel="noopener">Fort Worth Report voter guide</a></li>
+      <li><a href="https://www.dallasnews.com/projects/2026/dallas-texas-november-election-voter-guide/" target="_blank" rel="noopener">Dallas Morning News voter guide</a></li>
+      <li><a href="https://ballotpedia.org/Tarrant_County,_Texas,_elections,_2026" target="_blank" rel="noopener">Ballotpedia: Tarrant 2026</a></li>
+      <li><a href="https://votetheperson.org/races/" target="_blank" rel="noopener">Vote the Person</a>: judges plus TCBA data</li>
+      <li><a href="https://texasjudges.org/" target="_blank" rel="noopener">texasjudges.org</a></li>
+      <li><a href="https://www.kellerisd.net/about-kisd/bond" target="_blank" rel="noopener">Keller ISD bond information</a></li>
+    </ul>
+    <p class="caveats"><b>Caveats.</b> Voter polls are snapshots; many leads are within the margin of error. Bar polls reflect only responding lawyers (about 22% for TCBA), predate the primaries and are not endorsements. Campaign claims (Porter's docket figures, Ferry's and Gayden's years of experience, Mizani's priorities as summarized by third parties) are unverified. Allin's appointment date conflicts between sources. The Bolton–Pamplin dispute is reported only by a partisan-leaning outlet. Compiled Oct. 21, 2026.</p>
+  </section>
+</div>
+
+</body>
+</html>

@@ -7,7 +7,7 @@ Output is an artifact-ready HTML fragment (title + style + content, no <html>/<b
 render_pdf.py wraps it into a full document for printing.
 """
 import sys
-from common import E, party, load, is_measure, contested, links_html, PARTY_TOKENS_LIGHT, PARTY_TOKENS_DARK
+from common import E, party, load, is_measure, contested, links_html, standalone, PARTY_TOKENS_LIGHT, PARTY_TOKENS_DARK
 
 
 def bar_row(name, pcls, width, value_txt):
@@ -297,6 +297,16 @@ th {{ font: 600 13px var(--f-display); text-transform: uppercase; letter-spacing
 
 
 if __name__ == "__main__":
-    d = load(sys.argv[1])
-    open(sys.argv[2], "w").write(build(d))
-    print("wrote", sys.argv[2])
+    import argparse
+    ap = argparse.ArgumentParser(description="Build the research guide from ballot.json")
+    ap.add_argument("ballot_json")
+    ap.add_argument("out_html", help="artifact page (fragment) to publish")
+    ap.add_argument("--standalone", metavar="FILE.html",
+                    help="also write a complete, self-contained HTML file for download/email/offline reading")
+    a = ap.parse_args()
+    page = build(load(a.ballot_json))
+    open(a.out_html, "w").write(page)
+    print("wrote", a.out_html)
+    if a.standalone:
+        open(a.standalone, "w").write(standalone(page))
+        print("wrote", a.standalone)

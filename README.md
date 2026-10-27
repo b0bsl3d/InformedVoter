@@ -4,7 +4,10 @@
 
 A [Claude](https://claude.ai) skill that turns your **sample ballot** into two things:
 
-1. **A nonpartisan research guide.** Every contested race on your ballot, in ballot order, one clearly separated box per race. Each box has polls, candidate backgrounds, positions, endorsements and links. You get it as a shareable web page and a PDF.
+1. **A nonpartisan research guide.** Every contest on your ballot, in ballot order, one clearly separated box per race. Each box has polls, candidate backgrounds, positions, endorsements and links. It comes three ways:
+   - a shareable **web page**: one scrolling page, easiest to read on a screen;
+   - a **standalone HTML file** that opens in any browser, offline or as an email attachment;
+   - a **PDF** for printing.
 2. **A one-page ballot cheat sheet.** Every contest on your ballot, including uncontested ones, in exact ballot order with checkboxes. Mark it in pen ahead of time and bring it with you to vote.
 
 It works for any U.S. state, county or city. Each guide also opens with **that state's voting rules for that election**: ID, early-voting window, Election Day hours, and phone and note rules. There's a fuller version for first-time voters.
@@ -33,7 +36,7 @@ The cheat sheet also handles ranked-choice grids, write-ins and ballot measures.
 
 ![Sample cheat sheet](docs/images/sample-cheatsheet.png)
 
-Full PDFs and the Tarrant County quality-check report ([`qc-report.md`](examples/tarrant-county-tx-2026/qc-report.md)) are in [`examples/`](examples/).
+Full PDFs, standalone HTML guides and the Tarrant County quality-check report ([`qc-report.md`](examples/tarrant-county-tx-2026/qc-report.md)) are in [`examples/`](examples/).
 
 ---
 
@@ -113,7 +116,7 @@ Attach the PDF. Claude asks up to four quick questions:
 - Who the guide is for (for example, a first-time voter)
 - Whether to note party signals in nonpartisan races
 
-Then it researches and delivers the guide (web page + PDF) and the cheat sheet (PDF).
+Then it researches and delivers the guide (web page, standalone HTML file and PDF) and the cheat sheet (PDF).
 
 ### 4. Before Election Day
 Ask Claude to **recheck polls and late news** a few days before Election Day, or before the last day of early voting. Candidates sometimes withdraw, courts rule and new polls come out.
@@ -124,7 +127,7 @@ The builders are plain Python and work without Claude, given a `ballot.json`. Se
 ```bash
 pip install playwright pdfplumber && python -m playwright install chromium
 cd ballot-research-guide/scripts
-python build_guide.py ../../examples/fictional-sample/ballot.json guide.html
+python build_guide.py ../../examples/fictional-sample/ballot.json guide.html --standalone guide-standalone.html
 python build_cheatsheet.py ../../examples/fictional-sample/ballot.json cheatsheet.html
 python render_pdf.py guide.html guide.pdf --footer "Ballot Guide"
 python render_pdf.py cheatsheet.html cheatsheet.pdf --one-page

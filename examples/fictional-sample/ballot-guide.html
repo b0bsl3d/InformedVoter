@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lakeshore County Ballot Guide 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: ballot-style contests; each race is a ruled box with a dark contest band, poll strip, then candidates side by side. */
+:root {
+  --paper: #fbfbf9; --ink: #1b2230; --muted: #5b6474; --rule: #c9ced6; --band: #26303f; --band-fg: #f3f5f8;
+  --card: #ffffff; --soft: #eef1f5; --accent: #9a6b12; --link: #1f5aa6; --neu: #b9bfc8; --neg: #4a505b;
+  --rep: #c0392b; --dem: #1f5bc4; --lib: #b07f00; --grn: #2f8a43; --oth: #8a3fa8; --np: #5f6b85;
+  --f-display: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif;
+  --f-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #13171e; --ink: #e5e8ee; --muted: #9aa3b2; --rule: #343c49; --band: #2b3546; --band-fg: #f3f5f8;
+  --card: #1a1f28; --soft: #222935; --accent: #e0b35a; --link: #7fb0f0; --neu: #5a6170; --neg: #c9ced6;
+  --rep: #e5574a; --dem: #4d8cf0; --lib: #e0b030; --grn: #4fb866; --oth: #c27fe0; --np: #9aa6c4; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #13171e; --ink: #e5e8ee; --muted: #9aa3b2; --rule: #343c49; --band: #2b3546; --band-fg: #f3f5f8;
+  --card: #1a1f28; --soft: #222935; --accent: #e0b35a; --link: #7fb0f0; --neu: #5a6170; --neg: #c9ced6;
+  --rep: #e5574a; --dem: #4d8cf0; --lib: #e0b030; --grn: #4fb866; --oth: #c27fe0; --np: #9aa6c4; color-scheme: dark; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.5 var(--f-body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 32px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3, h4 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+a { color: var(--link); } a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.kicker { font: 500 12px/1 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 700; margin-top: 8px; line-height: 1.1; }
+.lede { max-width: 68ch; color: var(--muted); margin: 12px 0 0; }
+.notice { margin-top: 16px; border: 1px solid var(--accent); border-left-width: 4px; padding: 12px 16px; max-width: 80ch; background: var(--card); }
+.notice b { color: var(--accent); } .notice ul { margin: 6px 0 0; padding-left: 18px; font-size: 15px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-top: 16px; font-size: 14px; color: var(--muted); align-items: center; }
+nav.toc { margin-top: 28px; border-top: 2px solid var(--ink); padding-top: 16px; }
+nav.toc > ol { list-style: none; padding: 0; margin: 12px 0 0; columns: 2 300px; column-gap: 32px; }
+nav.toc > ol > li { break-inside: avoid; margin-bottom: 14px; }
+nav.toc > ol > li > a { font: 600 15px var(--f-display); text-transform: uppercase; letter-spacing: .04em; color: var(--ink); text-decoration: none; }
+nav.toc ol ol { list-style: none; padding: 0; margin: 4px 0 0; }
+nav.toc ol ol a { display: flex; gap: 8px; font-size: 14px; color: var(--ink); text-decoration: none; padding: 2px 0; }
+nav.toc .num { font: 500 12px/1.6 var(--f-mono); color: var(--muted); min-width: 22px; font-variant-numeric: tabular-nums; }
+.sec { margin-top: 48px; }
+.sec h2 { font-size: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; border-bottom: 3px solid var(--ink); padding-bottom: 6px; }
+.sec-intro { max-width: 80ch; color: var(--muted); margin: 10px 0 20px; font-size: 15px; }
+.race { border: 1.5px solid var(--ink); background: var(--card); margin-top: 24px; break-inside: avoid-page; }
+.race-head { display: flex; gap: 14px; align-items: center; background: var(--band); color: var(--band-fg); padding: 10px 16px; }
+.race-head .num { font: 500 14px var(--f-mono); border: 1px solid currentColor; min-width: 34px; text-align: center; padding: 3px 4px; }
+.race-head h3 { font-size: 21px; font-weight: 600; }
+.race-head .meta { margin: 2px 0 0; font: 500 11px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; opacity: .78; }
+.office { margin: 0; padding: 10px 16px; background: var(--soft); font-size: 14.5px; border-bottom: 1px solid var(--rule); }
+.info { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-bottom: 1px solid var(--rule); }
+.ib { padding: 10px 16px 12px; min-width: 0; } .ib + .ib { border-left: 1px solid var(--rule); }
+.ib-t { margin: 0 0 8px; font: 600 12px var(--f-display); text-transform: uppercase; letter-spacing: .06em; }
+.ib-t span { font: 400 12px var(--f-body); text-transform: none; letter-spacing: 0; color: var(--muted); margin-left: 6px; }
+.bar-row { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr auto; gap: 8px; align-items: center; font-size: 13px; margin-bottom: 5px; }
+.bn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bv { font: 500 12px var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; min-width: 3.5em; }
+.track { height: 12px; background: var(--soft); display: flex; overflow: hidden; }
+.fill { display: block; height: 100%; background: currentColor; } .seg { display: block; height: 100%; }
+.seg.neu { background: var(--neu); } .seg.neg { background: var(--neg); }
+.none { margin: 0; font-size: 13px; color: var(--muted); font-style: italic; }
+.key { margin: 6px 0 0; font-size: 11.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.k { display: inline-block; width: 10px; height: 10px; margin-right: 3px; }
+.k.rec { background: linear-gradient(90deg, var(--rep) 50%, var(--dem) 50%); } .k.neu { background: var(--neu); } .k.neg { background: var(--neg); }
+.k.sk { background: var(--soft); outline: 1px solid var(--rule); }
+.cands { display: grid; } .cands.c2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cand { padding: 14px 16px 12px; border-top: 1px solid var(--rule); min-width: 0; }
+.cands.c2 > .cand:nth-child(odd) { border-right: 1px solid var(--rule); }
+.cands.c2 > .cand:nth-child(-n+2) { border-top: 0; }
+.cands.c2 > .cand:last-child:nth-child(odd) { grid-column: 1 / -1; border-right: 0; }
+.cand-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.cand h4 { font-size: 18px; font-weight: 600; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.party, .tag, .lean { font: 500 11px/1 var(--f-mono); letter-spacing: .06em; padding: 4px 6px; border: 1px solid currentColor; white-space: nowrap; }
+.rep { color: var(--rep); } .dem { color: var(--dem); } .lib { color: var(--lib); } .grn { color: var(--grn); } .oth { color: var(--oth); } .np { color: var(--np); }
+.tag, .muted { color: var(--muted); text-transform: uppercase; } .tag.thin { color: var(--accent); }
+.cand ul { margin: 8px 0 0; padding-left: 18px; font-size: 14.5px; } .cand li { margin-bottom: 4px; }
+.links { margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13.5px; }
+.race-links { padding: 8px 16px 12px; border-top: 1px solid var(--rule); margin: 0; }
+.unc-row { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 10px; padding: 8px 16px; border: 1px dashed var(--rule); background: var(--card); font-size: 14.5px; break-inside: avoid; }
+.unc-row .num { font: 500 12px var(--f-mono); color: var(--muted); border: 1px solid var(--rule); min-width: 30px; text-align: center; padding: 2px 4px; }
+.uo-office { font-weight: 600; } .uo-name { display: inline-flex; gap: 6px; align-items: baseline; }
+.uo-tag { margin-left: auto; font: 500 11px var(--f-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.rng { font: 500 .6em var(--f-mono); color: var(--muted); vertical-align: middle; }
+nav.toc .toc-unc a { color: var(--muted); }
+.notice.qc { border-color: var(--grn); } .notice.qc b { color: var(--grn); }
+.notice.qc.warn { border-color: var(--rep); } .notice.qc.warn b { color: var(--rep); }
+.split-body { padding: 12px 16px 14px; } .timeline { margin: 0 0 12px; padding-left: 18px; font-size: 14.5px; }
+.timeline li { margin-bottom: 6px; } .stance td:first-child { font-weight: 600; }
+.note { font-size: 14px; margin: 10px 0 0; padding: 8px 12px; background: var(--soft); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+th { font: 600 13px var(--f-display); text-transform: uppercase; letter-spacing: .05em; background: var(--soft); }
+.resources { margin-top: 48px; border-top: 3px solid var(--ink); padding-top: 12px; }
+.resources h2 { font-size: 22px; text-transform: uppercase; }
+.resources ul { columns: 2 300px; column-gap: 32px; font-size: 14.5px; padding-left: 18px; }
+.caveats { font-size: 13.5px; color: var(--muted); max-width: 80ch; }
+@media (max-width: 640px) {
+  .cands.c2, .info { grid-template-columns: 1fr; }
+  .cands.c2 > .cand:nth-child(odd) { border-right: 0; }
+  .cands.c2 > .cand:nth-child(2) { border-top: 1px solid var(--rule); }
+  .ib + .ib { border-left: 0; border-top: 1px solid var(--rule); }
+}
+@media print {
+  :root { --paper: #fff; --card: #fff; } body { font-size: 10.5pt; } .wrap { max-width: none; padding: 0; }
+  .race { break-inside: avoid; } .sec h2 { break-after: avoid; } .sec { break-before: page; margin-top: 0; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } a { text-decoration: none; }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <p class="kicker">Lakeshore County, ST · Precinct 0412 · Nov. 3, 2026</p>
+  <h1>Lakeshore County Ballot Guide 2026</h1>
+  <p class="lede">Every contest on this ballot, in exact ballot order. Contest numbers match the ballot cheat sheet. Contested races get a full box; uncontested races are one line in their ballot position. This guide is nonpartisan and recommends no candidate or vote.</p>
+  <div class="notice"><b>First time voting? What to know in Example State</b><ul><li>Photo ID required: driver&#x27;s license, state ID, passport or military ID. Without one you can cast a provisional ballot and show ID within 6 days. <a href="https://sos.example.gov/voter-id" target="_blank" rel="noopener">source</a></li><li>Early voting runs Oct. 19–30 at any county vote center. Election Day hours are 7 a.m.–7 p.m.; if you&#x27;re in line at 7 p.m., you can still vote. <a href="https://lakeshore.example.gov/elections" target="_blank" rel="noopener">source</a></li><li>There is no straight-party option. Mark each contest separately; skipping a contest doesn&#x27;t affect the rest of your ballot. <a href="https://sos.example.gov/faq" target="_blank" rel="noopener">source</a></li><li>You may bring printed notes. Phones may not be used at the voting station. <a href="https://sos.example.gov/faq" target="_blank" rel="noopener">source</a></li></ul></div>
+  <div class="notice qc"><b>Quality checks</b><ul><li>Ballot match: all contests and candidate names checked against the official sample ballot PDF, in order (scripts/verify_ballot.py).</li><li>Fact-check: an independent reviewer checked candidate claims against their cited sources on Oct. 21, 2026; unsupported claims were removed.</li><li>Voting rules: verified against the Secretary of State and county elections pages listed beside each item.</li></ul></div>
+  <div class="legend"><span class="party rep">REP</span><span class="party dem">DEM</span><span class="party lib">LIB</span><span class="party grn">GRN</span><span class="party oth">Other / Ind.</span><span class="party np">Nonpartisan</span><span class="tag">Incumbent</span><span class="tag thin">Little info</span></div>
+  <nav class="toc" aria-label="Races"><p class="kicker">Contents</p><ol><li><a href="#s0">Federal &amp; State <span class="rng">#1–3</span></a><ol><li><a href="#r1"><span class="num">1</span>Governor</a></li><li><a href="#r2"><span class="num">2</span>Supreme Court, Place 3</a></li><li class="toc-unc"><a href="#r3"><span class="num">3</span>State Treasurer <i>(unopposed)</i></a></li></ol></li><li><a href="#s1">Lakeshore County <span class="rng">#4–5</span></a><ol><li><a href="#r4"><span class="num">4</span>District Judge, 4th District</a></li><li><a href="#r5"><span class="num">5</span>City Council, Ward 2</a></li></ol></li><li><a href="#s2">Lakeshore School District (nonpartisan) <span class="rng">#6–7</span></a><ol><li><a href="#r6"><span class="num">6</span>School Board Trustee, Place 1</a></li><li><a href="#r7"><span class="num">7</span>Proposition A: $120M school bond</a></li></ol></li></ol></nav>
+  <section class="sec" id="s0"><h2>Federal &amp; State <span class="rng">#1–3</span></h2><p class="sec-intro">Optional one-line context for the section.</p><article class="race" id="r1" data-contest="1"><header class="race-head"><span class="num">1</span><div><h3>Governor</h3><p class="meta">Ballot page 1 · 3 candidates</p></div></header><p class="office">State chief executive; signs or vetoes bills. Four-year term.</p><div class="info"><div class="ib"><p class="ib-t">Voter poll <span>State University poll, likely voters, Oct. 10–14, ±2.5</span></p><div class="bar-row"><span class="bn">Tom Hale</span><span class="track"><span class="fill rep" style="width:75.0%"></span></span><span class="bv">45%</span></div><div class="bar-row"><span class="bn">Ann Rivera</span><span class="track"><span class="fill dem" style="width:80.0%"></span></span><span class="bv">48%</span></div><div class="bar-row"><span class="bn">Lee Park</span><span class="track"><span class="fill lib" style="width:5.0%"></span></span><span class="bv">3%</span></div></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div><div class="cands c2"><div class="cand" data-cand="Tom Hale"><div class="cand-head"><h4>Tom Hale</h4><div class="tags"><span class="party rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div><ul><li>Governor since 2019.</li><li>Platform: property-tax cuts; border enforcement.</li></ul><p class="links"><a href="https://example.com/hale" target="_blank" rel="noopener">Campaign site</a></p></div><div class="cand" data-cand="Ann Rivera"><div class="cand-head"><h4>Ann Rivera</h4><div class="tags"><span class="party dem" title="Democrat">DEM</span></div></div><ul><li>State senator since 2015.</li><li>Platform: school funding; health-care costs.</li></ul><p class="links"><a href="https://example.com/rivera" target="_blank" rel="noopener">Campaign site</a></p></div><div class="cand" data-cand="Lee Park"><div class="cand-head"><h4>Lee Park</h4><div class="tags"><span class="party lib" title="Libertarian">LIB</span><span class="tag thin">Little info</span></div></div><ul><li>Little published. Check VOTE411.</li></ul></div></div></article><article class="race" id="r2" data-contest="2"><header class="race-head"><span class="num">2</span><div><h3>Supreme Court, Place 3</h3><p class="meta">Ballot page 1 · 2 candidates</p></div></header><p class="office">Highest civil court. Six-year term.</p><div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>State Bar poll, lawyer votes (Feb. 2026)</span></p><div class="bar-row"><span class="bn">Dan Webb</span><span class="track"><span class="fill rep" style="width:86.3%"></span></span><span class="bv">1,650</span></div><div class="bar-row"><span class="bn">Mara Ortiz</span><span class="track"><span class="fill dem" style="width:100.0%"></span></span><span class="bv">1,912</span></div></div></div><div class="cands c2"><div class="cand" data-cand="Dan Webb"><div class="cand-head"><h4>Dan Webb</h4><div class="tags"><span class="party rep" title="Republican">REP</span><span class="tag">Incumbent</span></div></div><ul><li>Appointed 2021.</li></ul><p class="links"><a href="https://example.com/dan-webb" target="_blank" rel="noopener">Example source</a></p></div><div class="cand" data-cand="Mara Ortiz"><div class="cand-head"><h4>Mara Ortiz</h4><div class="tags"><span class="party dem" title="Democrat">DEM</span></div></div><ul><li>Appeals court justice since 2019.</li></ul><p class="links"><a href="https://example.com/mara-ortiz" target="_blank" rel="noopener">Example source</a></p></div></div></article><div class="unc-row" id="r3" data-contest="3"><span class="num">3</span><span class="uo-office">State Treasurer</span><span class="uo-name" data-cand="Gil Moore">Gil Moore <span class="party rep">REP</span></span><span class="uo-tag">Unopposed · p.1</span></div></section><section class="sec" id="s1"><h2>Lakeshore County <span class="rng">#4–5</span></h2><article class="race" id="r4" data-contest="4"><header class="race-head"><span class="num">4</span><div><h3>District Judge, 4th District</h3><p class="meta">Ballot page 2 · 2 candidates</p></div></header><p class="office">Felony trial court.</p><div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll <span>County Bar: recommend / not recommend</span></p><div class="bar-row"><span class="bn">Sue Kim</span><span class="track stack"><span class="fill rep" style="width:45%"></span><span class="seg neu" style="width:10%"></span><span class="seg neg" style="width:13%"></span></span><span class="bv">45% / 13%</span></div><div class="bar-row"><span class="bn">Raj Patel</span><span class="track stack"><span class="fill dem" style="width:28%"></span><span class="seg neu" style="width:8%"></span><span class="seg neg" style="width:20%"></span></span><span class="bv">28% / 20%</span></div><p class="key"><i class="k rec"></i>Recommend <i class="k neu"></i>Neutral <i class="k neg"></i>Not recommend <i class="k sk"></i>Skipped</p></div></div><div class="cands c2"><div class="cand" data-cand="Sue Kim"><div class="cand-head"><h4>Sue Kim</h4><div class="tags"><span class="party rep" title="Republican">REP</span></div></div><ul><li>Associate judge since 2022.</li></ul><p class="links"><a href="https://example.com/sue-kim" target="_blank" rel="noopener">Example source</a></p></div><div class="cand" data-cand="Raj Patel"><div class="cand-head"><h4>Raj Patel</h4><div class="tags"><span class="party dem" title="Democrat">DEM</span></div></div><ul><li>Defense attorney, 15 years.</li></ul><p class="links"><a href="https://example.com/raj-patel" target="_blank" rel="noopener">Example source</a></p></div></div></article><article class="race" id="r5" data-contest="5"><header class="race-head"><span class="num">5</span><div><h3>City Council, Ward 2</h3><p class="meta">Ballot page 2 · 3 candidates · ranked choice</p></div></header><div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div><div class="cands c2"><div class="cand" data-cand="Ada Li"><div class="cand-head"><h4>Ada Li</h4><div class="tags"></div></div><ul><li>Small-business owner.</li></ul><p class="links"><a href="https://example.com/ada-li" target="_blank" rel="noopener">Example source</a></p></div><div class="cand" data-cand="Ben Ruiz"><div class="cand-head"><h4>Ben Ruiz</h4><div class="tags"></div></div><ul><li>Retired teacher.</li></ul><p class="links"><a href="https://example.com/ben-ruiz" target="_blank" rel="noopener">Example source</a></p></div><div class="cand" data-cand="Cy Young"><div class="cand-head"><h4>Cy Young</h4><div class="tags"><span class="tag thin">Little info</span></div></div><ul><li>No background found.</li></ul></div></div></article></section><section class="sec" id="s2"><h2>Lakeshore School District (nonpartisan) <span class="rng">#6–7</span></h2><div class="race issue"><header class="race-head"><span class="num">§</span><div><h3>The 2025 district split proposal</h3><p class="meta">Background and where candidates stand</p></div></header><div class="split-body"><ul class="timeline"><li><b>Jan. 2025:</b> Board discussed splitting the district.</li><li><b>May 2025:</b> Board voted to drop it.</li></ul><div class="tablewrap"><table class="stance"><thead><tr><th>Candidate</th><th>Seat</th><th>Stance</th><th>Party signal</th></tr></thead><tbody><tr><td>Ed Vance</td><td>Place 1 (inc.)</td><td>Voted to study the split.</td><td><span class="lean rep">Republican</span> GOP precinct chair</td></tr><tr><td>Dee Shaw</td><td>Place 1</td><td>Opposed.</td><td><span class="lean muted">None found</span> </td></tr></tbody></table></div><p class="note">Party signals come only from public party roles and partisan-group endorsements.</p><p class="links"><a href="https://example.com/news" target="_blank" rel="noopener">Local news story</a></p></div></div><article class="race" id="r6" data-contest="6"><header class="race-head"><span class="num">6</span><div><h3>School Board Trustee, Place 1</h3><p class="meta">Ballot page 3 · 2 candidates</p></div></header><div class="info"><div class="ib"><p class="ib-t">Voter poll</p><p class="none">No public poll found for this race.</p></div><div class="ib"><p class="ib-t">Bar poll</p><p class="none">No bar poll applies (non-judicial office).</p></div></div><div class="cands c2"><div class="cand" data-cand="Dee Shaw"><div class="cand-head"><h4>Dee Shaw</h4><div class="tags"></div></div><ul><li>Split: opposed.</li><li>Party signals: none found.</li></ul><p class="links"><a href="https://example.com/dee-shaw" target="_blank" rel="noopener">Example source</a></p></div><div class="cand" data-cand="Ed Vance"><div class="cand-head"><h4>Ed Vance</h4><div class="tags"><span class="tag">Incumbent</span></div></div><ul><li>Split: voted to study it in 2025.</li><li>Party signals: county GOP precinct chair.</li></ul><p class="links"><a href="https://example.com/ed-vance" target="_blank" rel="noopener">Example source</a></p></div></div></article><article class="race" id="r7" data-contest="7"><header class="race-head"><span class="num">7</span><div><h3>Proposition A: $120M school bond</h3><p class="meta">Ballot page 3 · For / Against</p></div></header><p class="office">Official ballot language summarized here.</p><div class="cands c2"><div class="cand"><div class="cand-head"><h4>What it does</h4></div><ul><li>Renovations and HVAC at 12 campuses.</li></ul></div><div class="cand"><div class="cand-head"><h4>Support</h4></div><ul><li>District; citizens&#x27; bond committee.</li></ul></div><div class="cand"><div class="cand-head"><h4>Opposition</h4></div><ul><li>Local taxpayer group.</li></ul></div><div class="cand"><div class="cand-head"><h4>Fiscal / tax impact</h4></div><ul><li>District projects no tax-rate increase; depends on property values.</li></ul></div></div></article></section>
+  <section class="resources"><h2>Resources</h2><ul><li><a href="https://www.vote411.org" target="_blank" rel="noopener">VOTE411</a></li><li><a href="https://lakeshore.example.gov/elections" target="_blank" rel="noopener">County elections</a></li></ul>
+  <p class="caveats"><b>Caveats.</b> Polls are snapshots. Bar polls are lawyer surveys, not endorsements. Compiled Oct. 21, 2026.</p></section>
+</div>
+
+</body>
+</html>

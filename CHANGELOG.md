@@ -14,7 +14,7 @@ Found while building a guide for a Carver County, Minnesota ballot (City of Vict
 - **Per-page column counts.** `--columns` now accepts a comma-separated list with one count per page, such as `--columns 3,2`. The last value repeats for any later pages. A single number works as before.
 - **Better gap detection.** A cut must now leave real text on each side, within the stretch between cuts already made: at least 8 words or 2% of the page's words, whichever is more. A stray footer or the end of an instruction line no longer counts. Among the cuts that qualify, the finder picks the emptiest band nearest the page center, as before. If no position qualifies, the old rule applies.
 
-  A first version picked whichever near-empty band split the words most evenly. That cut through headers on the Tarrant County ballot, whose columns are uneven, so it was replaced before release.
+  A first version picked whichever near-empty band split the words most evenly. That cut through headers on the Tarrant County ballot, whose columns are uneven, so it was replaced the same day (it shipped briefly in 5558bc6; use 040d617 or later).
 
 **Testing**
 

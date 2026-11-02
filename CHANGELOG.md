@@ -12,16 +12,20 @@ Found while building a guide for a Carver County, Minnesota ballot (City of Vict
 **Fixes** (`ballot-research-guide/scripts/verify_ballot.py`)
 
 - **Per-page column counts.** `--columns` now accepts a comma-separated list with one count per page, such as `--columns 3,2`. The last value repeats for any later pages. A single number works as before.
-- **Better gap detection.** Any nearly empty band now counts as a possible gap: coverage up to 3 words, or 10% of the busiest column. Among those, the finder picks the cut that best splits the words into even column boundaries. A margin with nothing to its right no longer wins. If no band qualifies, the old rule applies.
+- **Better gap detection.** A cut must now leave real text on each side, within the stretch between cuts already made: at least 8 words or 2% of the page's words, whichever is more. A stray footer or the end of an instruction line no longer counts. Among the cuts that qualify, the finder picks the emptiest band nearest the page center, as before. If no position qualifies, the old rule applies.
+
+  A first version picked whichever near-empty band split the words most evenly. That cut through headers on the Tarrant County ballot, whose columns are uneven, so it was replaced before release.
 
 **Testing**
 
-- Carver County ballot: `--columns 3,2` (and plain `--columns 3`) now pass with 0 errors across all 35 contests. Before the fix, 8–28 contests failed depending on the setting.
-- Synthetic layouts, all split correctly:
+- **Carver County ballot.** `--columns 3,2` (and plain `--columns 3`) now pass with 0 errors across all 35 contests. Before the fix, 8–28 contests failed depending on the setting.
+- **Regression on the Tarrant County example (precinct 3471-127).** With the default `--columns 2`, the new reader produces exactly the same reading order as the previous version, line for line on all 6 pages. It also matches the dump in `examples/tarrant-county-tx-2026/qc-report.md`, the run that passed 126/126 names in order. That ballot has a short right column on page 5 (18 words); it still splits correctly.
+- **Synthetic layouts**, all split correctly:
   - two equal columns with a centered header;
   - three equal columns with a centered header;
   - two columns in the left two-thirds of the page;
   - two unequal columns;
-  - two columns with no header.
+  - two columns with no header;
+  - a very short right column.
 
 **Docs.** `SKILL.md`, both READMEs and `dist/ballot-research-guide.zip` are updated.

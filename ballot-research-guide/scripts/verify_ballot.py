@@ -23,6 +23,7 @@ single-column ballots or if detection misbehaves, or a comma list per page such 
 when pages differ; check the "page text" dump in the report.
 """
 import argparse
+import bisect
 import html as htmlmod
 import json
 import re
@@ -55,24 +56,24 @@ def split_columns(words, width, ncols):
         for x in range(int(w["x0"]), int(w["x1"]) + 1):
             cov[x] += 1
     lo, hi = int(width * 0.2), int(width * 0.8)
-    # Centered titles and instruction lines leave a coverage of 1-3 even in real column gaps, while
-    # an empty margin beside the last column can read 0. So treat any near-empty position as a gap
-    # candidate and prefer the one that splits the word mass closest to an even column boundary.
+    # A real column gap has text on both sides. An empty margin beside the last column (common when
+    # the columns don't fill the page) can read emptier than the real gap, which centered titles
+    # cross, so only accept a cut that leaves real text (not just a stray footer) on each side of it,
+    # within the stretch between the cuts already made.
     centers = sorted((w["x0"] + w["x1"]) / 2 for w in words)
-    peak = max(cov[lo:hi]) if hi > lo else 0
-    thresh = max(3, peak * 0.1)
+    min_side = max(8, len(centers) * 0.02)  # a footer or an instruction fragment is a few words
 
-    def balance(x):
-        left = sum(1 for c in centers if c < x) / len(centers)
-        return min(abs(left - j / ncols) for j in range(1, ncols))
+    def fair(x, cuts):
+        left_edge = max([c for c in cuts if c < x], default=-1)
+        right_edge = min([c for c in cuts if c > x], default=10 ** 9)
+        left = bisect.bisect_left(centers, x) - bisect.bisect_left(centers, left_edge)
+        right = bisect.bisect_left(centers, right_edge) - bisect.bisect_left(centers, x)
+        return left >= min_side and right >= min_side
 
     cuts = []
     for _ in range(ncols - 1):
-        low = [x for x in range(lo, hi) if cov[x] <= thresh]
-        if low:
-            best = min(low, key=lambda x: (round(balance(x), 2), cov[x]))
-        else:
-            best = min(range(lo, hi), key=lambda x: (cov[x], abs(x - width / 2)))
+        pool = [x for x in range(lo, hi) if fair(x, cuts)] or list(range(lo, hi))
+        best = min(pool, key=lambda x: (cov[x], abs(x - width / 2)))
         cuts.append(best)
         for x in range(max(lo, best - 40), min(hi, best + 40)):
             cov[x] = 10 ** 9  # do not pick a neighbour as the next cut

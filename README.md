@@ -104,6 +104,8 @@ The skill doesn't deliver anything until these gates pass. Their results print i
 
 If a gate can't pass, for example because there is no ballot PDF, the guide says so and is labeled a draft.
 
+**Regression suite.** `python tests/run_regression.py` reads real sample ballots kept in `tests/fixtures/`: Tarrant County, TX (two columns, bilingual, uneven columns) and Carver County, MN (three-column front, two-column back). It compares their reading order line by line against saved golden files and runs the full name-and-order check where a transcription exists. Run it after any change to `verify_ballot.py`. After an intended change, run it with `--update` and review `git diff tests/`. Adding a ballot means a PDF, an entry in `tests/fixtures/manifest.json` and, optionally, a names-only `ballot.json`.
+
 We tested the checker by planting errors: a misspelled name, an invented candidate, two swapped races, a dropped candidate and a wrong contest number. It caught every one. The real Tarrant County example passes with 0 errors and 0 warnings across 71 contests.
 
 ---
@@ -199,6 +201,7 @@ ballot-research-guide/          The Claude skill (upload this folder, zipped)
   scripts/                      build_guide.py, build_cheatsheet.py, render_pdf.py, verify_ballot.py
   assets/example-ballot.json    Data-file schema (fictional candidates)
 dist/ballot-research-guide.zip  Ready-to-upload skill
+tests/run_regression.py         Regression suite for the ballot reader (real sample ballots in tests/fixtures/)
 examples/                       Sample PDFs (fictional and real Texas 2026)
 docs/images/                    Screenshots
 ```

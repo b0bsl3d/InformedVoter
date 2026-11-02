@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-02: Regression suite with real ballots
+
+- `tests/fixtures/` holds two official sample ballots:
+  - `tarrant-tx-3471-127.pdf`: Tarrant County, TX, precinct 3471-127.
+  - `carver-mn-victoria-p4.pdf`: Carver County, MN, City of Victoria P4. It comes with a names-only `ballot.json` (35 contests, no research content).
+- `tests/run_regression.py` compares each ballot's reading order with a saved golden file and runs the full ballot-match check on the Carver transcription. `--update` rewrites the golden files after an intended change.
+- The Tarrant golden file is identical to the reading-order dump in `examples/tarrant-county-tx-2026/qc-report.md`, so it anchors the run that passed 126/126.
+- Run against the pre-fix checker (`7c23c5e`), the suite fails on the Carver ballot, so it would have caught this bug.
+
 ## 2026-11-02: Ballot checker reads mixed-column ballots
 
 Found while building a guide for a Carver County, Minnesota ballot (City of Victoria P4). The front has three columns and the back has two. `verify_ballot.py` reported every contest in the later columns as out of order, even though the transcription was correct.

@@ -1,0 +1,19 @@
+{
+  "fixtures": [
+    {
+      "name": "tarrant-tx-3471-127",
+      "pdf": "tarrant-tx-3471-127.pdf",
+      "columns": "2",
+      "source": "Tarrant County, TX official sample ballot, Joint General and Special Elections, Nov. 3, 2026, precinct 3471-127",
+      "layout": "6 pages (5 ballot pages + blank), 2 columns, bilingual English/Spanish, uneven columns on page 3, short right column on page 5"
+    },
+    {
+      "name": "carver-mn-victoria-p4",
+      "pdf": "carver-mn-victoria-p4.pdf",
+      "columns": "3,2",
+      "ballot_json": "carver-mn-victoria-p4.ballot.json",
+      "source": "Carver County, MN official sample ballot, State General Election, Nov. 3, 2026, City of Victoria P4 (style CAV-0118)",
+      "layout": "2 pages: 3-column front, 2-column back filling only the left two-thirds; centered headers cross the column gaps; diagonal SAMPLE watermark"
+    }
+  ]
+}

@@ -1,0 +1,618 @@
+{
+  "_comment": "Names-only transcription of the official Carver County sample ballot (City of Victoria P4, style CAV-0118) for regression tests. No research content.",
+  "election": {
+    "guide_title": "Victoria, MN Ballot Guide 2026",
+    "jurisdiction": "Carver County, Minnesota · City of Victoria",
+    "precinct": "Victoria P4 (ballot style CAV-0118)",
+    "date_label": "Tue., Nov. 3, 2026"
+  },
+  "sections": [
+    {
+      "title": "Federal & State Offices",
+      "ballot_label": "Front, column 1: Federal & State Offices",
+      "contests": [
+        {
+          "office": "U.S. Senator",
+          "short": "U.S. Senator",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Rebecca Whiting",
+              "party": "Libertarian"
+            },
+            {
+              "name": "Peggy Flanagan",
+              "party": "DFL"
+            },
+            {
+              "name": "Michele Tafoya",
+              "party": "Republican"
+            },
+            {
+              "name": "Marisa Simonetti",
+              "party": "Independent"
+            }
+          ]
+        },
+        {
+          "office": "U.S. Representative, District 6",
+          "short": "U.S. Rep. Dist. 6",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Doug Chapin",
+              "party": "DFL"
+            },
+            {
+              "name": "Tom Emmer",
+              "party": "Republican"
+            }
+          ]
+        },
+        {
+          "office": "State Senator, District 48",
+          "short": "State Sen. Dist. 48",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Julia Coleman",
+              "party": "Republican"
+            },
+            {
+              "name": "Dan Kessler",
+              "party": "DFL"
+            }
+          ]
+        },
+        {
+          "office": "State Representative, District 48A",
+          "short": "State Rep. Dist. 48A",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Jim Nash",
+              "party": "Republican"
+            },
+            {
+              "name": "Joe Brothers",
+              "party": "DFL"
+            }
+          ]
+        },
+        {
+          "office": "Governor and Lieutenant Governor",
+          "short": "Governor / Lt. Gov.",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Steven Young and Jane Kirby",
+              "party": "Green"
+            },
+            {
+              "name": "Amy Klobuchar and Ben Schierer",
+              "party": "DFL"
+            },
+            {
+              "name": "Lisa Demuth and Ryan Wilson",
+              "party": "Republican"
+            }
+          ]
+        },
+        {
+          "office": "Secretary of State",
+          "short": "Secretary of State",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Seth Kuhl-Stennes",
+              "party": "Green"
+            },
+            {
+              "name": "Tad Jude",
+              "party": "Republican"
+            },
+            {
+              "name": "George \"Chip\" Tangen",
+              "party": "Libertarian"
+            },
+            {
+              "name": "Steve Simon",
+              "party": "DFL"
+            }
+          ]
+        },
+        {
+          "office": "State Auditor",
+          "short": "State Auditor",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Jay Reeves",
+              "party": "Forward Independence"
+            },
+            {
+              "name": "Scott Jensen",
+              "party": "Republican"
+            },
+            {
+              "name": "Zack Filipovich",
+              "party": "DFL"
+            }
+          ]
+        },
+        {
+          "office": "Attorney General",
+          "short": "Attorney General",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Ronald J. Schutz",
+              "party": "Republican"
+            },
+            {
+              "name": "Keith Ellison",
+              "party": "DFL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Constitutional Amendment",
+      "ballot_label": "Front, column 2: Constitutional Amendment",
+      "contests": [
+        {
+          "type": "measure",
+          "office": "Constitutional Amendment: Increasing funding to school districts",
+          "short": "Amendment – School funding",
+          "ballot_page": 1,
+          "choices": [
+            "Yes",
+            "No"
+          ],
+          "ballot_key": "increasing funding to school districts"
+        }
+      ]
+    },
+    {
+      "title": "Carver County & City of Victoria (nonpartisan)",
+      "ballot_label": "Front, column 2: County & City Offices",
+      "contests": [
+        {
+          "office": "Carver County Sheriff",
+          "short": "County Sheriff",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Jessica Heger",
+              "party": ""
+            },
+            {
+              "name": "Patrick Barry",
+              "party": ""
+            }
+          ]
+        },
+        {
+          "office": "Carver County Attorney",
+          "short": "County Attorney",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Mark Metz",
+              "party": ""
+            }
+          ]
+        },
+        {
+          "office": "Soil and Water Conservation District Supervisor, District 3",
+          "short": "Soil & Water Supv. Dist. 3",
+          "ballot_page": 1,
+          "writein": true,
+          "candidates": [
+            {
+              "name": "Mark Zabel",
+              "party": ""
+            }
+          ]
+        },
+        {
+          "office": "Council Member At Large, City of Victoria",
+          "short": "Victoria Council (up to 2)",
+          "ballot_page": 1,
+          "writein": true,
+          "vote_for": 2,
+          "candidates": [
+            {
+              "name": "Andy Reiff",
+              "party": ""
+            },
+            {
+              "name": "Benjamin Sykora",
+              "party": ""
+            },
+            {
+              "name": "Judson Sandahl",
+              "party": ""
+            },
+            {
+              "name": "Greg Evansky",
+              "party": ""
+            },
+            {
+              "name": "Donna Tarantino-Walker",
+              "party": ""
+            },
+            {
+              "name": "Thomas Almquist",
+              "party": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "School District No. 112 (nonpartisan)",
+      "ballot_label": "Front, column 3: School District Offices",
+      "contests": [
+        {
+          "office": "School Board Member, ISD 112 (Eastern Carver County)",
+          "short": "ISD 112 Board (up to 4)",
+          "ballot_page": 1,
+          "writein": true,
+          "vote_for": 4,
+          "candidates": [
+            {
+              "name": "Makiza Johnson",
+              "party": ""
+            },
+            {
+              "name": "Chet Gunhus",
+              "party": ""
+            },
+            {
+              "name": "Tracy Rundell",
+              "party": ""
+            },
+            {
+              "name": "Ellie Krug",
+              "party": ""
+            },
+            {
+              "name": "Jennifer Stone",
+              "party": ""
+            },
+            {
+              "name": "Ken Salway",
+              "party": ""
+            },
+            {
+              "name": "Joe Scott",
+              "party": ""
+            },
+            {
+              "name": "Tim Klein",
+              "party": ""
+            },
+            {
+              "name": "Jonathon Heinonen",
+              "party": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Judicial Offices (nonpartisan, all unopposed)",
+      "ballot_label": "Back: Judicial Offices",
+      "contests": [
+        {
+          "office": "Supreme Court, Associate Justice 1",
+          "short": "Supreme Ct. Justice 1",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Sarah Hennesy",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "Supreme Court, Associate Justice 4",
+          "short": "Supreme Ct. Justice 4",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Paul Thissen",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "Court of Appeals, Judge 1",
+          "short": "Ct. of Appeals 1",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "divider_before": "Court of Appeals",
+          "candidates": [
+            {
+              "name": "Elizabeth Bentley",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "Court of Appeals, Judge 7",
+          "short": "Ct. of Appeals 7",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Rachel Bond",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "Court of Appeals, Judge 13",
+          "short": "Ct. of Appeals 13",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Jeanne Cochran",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "Court of Appeals, Judge 15",
+          "short": "Ct. of Appeals 15",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Kevin G. Ross",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "Court of Appeals, Judge 18",
+          "short": "Ct. of Appeals 18",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "JaPaul J. Harris",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 1",
+          "short": "1st Dist. Ct. 1",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "divider_before": "1st District Court",
+          "candidates": [
+            {
+              "name": "Ann M. Offermann",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 2",
+          "short": "1st Dist. Ct. 2",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Krista M. Marks",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 3",
+          "short": "1st Dist. Ct. 3",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Dannia L. Edwards",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 4",
+          "short": "1st Dist. Ct. 4",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Tracy Perzel",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 6",
+          "short": "1st Dist. Ct. 6",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Kelly A. Staples",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 7",
+          "short": "1st Dist. Ct. 7",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Matthew Schmidt",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 9",
+          "short": "1st Dist. Ct. 9",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Patrick Goggins",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 12",
+          "short": "1st Dist. Ct. 12",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Michael D. Wentzell",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 15",
+          "short": "1st Dist. Ct. 15",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Lauren M. Johnson",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 16",
+          "short": "1st Dist. Ct. 16",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Luis Morales",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 18",
+          "short": "1st Dist. Ct. 18",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Christian Sean Wilton",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 27",
+          "short": "1st Dist. Ct. 27",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Tanya Olympia O'Brien",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 34",
+          "short": "1st Dist. Ct. 34",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Christopher D. Bates",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        },
+        {
+          "office": "1st District Court, Judge 36",
+          "short": "1st Dist. Ct. 36",
+          "ballot_page": 2,
+          "writein": true,
+          "judicial": true,
+          "candidates": [
+            {
+              "name": "Adam Johnson",
+              "party": "",
+              "incumbent": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

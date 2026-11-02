@@ -1,0 +1,270 @@
+p1: Official Ballot
+p1: Judge _____
+p1: Judge _____
+p1: To vote, completely
+p1: Federal Offices
+p1: U.S. Senator
+p1: Vote for One
+p1: Rebecca Whiting
+p1: Libertarian
+p1: Peggy Flanagan
+p1: Democratic-Farmer-Labor
+p1: Michele Tafoya
+p1: Republican
+p1: Marisa Simonetti
+p1: Independent
+p1: write-in, if any
+p1: U.S. Representative
+p1: District 6
+p1: Vote for One
+p1: Doug Chapin
+p1: Democratic-Farmer-Labor
+p1: Tom Emmer
+p1: Republican
+p1: write-in, if any
+p1: State Offices
+p1: State Senator
+p1: District 48
+p1: Vote for One
+p1: Julia Coleman
+p1: Republican
+p1: Dan Kessler
+p1: Democratic-Farmer-Labor
+p1: write-in, if any
+p1: State Representative
+p1: District 48A
+p1: Vote for One
+p1: Jim Nash
+p1: Republican
+p1: Joe Brothers
+p1: Democratic-Farmer-Labor
+p1: write-in, if any
+p1: Governor and Lieutenant Governor
+p1: Vote for One Team
+p1: Steven Young and Jane Kirby
+p1: Green
+p1: Amy Klobuchar and Ben Schierer
+p1: Democratic-Farmer-Labor
+p1: Lisa Demuth and Ryan Wilson
+p1: Republican
+p1: write-in, if any
+p1: Secretary of State
+p1: Vote for One
+p1: Seth Kuhl-Stennes
+p1: Green
+p1: Tad Jude
+p1: Republican
+p1: George "Chip" Tangen
+p1: Libertarian
+p1: Steve Simon
+p1: Democratic-Farmer-Labor
+p1: write-in, if any
+p1: State Auditor
+p1: Vote for One
+p1: Jay Reeves
+p1: Forward Independence
+p1: Scott Jensen
+p1: Republican
+p1: Zack Filipovich
+p1: Democratic-Farmer-Labor
+p1: write-in, if any
+p1: Attorney General
+p1: Vote for One
+p1: Ronald J. Schutz
+p1: Republican
+p1: Keith Ellison
+p1: Democratic-Farmer-Labor
+p1: write-in, if any
+p1: City of Victoria P4
+p1: State General Election Ballot
+p1: Carver County, Minnesota
+p1: November 3, 2026
+p1: Instructions to Voters:
+p1: fill in the oval(s) next to your choice(s)
+p1: Constitutional Amendments
+p1: Failure to vote on a constitutional amendment
+p1: will have the same effect as voting no on the
+p1: amendment.
+p1: To vote for a proposed constitutional
+p1: amendment, fill in the oval next to the word
+p1: "Yes" on that question. To vote against a
+p1: proposed constitutional amendment, fill in the
+p1: oval next to the word "No" on that question.
+p1: Increasing funding to school districts
+p1: Shall the Minnesota Constitution be amended
+p1: to increase the funding going to all school
+p1: districts from the permanent school fund, which
+p1: is a fund that supports school districts without
+p1: raising individual income or property taxes,
+p1: effective July 1, 2027?
+p1: Yes
+p1: No
+p1: County Offices
+p1: County Sheriff
+p1: Vote for One
+p1: Jessica Heger
+p1: Patrick Barry
+p1: write-in, if any
+p1: County Attorney
+p1: Vote for One
+p1: Mark Metz
+p1: write-in, if any
+p1: Soil and Water Conservation District Supervisor
+p1: District 3
+p1: Vote for One
+p1: Mark Zabel
+p1: write-in, if any
+p1: City Offices
+p1: Council Member At Large
+p1: City of Victoria
+p1: Vote for Up to Two
+p1: Andy Reiff
+p1: Benjamin Sykora
+p1: Judson Sandahl
+p1: Greg Evansky
+p1: Donna Tarantino-Walker
+p1: Thomas Almquist
+p1: write-in, if any
+p1: write-in, if any
+p1: CAV-0118
+p1: Vote front and back of ballot
+p1: 0118
+p1: like this:
+p1: School District Offices
+p1: School Board Member
+p1: No. 112 (Eastern Carver County)
+p1: Vote for Up to Four
+p1: Makiza Johnson
+p1: Chet Gunhus
+p1: Tracy Rundell
+p1: Ellie Krug
+p1: Jennifer Stone
+p1: Ken Salway
+p1: Joe Scott
+p1: Tim Klein
+p1: Jonathon Heinonen
+p1: write-in, if any
+p1: write-in, if any
+p1: write-in, if any
+p1: write-in, if any
+p1: Typ:01 Seq:0046 Spl:01
+p2: To vote, completely
+p2: Judicial Offices
+p2: Supreme Court
+p2: Associate Justice 1 - Supreme Court
+p2: Vote for One
+p2: Sarah Hennesy
+p2: Incumbent
+p2: write-in, if any
+p2: Associate Justice 4 - Supreme Court
+p2: Vote for One
+p2: Paul Thissen
+p2: Incumbent
+p2: write-in, if any
+p2: Court of Appeals
+p2: Judge 1 - Court of Appeals
+p2: Vote for One
+p2: Elizabeth Bentley
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 7 - Court of Appeals
+p2: Vote for One
+p2: Rachel Bond
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 13 - Court of Appeals
+p2: Vote for One
+p2: Jeanne Cochran
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 15 - Court of Appeals
+p2: Vote for One
+p2: Kevin G. Ross
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 18 - Court of Appeals
+p2: Vote for One
+p2: JaPaul J. Harris
+p2: Incumbent
+p2: write-in, if any
+p2: 1st District Court
+p2: Judge 1 - District Court
+p2: Vote for One
+p2: Ann M. Offermann
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 2 - District Court
+p2: Vote for One
+p2: Krista M. Marks
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 3 - District Court
+p2: Vote for One
+p2: Dannia L. Edwards
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 4 - District Court
+p2: Vote for One
+p2: Tracy Perzel
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 6 - District Court
+p2: Vote for One
+p2: Kelly A. Staples
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 7 - District Court
+p2: Vote for One
+p2: Matthew Schmidt
+p2: Incumbent
+p2: write-in, if any
+p2: City of Victoria P4
+p2: State General Election Ballot
+p2: Carver County, Minnesota
+p2: November 3, 2026
+p2: Instructions to Voters:
+p2: fill in the oval(s) next to your choice(s) like this:
+p2: Judicial Offices
+p2: 1st District Court
+p2: Judge 9 - District Court
+p2: Vote for One
+p2: Patrick Goggins
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 12 - District Court
+p2: Vote for One
+p2: Michael D. Wentzell
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 15 - District Court
+p2: Vote for One
+p2: Lauren M. Johnson
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 16 - District Court
+p2: Vote for One
+p2: Luis Morales
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 18 - District Court
+p2: Vote for One
+p2: Christian Sean Wilton
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 27 - District Court
+p2: Vote for One
+p2: Tanya Olympia O'Brien
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 34 - District Court
+p2: Vote for One
+p2: Christopher D. Bates
+p2: Incumbent
+p2: write-in, if any
+p2: Judge 36 - District Court
+p2: Vote for One
+p2: Adam Johnson
+p2: Incumbent
+p2: write-in, if any
+p2: Vote front and back of ballot
+p2: 0118 Typ:01 Seq:0046 Spl:01

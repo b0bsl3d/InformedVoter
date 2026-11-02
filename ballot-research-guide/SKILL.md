@@ -141,6 +141,8 @@ python scripts/verify_ballot.py --pdf ballot.pdf --json ballot.json \
   - each number lists the right candidates.
 - **Read every warning.** Warnings flag ballot lines that look like candidates you didn't capture, and write-in or measure counts that don't match. Resolve each one or explain it in the report.
 - **Check the reading order.** If column detection looks wrong, check the "ballot text in reading order" dump in the report, then rerun with `--columns 1` or `3`.
+  - **Pages with different layouts.** `--columns` also takes one count per page, comma-separated; the last value repeats. For example, a three-column front and a two-column back is `--columns 3,2`.
+  - An out-of-order error on every contest in one column usually means a wrong column count for that page, not a transcription mistake.
 - **Spot-check by eye.** Render the ballot pages to PNG and compare the first, a middle and the last contest on each page against the cheat sheet.
 - **No PDF:** run without `--pdf`, and state prominently in the guide and to the user that names and order were not verified against the official ballot.
 

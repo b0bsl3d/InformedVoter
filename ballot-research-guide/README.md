@@ -30,6 +30,7 @@ Claude asks up to four quick questions: which races, which local issues, who the
 - `scripts/build_guide.py`: builds the guide HTML from `ballot.json`.
 - `scripts/build_cheatsheet.py`: builds the cheat sheet. It handles write-ins, "vote for N" contests, ranked-choice grids and measures.
 - `scripts/render_pdf.py`: renders HTML to PDF with headless Chromium. `--one-page` auto-fits the cheat sheet.
+- `scripts/verify_ballot.py`: the ballot-match quality gate. Checks names, order and numbering against the sample-ballot PDF. `--columns` sets the column count, per page if needed (`--columns 3,2`).
 - `assets/example-ballot.json`: a data-file example with fictional candidates.
 
 Requires Python 3 and Playwright (`pip install playwright && python -m playwright install chromium`).

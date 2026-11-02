@@ -165,6 +165,7 @@ Please read these before relying on a guide.
 - **The ballot check depends on the PDF.**
   - Unusual layouts, scanned images or watermarks can confuse the column reader.
   - Its report includes the extracted reading order so you can check it.
+  - If the front and back of a ballot have different numbers of columns, give one count per page, e.g. `--columns 3,2`.
   - Nonpartisan names (school boards, appraisal boards) print without party codes, so an omitted one is harder to detect automatically. Compare those by eye.
 - **A snapshot in time.**
   - Polls, endorsements, withdrawals and court rulings change. The guide is only current as of the date it was compiled.
